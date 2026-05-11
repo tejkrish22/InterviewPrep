@@ -1,0 +1,13 @@
+filters:
+  and:
+    - file.inFolder("DSA")
+views:
+  - type: table
+    name: Problems
+    order:
+      - file.name
+      - topic
+      - pattern
+      - difficulty
+      - unique
+      - link
