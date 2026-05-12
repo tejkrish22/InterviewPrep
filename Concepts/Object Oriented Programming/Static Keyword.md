@@ -46,7 +46,7 @@ int main() {
 A **static member function** belongs to the class and does **not** need an object to be called.
 ### Key points
 - Called using `ClassName::functionName()`.
-- **No **`**this**`** pointer** (because it’s not tied to any object).
+- **No `this` pointer** (because it's not tied to any object).
 - Can access:
     - ✅ static data members
     - ✅ other static member functions
@@ -94,7 +94,7 @@ public:
 ```
 ### B) Can a static function access non-static members?
 ❌ Not directly.
-Reason: non-static members need a specific object, but static functions have **no **`**this**`.
+Reason: non-static members need a specific object, but static functions have **no `this`**.
 ✅ Solution: pass an object (or pointer/reference to object) into the static function.
 ```c++
 class A {
@@ -118,7 +118,7 @@ public:
 ---
 ## 5) Important interview points
 - Static data members are **shared** across all objects.
-- Static member functions have **no **`**this**`** pointer**.
+- Static member functions have **no `this` pointer**.
 - Static functions can access **only static members directly**.
 - Prefer accessing static members using `ClassName::member`.
 - Static members have **class lifetime** (exist as long as the program runs).

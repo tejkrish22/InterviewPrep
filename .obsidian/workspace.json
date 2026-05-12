@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notion/OS Notes/Types of Operating System.md",
+                "file": "Notion/Learn LLM/Learn LLM.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Types of Operating System"
+              "title": "Learn LLM"
             }
           }
         ]
@@ -193,39 +193,40 @@
   "left-ribbon": {
     "hiddenItems": {
       "obsidian-git:Open Git source control": false,
+      "notebook-navigator:Notebook Navigator": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-importer:Open Importer": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false,
-      "notebook-navigator:Notebook Navigator": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
-      "obsidian-importer:Open Importer": false
+      "bases:Create new base": false
     }
   },
-  "active": "acdeefe59146ec7d",
+  "active": "20cab1cd4720b598",
   "lastOpenFiles": [
+    "Notion/Learn LLM/Week3, Day4 - Deep dive into Transformers, Quantization and Neural Networks.md",
+    "Notion/Learn LLM/Learn LLM.md",
+    "Notion/Operating Systems/Types of Operating System.md",
     "Notion/Misc/Meeting with Venkat.md",
     "Notion/Misc",
     "Notion/untitled folder",
     "Notion/Learn LLM/image.png",
     "Notion/Learn LLM/image 2.png",
     "Notion/Learn LLM/image 1.png",
-    "Notion/OS Notes/image 5.png",
-    "Notion/OS Notes/image 4.png",
+    "Notion/Operating Systems/image 5.png",
+    "Notion/Operating Systems/image 4.png",
     "Notion/Object Oriented Programming/image copy.png",
     "Notion/image copy.png",
-    "Notion/OS Notes/Basics of OS.md",
-    "Notion/OS Notes/Intro to OS.md",
-    "Notion/OS Notes/Types of Operating System.md",
-    "Notion/OS Notes/OS Notes.md",
+    "Notion/Operating Systems/Basics of OS.md",
+    "Notion/Operating Systems/Intro to OS.md",
+    "Notion/Operating Systems/OS Notes.md",
     "Notion/Object Oriented Programming/Abstraction.md",
     "Notion/Meeting with Venkat.md",
     "Notion/Applications/Software Engineer 1.md",
     "Notion/List of Companies/Sarla Aviation.md",
-    "Notion/Learn LLM/Learn LLM.md",
     "Notion/People/People Person.md",
     "Notion/People/Aakanksha Chitransh.md",
     "Notion/People/Atharva Inamdar.md",
@@ -245,7 +246,6 @@
     "Notion/List of Companies/Honeywell.md",
     "Notion/List of Companies/Indeed.md",
     "Notion/List of Companies/Salesforce.md",
-    "Notion/List of Companies/Nvidia.md",
     "Notion/List of Companies/List of Companies.base",
     "Notion/List of Companies",
     "Notion/Interview Experiences/New database/New database.base",

@@ -97,7 +97,7 @@ public:
 
 ---
 ## Best practices (Interview-friendly)
-1. **Keep data members **`**private**` by default.
+1. **Keep data members** `private` by default.
 2. Use **getters** for reading and mark them `const`.
 3. Use **setters** only when needed, and always **validate** input.
 4. Prefer **meaningful domain methods** instead of exposing too many setters:

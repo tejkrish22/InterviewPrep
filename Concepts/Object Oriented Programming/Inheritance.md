@@ -178,7 +178,7 @@ B   C
 ```
 `D` inherits from both `B` and `C`, and **both** `B` and `C` inherit from `A`.
 ### What exactly goes wrong?
-Without special handling, class `D` ends up containing **two separate copies of **`**A**`:
+Without special handling, class `D` ends up containing **two separate copies of `A`**:
 - one `A` subobject via `B`
 - another `A` subobject via `C`
 
@@ -214,7 +214,7 @@ int main() {
 }
 ```
 ### How virtual inheritance fixes it
-If `B` and `C` inherit from `A` as **virtual**, C++ ensures that `D` contains **only one shared **`**A**` subobject.
+If `B` and `C` inherit from `A` as **virtual**, C++ ensures that `D` contains **only one shared `A`** subobject.
 Key idea:
 - `virtual` inheritance says: “If this base appears multiple times through different paths, keep only one copy.”
 

@@ -11,23 +11,22 @@ notion-id: 34bd9a38-fc71-805d-8869-ee806215587d
     5. Dpendency Inversion Principle (DIP)
 
 ## Single Responsibility Principle (SRP)
-3. Only one reason to change, a  single responsibilty
-4. A class must have only one responsibilty.
-5. I
+1. Only one reason to change, a single responsibility.
+2. A class must have only one responsibility.
 
 ## Open / Close Principle (OCP)
-6. open for extension, closed for modificaiton
-7. A class should be open for extension, but we should not modify the class.
-8. Because modification would affect the existing users
+1. Open for extension, closed for modification.
+2. A class should be open for extension, but we should not modify the class.
+3. Because modification would affect the existing users.
 
 ## Liskov Substitution Principle (LSP)
-9. Subclasses should be substitutable for the base class without affecting the correctness of the program
+1. Subclasses should be substitutable for the base class without affecting the correctness of the program.
 
 ## Interface Segregation Principle (ISP)
-10. A class should not be forced to implement interfaces it does not use.
+1. A class should not be forced to implement interfaces it does not use.
 
 ## Dependency Inversion Principle (DIP)
-11. High level modules should not depend on low level modules. Both should depend on abstractions.
+1. High level modules should not depend on low level modules. Both should depend on abstractions.
 
 ## Summary
 

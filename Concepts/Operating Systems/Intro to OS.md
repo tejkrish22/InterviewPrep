@@ -18,12 +18,12 @@ notion-id: 35dd9a38-fc71-8020-b551-fe7c97a417ce
     5. Real Time OS
     6. Multi Programming/ Processing / Tasking OS
 9. Functions of OS
-    7. It is an interface b/w user and hardware
-    8. Process management
-    9. Storage Management - Hard Disk
-    10. Memory Management - RAM
-    11. Security and Privacy
+    1. It is an interface b/w user and hardware
+    2. Process management
+    3. Storage Management - Hard Disk
+    4. Memory Management - RAM
+    5. Security and Privacy
 10. Goals of OS
-    10. Convenience
-    11. Efficiency
-    12. Both
+    1. Convenience
+    2. Efficiency
+    3. Both
