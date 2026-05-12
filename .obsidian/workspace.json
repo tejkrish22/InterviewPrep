@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Templates/DSA Problem Template.md",
+                "file": "Notion/OS Notes/Types of Operating System.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DSA Problem Template"
+              "title": "Types of Operating System"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "venk",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,8 +73,19 @@
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
+          },
+          {
+            "id": "468a3c815994cd11",
+            "type": "leaf",
+            "state": {
+              "type": "notebook-navigator",
+              "state": {},
+              "icon": "notebook-navigator",
+              "title": "Notebook Navigator"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -161,39 +172,86 @@
               "icon": "lucide-list",
               "title": "Outline"
             }
+          },
+          {
+            "id": "acdeefe59146ec7d",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "notebook-navigator:Notebook Navigator": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-importer:Open Importer": false
     }
   },
   "active": "20cab1cd4720b598",
   "lastOpenFiles": [
-    "DSA/Arrays/Problems.base",
-    "DSA/Arrays/Two Sum.md",
-    "Templates/DSA Problem Template.md",
-    "DSA/Arrays/3 Sum.md",
-    "DSA/Arrays/2 Sum.md",
-    "Templates",
-    "Untitled.md",
-    "DSA/Template.md",
-    "DSA/Arrays",
-    "Welcome.md",
-    "DSA",
-    "hi.md",
-    "create a link.md"
+    "Notion/Object Oriented Programming/image copy.png",
+    "Notion/image copy.png",
+    "Notion/OS Notes/Basics of OS.md",
+    "Notion/OS Notes/Intro to OS.md",
+    "Notion/OS Notes/Types of Operating System.md",
+    "Notion/OS Notes/OS Notes.md",
+    "Notion/Object Oriented Programming/Abstraction.md",
+    "Notion/Meeting with Venkat.md",
+    "Notion/Applications/Software Engineer 1.md",
+    "Notion/List of Companies/Sarla Aviation.md",
+    "Notion/Learn LLM/Learn LLM.md",
+    "Notion/People/People Person.md",
+    "Notion/People/Aakanksha Chitransh.md",
+    "Notion/People/Atharva Inamdar.md",
+    "Notion/People/Hare Sankaran RV.md",
+    "Notion/People/Venusree Vegunta.md",
+    "Notion/People/People.base",
+    "Notion/People",
+    "Notion/Applications/Software Engineer 2.md",
+    "Notion/Applications/Advanced Software Engr.md",
+    "Notion/Applications/Software Engineer.md",
+    "Notion/Applications/MTS 2.md",
+    "Notion/Applications/Mechatronics Engineer 2.md",
+    "Notion/Applications/Applications.base",
+    "Notion/Applications",
+    "Notion/List of Companies/Google.md",
+    "Notion/List of Companies/Visa.md",
+    "Notion/List of Companies/Honeywell.md",
+    "Notion/List of Companies/Indeed.md",
+    "Notion/List of Companies/Salesforce.md",
+    "Notion/List of Companies/Nvidia.md",
+    "Notion/List of Companies/List of Companies.base",
+    "Notion/List of Companies",
+    "Notion/Interview Experiences/New database/New database.base",
+    "Notion/Interview Experiences/New database",
+    "Notion/Interview Experiences",
+    "image.png",
+    "Notion/C++ Notes",
+    "Notion/image 5.png",
+    "Notion/image 4.png",
+    "Notion/image 3.png",
+    "Notion/image 2.png",
+    "Notion/image 1.png",
+    "Notion/image.png",
+    "image 5.png",
+    "image 4.png"
   ]
 }
