@@ -15,6 +15,6 @@ Created: 2026-05-11T08:35:00
 Project: []
 People: []
 ---
-[[Intro to OS]]
-[[Basics of OS]]
+[[1_Intro to OS]]
+[[2_Basics of OS]]
 [[]]

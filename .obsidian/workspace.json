@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "de42b5520f3bb82c",
+        "id": "15c24d67f84d0bf7",
         "type": "tabs",
         "children": [
           {
-            "id": "20cab1cd4720b598",
+            "id": "790c13272050359e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "Notion/Learn LLM/Learn LLM.md",
-                "mode": "source",
-                "source": false
+                "aFile": "Concepts/Operating Systems/Types of Operating System.md",
+                "bFile": "Concepts/Operating Systems/Types of Operating System.md",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "Learn LLM"
+              "icon": "diff",
+              "title": "Diff: Types of Operating System  (Working Tree)"
             }
           }
         ]
@@ -84,8 +84,7 @@
               "title": "Notebook Navigator"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -188,70 +187,69 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 427.5
   },
   "left-ribbon": {
     "hiddenItems": {
       "obsidian-git:Open Git source control": false,
-      "notebook-navigator:Notebook Navigator": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
-      "obsidian-importer:Open Importer": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "notebook-navigator:Notebook Navigator": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-importer:Open Importer": false
     }
   },
-  "active": "20cab1cd4720b598",
+  "active": "790c13272050359e",
   "lastOpenFiles": [
-    "Notion/Learn LLM/Week3, Day4 - Deep dive into Transformers, Quantization and Neural Networks.md",
-    "Notion/Learn LLM/Learn LLM.md",
-    "Notion/Operating Systems/Types of Operating System.md",
-    "Notion/Misc/Meeting with Venkat.md",
-    "Notion/Misc",
-    "Notion/untitled folder",
-    "Notion/Learn LLM/image.png",
-    "Notion/Learn LLM/image 2.png",
-    "Notion/Learn LLM/image 1.png",
-    "Notion/Operating Systems/image 5.png",
-    "Notion/Operating Systems/image 4.png",
-    "Notion/Object Oriented Programming/image copy.png",
-    "Notion/image copy.png",
-    "Notion/Operating Systems/Basics of OS.md",
-    "Notion/Operating Systems/Intro to OS.md",
-    "Notion/Operating Systems/OS Notes.md",
-    "Notion/Object Oriented Programming/Abstraction.md",
-    "Notion/Meeting with Venkat.md",
-    "Notion/Applications/Software Engineer 1.md",
-    "Notion/List of Companies/Sarla Aviation.md",
-    "Notion/People/People Person.md",
-    "Notion/People/Aakanksha Chitransh.md",
-    "Notion/People/Atharva Inamdar.md",
-    "Notion/People/Hare Sankaran RV.md",
-    "Notion/People/Venusree Vegunta.md",
-    "Notion/People/People.base",
-    "Notion/People",
-    "Notion/Applications/Software Engineer 2.md",
-    "Notion/Applications/Advanced Software Engr.md",
-    "Notion/Applications/Software Engineer.md",
-    "Notion/Applications/MTS 2.md",
-    "Notion/Applications/Mechatronics Engineer 2.md",
-    "Notion/Applications/Applications.base",
-    "Notion/Applications",
-    "Notion/List of Companies/Google.md",
-    "Notion/List of Companies/Visa.md",
-    "Notion/List of Companies/Honeywell.md",
-    "Notion/List of Companies/Indeed.md",
-    "Notion/List of Companies/Salesforce.md",
-    "Notion/List of Companies/List of Companies.base",
-    "Notion/List of Companies",
-    "Notion/Interview Experiences/New database/New database.base",
-    "Notion/Interview Experiences/New database",
-    "image.png",
-    "Notion/image 5.png",
-    "Notion/image 4.png"
+    "Concepts/CloudComputing/Assets/5_IAM.md",
+    "Concepts/Operating Systems/4_Process_States_In_OS.md",
+    "Pasted image 20260513222246.png",
+    "Pasted image 20260513222214.png",
+    "Concepts/Operating Systems/3_Types of Operating System.md",
+    "Pasted image 20260513193028.png",
+    "Concepts/Operating Systems/2_Basics of OS.md",
+    "Concepts/Operating Systems/1_Intro to OS.md",
+    "Concepts/Learn LLM/Week 3, Day 5 -.md",
+    "Concepts/Learn LLM/Learn LLM.md",
+    "Concepts/CloudComputing/Assets/4_shared_responsibility.png",
+    "Concepts/CloudComputing/Assets/2_TypesOfCloudComputing.png",
+    "Concepts/Operating Systems/image 5.png",
+    "Concepts/Operating Systems/image 4.png",
+    "Concepts/Operating Systems/OS Notes.md",
+    "Concepts/Object Oriented Programming/image copy.png",
+    "Concepts/Object Oriented Programming/What is OOPS.md",
+    "Concepts/Object Oriented Programming/Static Keyword.md",
+    "Concepts/Object Oriented Programming/Polymorphism.md",
+    "Concepts/Object Oriented Programming/Object Oriented Programming.md",
+    "Concepts/Object Oriented Programming/Object Cloning.md",
+    "Concepts/Object Oriented Programming/Interfaces.md",
+    "Concepts/Object Oriented Programming/Inner Classes.md",
+    "Concepts/Object Oriented Programming/Inheritance.md",
+    "Concepts/Object Oriented Programming/Friend in C++.md",
+    "Concepts/Object Oriented Programming/Encapsulation.md",
+    "Concepts/Object Oriented Programming/Design Principles.md",
+    "Concepts/Object Oriented Programming/Constructors.md",
+    "Concepts/Object Oriented Programming/Classes and Objects.md",
+    "Concepts/Object Oriented Programming/Attributes and Methods.md",
+    "Concepts/Object Oriented Programming/Association, Aggregation and Composition.md",
+    "Concepts/Object Oriented Programming/Access Modifiers.md",
+    "Concepts/Object Oriented Programming/Abstraction.md",
+    "Concepts/Learn LLM/image.png",
+    "Concepts/Learn LLM/image 2.png",
+    "Concepts/CloudComputing/Assets",
+    "Concepts/Operating Systems",
+    "Concepts/Object Oriented Programming",
+    "Concepts/Misc",
+    "Concepts/Learn LLM",
+    "Concepts/High Level Design",
+    "Concepts/CloudComputing",
+    "Concepts/C++ Notes",
+    "Concepts",
+    "Notion/Misc"
   ]
 }
