@@ -11,14 +11,12 @@
             "id": "790c13272050359e",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "image",
               "state": {
-                "aFile": "Concepts/Operating Systems/Types of Operating System.md",
-                "bFile": "Concepts/Operating Systems/Types of Operating System.md",
-                "aRef": ""
+                "file": "Concepts/Operating Systems/Assets/image 4.png"
               },
-              "icon": "diff",
-              "title": "Diff: Types of Operating System  (Working Tree)"
+              "icon": "lucide-image",
+              "title": "image 4"
             }
           }
         ]
@@ -204,22 +202,23 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "790c13272050359e",
+  "active": "c6cdc1494b10a204",
   "lastOpenFiles": [
-    "Concepts/CloudComputing/Assets/5_IAM.md",
+    "Concepts/Operating Systems/Assets/image 5.png",
+    "Concepts/Operating Systems/Assets/image 4.png",
+    "Concepts/CloudComputing/5_IAM.md",
+    "Concepts/CloudComputing/Assets/5_IAM.png",
+    "Concepts/Operating Systems/Assets",
+    "Concepts/Operating Systems/Assets/Pasted image 20260513193028.png",
     "Concepts/Operating Systems/4_Process_States_In_OS.md",
-    "Pasted image 20260513222246.png",
     "Pasted image 20260513222214.png",
     "Concepts/Operating Systems/3_Types of Operating System.md",
-    "Pasted image 20260513193028.png",
     "Concepts/Operating Systems/2_Basics of OS.md",
     "Concepts/Operating Systems/1_Intro to OS.md",
     "Concepts/Learn LLM/Week 3, Day 5 -.md",
     "Concepts/Learn LLM/Learn LLM.md",
     "Concepts/CloudComputing/Assets/4_shared_responsibility.png",
     "Concepts/CloudComputing/Assets/2_TypesOfCloudComputing.png",
-    "Concepts/Operating Systems/image 5.png",
-    "Concepts/Operating Systems/image 4.png",
     "Concepts/Operating Systems/OS Notes.md",
     "Concepts/Object Oriented Programming/image copy.png",
     "Concepts/Object Oriented Programming/What is OOPS.md",
@@ -249,7 +248,6 @@
     "Concepts/High Level Design",
     "Concepts/CloudComputing",
     "Concepts/C++ Notes",
-    "Concepts",
-    "Notion/Misc"
+    "Concepts"
   ]
 }

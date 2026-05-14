@@ -8,7 +8,7 @@
 - `Groups` only contain users, not other groups.
 - Users don't have to belong to a group, and user can belong to multiple groups.
 
-![[Pasted image 20260513222246.png]]
+![[5_IAM.png]]
 
 ## IAM Permissions
 
