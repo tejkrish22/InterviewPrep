@@ -1,5 +1,15 @@
 # Identity and Access Management
 
+## Summary
+
+* **Users**: mapped to a physical user, has a password for AWS Console
+* **Groups**: contains users only
+* **Policies**: JSON document that outlines permissions for users or groups * Roles: for EC2 instances or AWS services
+* **Security**: MFA + Password Policy
+* **AWS CLI**: manage your AWS services using the command-line
+* **AWS SDK**: manage your AWS services using a programming language * Access Keys: access AWS using the CLI or SDK
+* **Audit**: IAM Credential Reports & IAM Access Advisor
+
 ## Users and Groups
 
 - IAM is a global service.
@@ -48,3 +58,42 @@
 
 - These policies define the `permissions`of the users
 - In AWS you apply the `least privilege principle`; that is don't give more permissions than a user needs.
+
+## IAM Roles for Services
+
+- Some AWS service will need to perform actions on your behalf.
+- To do so, we will assign permissions to AWS services with IAM roles.
+- Common Roles:
+	- EC2 Instance Roles
+	- Lambda Function Roles
+	- Roles for CloudFormation
+
+## IAM Security Tool
+
+- IAM Credentials Report (account-level)
+	- A report that lists all your account's users and the status of their various credentials
+- IAM Access Advisor (user-level)
+	- Access advisor shows the service permission granted to a user and when those services were last accessed.
+	- You can use this information to review your policies
+
+## IAM Guidelines & Best Practices
+
+- Do not use the root account except for AWS account setup.
+- One physical user = One AWS user
+- Assign users to groups and assign permissions to groups.
+- Create a strong password policy
+- Use and enforce the use of MFA
+- Create and use Roles for giving permissions to AWS services.
+- Use Access keys for CLI / Programmatic Access.
+- Audit permissions of your account using IAM Credentials Report and IAM access advisor.
+
+## Shared Responsibility Model for IAM
+
+| AWS                                         | You                                                         |
+| ------------------------------------------- | ----------------------------------------------------------- |
+| Infrastructure                              | Users, groups, roles, policies management<br>and monitoring |
+| Configuration and Vulnerability<br>Analysis | Enable MFA on all accounts                                  |
+| Compliance Validation                       | Rotate all your keys often                                  |
+|                                             | Use IAM tools to apply permissions                          |
+|                                             | Analyse access patterns and review permissions              |
+|                                             |                                                             |

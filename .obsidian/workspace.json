@@ -11,12 +11,14 @@
             "id": "790c13272050359e",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Concepts/Operating Systems/Assets/image 4.png"
+                "file": "Concepts/CloudComputing/5_IAM.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "image 4"
+              "icon": "lucide-file",
+              "title": "5_IAM"
             }
           }
         ]
@@ -86,7 +88,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "3c21b4e1b108e4d4",
@@ -202,10 +205,10 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "c6cdc1494b10a204",
+  "active": "790c13272050359e",
   "lastOpenFiles": [
-    "Concepts/Operating Systems/Assets/image 5.png",
     "Concepts/Operating Systems/Assets/image 4.png",
+    "Concepts/Operating Systems/Assets/image 5.png",
     "Concepts/CloudComputing/5_IAM.md",
     "Concepts/CloudComputing/Assets/5_IAM.png",
     "Concepts/Operating Systems/Assets",
