@@ -11,14 +11,15 @@
             "id": "7bc5a51a75907362",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "Concepts/CloudComputing/6_EC2.md",
-                "mode": "source",
-                "source": false
+                "aFile": "Concepts/CloudComputing/3_TypesOfCloudComputing.md",
+                "bFile": "Concepts/CloudComputing/3_TypesOfCloudComputing.md",
+                "aRef": "HEAD",
+                "bRef": ""
               },
-              "icon": "lucide-file",
-              "title": "6_EC2"
+              "icon": "diff",
+              "title": "Diff: 3_TypesOfCloudComputing  (Index)"
             }
           }
         ]
@@ -206,12 +207,12 @@
   },
   "active": "7bc5a51a75907362",
   "lastOpenFiles": [
+    "Concepts/CloudComputing/6_EC2.md",
     "Concepts/CloudComputing/5_IAM.md",
     "Concepts/CloudComputing/4_AWS.md",
     "Concepts/CloudComputing/3_TypesOfCloudComputing.md",
     "Concepts/CloudComputing/2_WhatIsCloudComputing.md",
     "Concepts/CloudComputing/1_Intro.md",
-    "Concepts/CloudComputing/6_EC2.md",
     "Pasted image 20260518155231.png",
     "Concepts/CloudComputing/Assets/6_3_Dedicated_Hosts_Instances.png",
     "Concepts/CloudComputing/Assets/6_2_Referencing_other_sgs.png",
