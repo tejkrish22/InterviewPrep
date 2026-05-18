@@ -2,5 +2,8 @@
   "obsidian-git",
   "notebook-navigator",
   "obsidian-excalidraw-plugin",
-  "obsidian-importer"
+  "obsidian-importer",
+  "easy-typing-obsidian",
+  "obsidian-linter",
+  "obsidian-languagetool-plugin"
 ]
