@@ -10,7 +10,7 @@
 2. Provides networking, computers, data storage space.
 3. Highest level as flexibility.
 4. Easy parallel with traditional on-premises IT.
-5. AWS: Amazon EC2
+5. AWS: Amazon EC 2
 
 ## Platform as a Service (PaaS)
 

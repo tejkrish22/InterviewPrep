@@ -4,7 +4,7 @@
 
 * **Users**: mapped to a physical user, has a password for AWS Console
 * **Groups**: contains users only
-* **Policies**: JSON document that outlines permissions for users or groups * Roles: for EC2 instances or AWS services
+* **Policies**: JSON document that outlines permissions for users or groups * Roles: for EC 2 instances or AWS services
 * **Security**: MFA + Password Policy
 * **AWS CLI**: manage your AWS services using the command-line
 * **AWS SDK**: manage your AWS services using a programming language * Access Keys: access AWS using the CLI or SDK
@@ -56,7 +56,7 @@
 }
 ```
 
-- These policies define the `permissions`of the users
+- These policies define the `permissions` of the users
 - In AWS you apply the `least privilege principle`; that is don't give more permissions than a user needs.
 
 ## IAM Roles for Services
@@ -64,7 +64,7 @@
 - Some AWS service will need to perform actions on your behalf.
 - To do so, we will assign permissions to AWS services with IAM roles.
 - Common Roles:
-	- EC2 Instance Roles
+	- EC 2 Instance Roles
 	- Lambda Function Roles
 	- Roles for CloudFormation
 

@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "1071ccb230a3b522",
+        "id": "f4fb50323ae26251",
         "type": "tabs",
         "children": [
           {
-            "id": "789abd68c2e06c06",
+            "id": "7bc5a51a75907362",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": ".obsidian/workspace.json",
-                "bFile": ".obsidian/workspace.json",
-                "aRef": ""
+                "file": "Concepts/CloudComputing/6_EC2.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: workspace.json  (Working Tree)"
+              "icon": "lucide-file",
+              "title": "6_EC2"
             }
           }
         ]
@@ -136,7 +136,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true,
+                "useHierarchy": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -204,10 +204,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "789abd68c2e06c06",
+  "active": "7bc5a51a75907362",
   "lastOpenFiles": [
-    "Concepts/CloudComputing/6_EC2.md",
     "Concepts/CloudComputing/5_IAM.md",
+    "Concepts/CloudComputing/4_AWS.md",
+    "Concepts/CloudComputing/3_TypesOfCloudComputing.md",
+    "Concepts/CloudComputing/2_WhatIsCloudComputing.md",
+    "Concepts/CloudComputing/1_Intro.md",
+    "Concepts/CloudComputing/6_EC2.md",
     "Pasted image 20260518155231.png",
     "Concepts/CloudComputing/Assets/6_3_Dedicated_Hosts_Instances.png",
     "Concepts/CloudComputing/Assets/6_2_Referencing_other_sgs.png",
@@ -241,11 +245,8 @@
     "Notion/People/Aakanksha Chitransh.md",
     "Notion/People/Atharva Inamdar.md",
     "Notion/People/Hare Sankaran RV.md",
-    "Notion/People/Venusree Vegunta.md",
     "Notion/People/People.base",
     "Notion/People",
-    "Notion/Applications/Software Engineer 2.md",
-    "Notion/Applications/Advanced Software Engr.md",
     "Notion/Applications/Applications.base",
     "Notion/Applications",
     "Notion/List of Companies/List of Companies.base",
