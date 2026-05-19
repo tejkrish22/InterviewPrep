@@ -3,7 +3,5 @@
   "notebook-navigator",
   "obsidian-excalidraw-plugin",
   "obsidian-importer",
-  "easy-typing-obsidian",
-  "obsidian-linter",
-  "obsidian-languagetool-plugin"
+  "obsidian-linter"
 ]

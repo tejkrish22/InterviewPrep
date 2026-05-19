@@ -4,25 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "f4fb50323ae26251",
+        "id": "70fd3bea4a241656",
         "type": "tabs",
         "children": [
           {
-            "id": "7bc5a51a75907362",
+            "id": "ec0620d9ab71dc10",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "Concepts/CloudComputing/3_TypesOfCloudComputing.md",
-                "bFile": "Concepts/CloudComputing/3_TypesOfCloudComputing.md",
-                "aRef": "HEAD",
-                "bRef": ""
+                "file": "DSA/Graphs/Word Ladder 1.md",
+                "mode": "preview",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: 3_TypesOfCloudComputing  (Index)"
+              "icon": "lucide-file",
+              "title": "Word Ladder 1"
+            }
+          },
+          {
+            "id": "67f40fbe78ff1a4e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DSA/Graphs/Dijkstra's Algo.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Dijkstra's Algo"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -54,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "venk",
+                "query": "tag:#graphs",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,7 +103,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "3c21b4e1b108e4d4",
@@ -105,6 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "DSA/Graphs/Dijkstra's Algo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +130,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for Dijkstra's Algo"
             }
           },
           {
@@ -123,11 +139,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "DSA/Graphs/Dijkstra's Algo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from Dijkstra's Algo"
             }
           },
           {
@@ -137,7 +154,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": false,
+                "useHierarchy": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -165,12 +182,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "DSA/Graphs/Dijkstra's Algo.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Dijkstra's Algo"
             }
           },
           {
@@ -188,70 +206,70 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 427.5
   },
   "left-ribbon": {
     "hiddenItems": {
       "obsidian-git:Open Git source control": false,
-      "notebook-navigator:Notebook Navigator": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
-      "obsidian-importer:Open Importer": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "notebook-navigator:Notebook Navigator": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-importer:Open Importer": false
     }
   },
-  "active": "7bc5a51a75907362",
+  "active": "67f40fbe78ff1a4e",
   "lastOpenFiles": [
-    "Concepts/CloudComputing/6_EC2.md",
-    "Concepts/CloudComputing/5_IAM.md",
-    "Concepts/CloudComputing/4_AWS.md",
-    "Concepts/CloudComputing/3_TypesOfCloudComputing.md",
-    "Concepts/CloudComputing/2_WhatIsCloudComputing.md",
-    "Concepts/CloudComputing/1_Intro.md",
-    "Pasted image 20260518155231.png",
-    "Concepts/CloudComputing/Assets/6_3_Dedicated_Hosts_Instances.png",
+    "DSA/Graphs/Word Ladder 1.md",
+    "DSA/Graphs/Dijkstra's Algo.md",
+    "DSA/Problems.base",
+    "DSA/Graphs/Word Ladder 2.md",
+    "Templates/DSA Problem Template.md",
+    "Concepts/Operating Systems/4_Process_States_In_OS.md",
+    "DSA/Graphs/Untitled",
+    "DSA/Graphs",
     "Concepts/CloudComputing/Assets/6_2_Referencing_other_sgs.png",
     "Concepts/CloudComputing/Assets/6_1_Security_Groups.png",
-    "Concepts/Operating Systems/Assets/image 5.png",
-    "Concepts/Operating Systems/Assets/image 4.png",
-    "Concepts/Operating Systems/Assets/Pasted image 20260513193028.png",
-    "Concepts/Operating Systems/Assets",
-    "Concepts/Operating Systems/4_Process_States_In_OS.md",
+    "Concepts/CloudComputing/6_EC2.md",
     "Concepts/Operating Systems/3_Types of Operating System.md",
+    "Concepts/Operating Systems/5_System Call.md",
+    "Concepts/CloudComputing/5_IAM.md",
+    "Concepts/Operating Systems/Assets/image 4.png",
+    "Concepts/Operating Systems/Assets/image 5.png",
+    "Concepts/CloudComputing/Assets/5_IAM.png",
+    "Concepts/Operating Systems/Assets",
+    "Concepts/Operating Systems/Assets/Pasted image 20260513193028.png",
+    "Pasted image 20260513222214.png",
     "Concepts/Operating Systems/2_Basics of OS.md",
     "Concepts/Operating Systems/1_Intro to OS.md",
     "Concepts/Learn LLM/Week 3, Day 5 -.md",
-    "Concepts/CloudComputing/Assets/5_IAM.png",
-    "Notion/Learn LLM/Week3, Day4 - Deep dive into Transformers, Quantization and Neural Networks.md",
-    "Notion/Learn LLM/Learn LLM.md",
-    "Notion/Operating Systems/Types of Operating System.md",
-    "Notion/Misc/Meeting with Venkat.md",
-    "Notion/Misc",
-    "Notion/untitled folder",
-    "Notion/Learn LLM/image.png",
-    "Notion/Learn LLM/image 2.png",
-    "Notion/Operating Systems/Basics of OS.md",
-    "Notion/Operating Systems/Intro to OS.md",
-    "Notion/Operating Systems/OS Notes.md",
-    "Notion/Object Oriented Programming/Abstraction.md",
-    "Notion/Meeting with Venkat.md",
-    "Notion/Applications/Software Engineer 1.md",
-    "Notion/List of Companies/Sarla Aviation.md",
-    "Notion/People/People Person.md",
-    "Notion/People/Aakanksha Chitransh.md",
-    "Notion/People/Atharva Inamdar.md",
-    "Notion/People/Hare Sankaran RV.md",
-    "Notion/People/People.base",
-    "Notion/People",
-    "Notion/Applications/Applications.base",
-    "Notion/Applications",
-    "Notion/List of Companies/List of Companies.base",
-    "Notion/List of Companies",
-    "Notion/Interview Experiences/New database/New database.base"
+    "Concepts/Learn LLM/Learn LLM.md",
+    "Concepts/CloudComputing/Assets/4_shared_responsibility.png",
+    "Concepts/CloudComputing/Assets/2_TypesOfCloudComputing.png",
+    "Concepts/Operating Systems/OS Notes.md",
+    "Concepts/Object Oriented Programming/image copy.png",
+    "Concepts/Object Oriented Programming/What is OOPS.md",
+    "Concepts/Object Oriented Programming/Static Keyword.md",
+    "Concepts/Object Oriented Programming/Polymorphism.md",
+    "Concepts/Object Oriented Programming/Object Oriented Programming.md",
+    "Concepts/Object Oriented Programming/Object Cloning.md",
+    "Concepts/Object Oriented Programming/Interfaces.md",
+    "Concepts/Object Oriented Programming/Inner Classes.md",
+    "Concepts/Object Oriented Programming/Inheritance.md",
+    "Concepts/Object Oriented Programming/Friend in C++.md",
+    "Concepts/Object Oriented Programming/Encapsulation.md",
+    "Concepts/Object Oriented Programming/Design Principles.md",
+    "Concepts/Object Oriented Programming/Constructors.md",
+    "Concepts/CloudComputing/Assets",
+    "Concepts/Operating Systems",
+    "Concepts/Object Oriented Programming",
+    "Concepts/Misc",
+    "Concepts/Learn LLM",
+    "Concepts/High Level Design"
   ]
 }
