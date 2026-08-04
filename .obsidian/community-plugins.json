@@ -3,5 +3,7 @@
   "notebook-navigator",
   "obsidian-excalidraw-plugin",
   "obsidian-importer",
-  "obsidian-linter"
+  "obsidian-linter",
+  "multi-column-markdown",
+  "dataview"
 ]

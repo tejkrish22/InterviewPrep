@@ -1,0 +1,8 @@
+# macOS system files
+.DS_Store
+
+# Obsidian temporary state (window tabs/positions)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Keep .obsidian/plugins/ and community-plugins.json in Git so plugins automatically sync across laptops!
