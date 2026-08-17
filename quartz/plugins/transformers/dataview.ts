@@ -44,7 +44,7 @@ export const DataviewTransformer: QuartzTransformerPlugin = () => {
       const replacementText =
         matchingProblems.length > 0
           ? matchingProblems
-              .map((p) => `- 🔍 [${p.name}](../../problems/${p.name.toLowerCase().replace(/\s+/g, "-")})`)
+              .map((p) => `- 🔍 [[dsa/problems/${p.name.toLowerCase().replace(/\s+/g, "-")}|${p.name}]]`)
               .join("\n")
           : "*No problems logged yet under this pattern.*"
 
