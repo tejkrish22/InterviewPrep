@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "a892913125e240e1",
+        "id": "24b93dea00ab1ca8",
         "type": "tabs",
         "children": [
           {
-            "id": "2966e41f0f001dbb",
+            "id": "ea7e45ea72097187",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DSA/Template.md",
+                "file": "Templates/DSA Template.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Template"
+              "title": "DSA Template"
             }
           }
         ]
@@ -125,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DSA/Template.md",
+                "file": "Concepts/Computer Networks/Physical/Network Devices.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -168,13 +168,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DSA/Patterns/Stack.md",
+                "file": "Templates/DSA Template.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Stack"
+              "title": "Outline"
             }
           },
           {
@@ -186,13 +186,26 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "d72edd22e007d034",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "Templates/DSA Template.md"
+              },
+              "icon": "lucide-info",
+              "title": "File properties"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -206,56 +219,58 @@
       "bases:Create new base": false,
       "notebook-navigator:Notebook Navigator": false,
       "obsidian-excalidraw-plugin:New drawing": false,
-      "obsidian-importer:Open Importer": false
+      "obsidian-importer:Open Importer": false,
+      "obsidian-importer:Import notes": false
     }
   },
   "active": "c6cdc1494b10a204",
   "lastOpenFiles": [
-    "setup_vault_instructions.md",
-    "DSA/README.md",
-    "DSA/Template.md",
-    "DSA/Mistakes.md",
-    "DSA/Problems/Next Greater Element I.md",
-    "2026-08-04.md",
-    "DSA/Patterns/Stack.md",
-    "DSA/Problems.base",
-    "DSA/Problems/Problems.base",
-    "DSA/Patterns/Arrays.md",
-    "DSA/Patterns/Dynamic Programming.md",
-    "DSA/Patterns/Backtracking.md",
-    "DSA/Patterns/Greedy.md",
-    "DSA/Patterns/Trie.md",
-    "DSA/Patterns/Union Find.md",
-    "DSA/Patterns/BFS.md",
-    "DSA/Patterns/DFS.md",
-    "DSA/Patterns/Graphs.md",
-    "DSA/Patterns/Heap.md",
-    "DSA/Patterns/BST.md",
-    "DSA/Patterns/Trees.md",
-    "DSA/Patterns/Queue.md",
-    "DSA/Patterns/Binary Search.md",
-    "DSA/Patterns/Sliding Window.md",
-    "DSA/Patterns/Two Pointers.md",
-    "DSA/Patterns.md",
-    "DSA/Patterns",
-    "DSA/Problems/Dijkstra's Algo.md",
-    "DSA/Problems/Word Ladder 2.md",
-    "DSA/Problems/DP",
-    "DSA/Problems/Trees",
-    "DSA/Problems/Binary Search",
-    "DSA/Problems/Arrays",
-    "DSA/Problems/Graphs",
-    "DSA/Problems",
-    "DSA/Resources",
-    "Concepts/Operating Systems/Assets/system_call.png",
-    "Concepts/Operating Systems/Assets/kernel.png",
-    "Concepts/CloudComputing/Assets/6_2_Referencing_other_sgs.png",
-    "Concepts/CloudComputing/Assets/6_1_Security_Groups.png",
-    "Concepts/Operating Systems/Assets/image 4.png",
-    "Concepts/Operating Systems/Assets/image 5.png",
-    "Concepts/CloudComputing/Assets/5_IAM.png",
-    "Concepts/Operating Systems/Assets/Pasted image 20260513193028.png",
-    "Pasted image 20260513222214.png",
-    "Concepts/CloudComputing/Assets/4_shared_responsibility.png"
+    "docs/Concepts/Operating Systems/Assets/system_call.png",
+    "docs/Concepts/Operating Systems/Assets/kernel.png",
+    "docs/Concepts/Operating Systems/Assets/image 5.png",
+    "docs/Concepts/Operating Systems/Assets/image 4.png",
+    "docs/Concepts/Operating Systems/Assets/Pasted image 20260513193028.png",
+    "docs/Concepts/Computer Networks/Physical/8_Error Detection.md",
+    "docs/Concepts/Computer Networks/Physical/7_MAC Address and Ethernet Frames.md",
+    "docs/Concepts/Computer Networks/Physical/6_Network Devices.md",
+    "docs/Concepts/Computer Networks/Physical/5_Duplex Communication.md",
+    "docs/Concepts/Computer Networks/Physical/4_Coaxial Cable.md",
+    "docs/Concepts/Computer Networks/Physical/3_Fiber Optic Cable.md",
+    "docs/Concepts/Computer Networks/Physical/2_Twisted Pair Cable.md",
+    "docs/Concepts/Computer Networks/Physical/1_Transmission Medium.md",
+    "docs/Concepts/Computer Networks/Physical/0_Intro to Physical Layer.md",
+    "docs/Concepts/Computer Networks/Images/Pasted image 20260813121806.png",
+    "docs/Concepts/CloudComputing/Assets/6_2_Referencing_other_sgs.png",
+    "docs/Concepts/CloudComputing/Assets/6_1_Security_Groups.png",
+    "docs/Concepts/CloudComputing/Assets/5_IAM.png",
+    "docs/Concepts/CloudComputing/Assets/4_shared_responsibility.png",
+    "docs/Concepts/CloudComputing/Assets/2_TypesOfCloudComputing.png",
+    "docs/Concepts/Operating Systems/OS Notes.md",
+    "docs/Concepts/Operating Systems/Assets",
+    "docs/Concepts/Operating Systems/4_Process_States_In_OS.md",
+    "docs/Concepts/Operating Systems/3_Types of Operating System.md",
+    "docs/Concepts/Operating Systems/2_Operating System Structure.md",
+    "docs/Concepts/Operating Systems/2_Basics of OS.md",
+    "docs/Concepts/Operating Systems/1_Intro to OS.md",
+    "docs/Concepts/Object Oriented Programming/What is OOPS.md",
+    "docs/Concepts/Object Oriented Programming/Static Keyword.md",
+    "docs/Concepts/Object Oriented Programming/Polymorphism.md",
+    "docs/Concepts/Object Oriented Programming/Object Oriented Programming.md",
+    "docs/Concepts/Object Oriented Programming/Object Cloning.md",
+    "docs/Concepts/Object Oriented Programming/Interfaces.md",
+    "docs/Concepts/Object Oriented Programming/Inner Classes.md",
+    "docs/Concepts/Object Oriented Programming/Inheritance.md",
+    "docs/Concepts/Object Oriented Programming/Friend in C++.md",
+    "docs/Concepts/Object Oriented Programming/Encapsulation.md",
+    "docs/Concepts/Computer Networks/Physical",
+    "docs/Concepts/Computer Networks/Images",
+    "docs/Concepts/CloudComputing/Assets",
+    "docs/Concepts/Operating Systems",
+    "docs/Concepts/Object Oriented Programming",
+    "docs/Concepts/Learn LLM",
+    "docs/Concepts/High Level Design",
+    "docs/Concepts/Computer Networks",
+    "docs/Concepts/CloudComputing",
+    "Concepts/Computer Networks/Untitled.canvas"
   ]
 }

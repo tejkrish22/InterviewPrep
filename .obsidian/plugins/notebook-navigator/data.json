@@ -60,7 +60,8 @@
           "transitionStyle": "hue",
           "scope": "root"
         }
-      }
+      },
+      "descendantExcludedFolders": []
     }
   ],
   "vaultProfile": "default",
@@ -75,6 +76,9 @@
     "useFloatingToolbars": "synced",
     "dualPane": "synced",
     "dualPaneOrientation": "synced",
+    "narrowSidebarLayout": "synced",
+    "narrowSidebarTriggerMode": "synced",
+    "narrowSidebarCustomWidth": "synced",
     "paneTransitionDuration": "synced",
     "toolbarVisibility": "synced",
     "pinNavigationBanner": "synced",
@@ -110,6 +114,9 @@
   },
   "dualPane": false,
   "dualPaneOrientation": "horizontal",
+  "narrowSidebarLayout": "singlePane",
+  "narrowSidebarTriggerMode": "fitPanes",
+  "narrowSidebarCustomWidth": 350,
   "showTooltips": false,
   "showTooltipPath": true,
   "showTooltipWordCount": false,
@@ -129,7 +136,9 @@
     "list": {
       "back": true,
       "search": true,
+      "reveal": false,
       "descendants": true,
+      "groupExpansion": false,
       "sort": true,
       "appearance": true,
       "newNote": true
@@ -149,12 +158,15 @@
   "showNoteCount": true,
   "separateNoteCounts": true,
   "showIndentGuides": false,
+  "navCountLeaderStyle": "none",
   "rootLevelSpacing": 0,
   "navIndent": 16,
   "navItemHeight": 28,
   "navItemHeightScaleText": true,
   "collapseBehavior": "all",
   "smartCollapse": true,
+  "excludeVaultRootFromCollapse": false,
+  "collapseOtherBranchesOnExpand": false,
   "autoSelectFirstFileOnFocusChange": false,
   "autoExpandNavItems": false,
   "springLoadedFolders": true,
@@ -180,7 +192,8 @@
   "enableFolderNoteLinks": true,
   "hideFolderNoteInList": true,
   "pinCreatedFolderNote": false,
-  "openFolderNotesInNewTab": false,
+  "folderNoteOpenLocation": "current-tab",
+  "showNearestFolderNoteInSidebar": true,
   "showTags": true,
   "showTagIcons": true,
   "showAllTagsFolder": true,
@@ -198,13 +211,22 @@
   "defaultListMode": "standard",
   "includeDescendantNotes": false,
   "defaultFolderSort": "modified-desc",
+  "defaultFolderSortPropertyKey": "",
   "propertySortKey": "",
+  "propertyGroupKey": "",
   "propertySortSecondary": "title",
+  "manualSortPropertyKey": "sort_index",
+  "manualSortGroupHeaderProperty": "group_header",
+  "manualSortNewNotePlacement": "below-selected-note",
+  "confirmBeforeManualSort": true,
   "revealFileOnListChanges": true,
   "listPaneTitle": "header",
   "noteGrouping": "date",
   "showSelectedNavigationPills": false,
   "stickyGroupHeaders": true,
+  "showFolderGroupPaths": true,
+  "showGroupHeaderItemCounts": false,
+  "showCurrentFolderFilesAtBottom": false,
   "filterPinnedByFolder": false,
   "compactItemHeight": 28,
   "compactItemHeightScaleText": true,
@@ -214,6 +236,7 @@
   "quickActionAddToShortcuts": true,
   "quickActionPinNote": true,
   "quickActionOpenInNewTab": false,
+  "hideDrawingPreviewImages": true,
   "useFrontmatterMetadata": false,
   "frontmatterIconField": "icon",
   "frontmatterColorField": "color",
@@ -222,20 +245,27 @@
   "frontmatterCreatedField": "",
   "frontmatterModifiedField": "",
   "frontmatterDateFormat": "",
-  "showFileIconUnfinishedTask": false,
+  "showFileTaskProgress": true,
+  "showFileTaskProgressBar": true,
+  "showFileTaskProgressCount": true,
+  "hideFileTaskProgressWhenComplete": false,
   "showFileBackgroundUnfinishedTask": false,
   "unfinishedTaskBackgroundColor": "#ef000050",
+  "unfinishedTaskBackgroundColorDark": "#ef000050",
   "showFileIcons": true,
+  "unfinishedTaskIcon": "none",
   "useFolderIconForFiles": false,
   "showFilenameMatchIcons": false,
   "fileNameIconMap": {},
   "showCategoryIcons": false,
   "fileTypeIconMap": {},
+  "fileTypeIconPreset": "none",
   "fileNameRows": 1,
   "useFolderColorForTitles": false,
   "showFilePreview": true,
   "skipHeadingsInPreview": true,
   "skipCodeBlocksInPreview": true,
+  "skipCalloutsInPreview": false,
   "stripHtmlInPreview": true,
   "stripLatexInPreview": true,
   "previewRows": 2,
@@ -260,7 +290,11 @@
   "showPropertiesOnSeparateRows": false,
   "enablePropertyInternalLinks": true,
   "enablePropertyExternalLinks": true,
-  "notePropertyType": "none",
+  "textCountDisplay": "none",
+  "textCountPlacement": "title",
+  "characterCountSpaces": "include",
+  "wordCountTargetProperty": "word-goal",
+  "showWordCountPercentage": false,
   "showFileDate": true,
   "alphabeticalDateMode": "modified",
   "showParentFolder": true,
@@ -271,18 +305,22 @@
   "calendarEnabled": true,
   "calendarPlacement": "left-sidebar",
   "calendarConfirmBeforeCreate": true,
+  "calendarShowHiddenItems": false,
   "calendarLocale": "system-default",
   "calendarWeekendDays": "sat-sun",
   "calendarMonthHeadingFormat": "full",
   "calendarHighlightToday": true,
   "calendarShowFeatureImage": true,
+  "calendarShowTasks": true,
   "calendarMonthHighlights": {},
   "calendarShowWeekNumber": false,
   "calendarShowQuarter": false,
+  "calendarShowOutsideMonthDays": true,
   "calendarShowYearCalendar": true,
   "calendarLeftPlacement": "navigation",
   "calendarWeeksToShow": 1,
   "calendarIntegrationMode": "notebook-navigator",
+  "calendarPeriodicNotesLocaleSource": "calendar",
   "calendarCustomFilePattern": "YYYY/YYYYMMDD",
   "calendarCustomWeekPattern": "gggg/[W]ww",
   "calendarCustomMonthPattern": "YYYY/YYYYMM",
@@ -327,6 +365,12 @@
     "pane:end": [
       {
         "key": "End",
+        "modifiers": []
+      }
+    ],
+    "pane:rename": [
+      {
+        "key": "Enter",
         "modifiers": []
       }
     ],
@@ -404,6 +448,22 @@
         ]
       }
     ],
+    "list:manual-sort-up": [
+      {
+        "key": "ArrowUp",
+        "modifiers": [
+          "Mod"
+        ]
+      }
+    ],
+    "list:manual-sort-down": [
+      {
+        "key": "ArrowDown",
+        "modifiers": [
+          "Mod"
+        ]
+      }
+    ],
     "list:range-to-start": [
       {
         "key": "Home",
@@ -447,7 +507,6 @@
   },
   "customVaultName": "",
   "pinnedNotes": {},
-  "collapsedPinnedContexts": {},
   "fileIcons": {},
   "fileColors": {},
   "fileBackgroundColors": {},
@@ -494,7 +553,7 @@
     "#404040",
     "#404040"
   ],
-  "lastShownVersion": "2.6.5",
+  "lastShownVersion": "3.3.3",
   "rootFolderOrder": [],
   "rootTagOrder": [],
   "rootPropertyOrder": []

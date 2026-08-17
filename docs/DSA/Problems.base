@@ -1,0 +1,10 @@
+filters:
+  and:
+    - file.inFolder("DSA/Problems")
+views:
+  - type: table
+    name: Problems
+    order:
+      - file.name
+      - pattern
+      - confidence
