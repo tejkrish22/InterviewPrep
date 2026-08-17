@@ -1,6 +1,13 @@
 # macOS system files
 .DS_Store
 
+# Node & Build Outputs
+node_modules/
+public/
+
+# Quartz temporary files
+.quartz/
+
 # Obsidian temporary state (window tabs/positions)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
