@@ -36,6 +36,9 @@ jobs:
       - name: Build Quartz Site
         run: npx quartz build -d docs -v
 
+      - name: Verify All Hyperlinks (Automated 404 Link Checker)
+        run: node scripts/check-links.mjs
+
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -1,5 +1,5 @@
 ---
-pattern: "[[docs/DSA/Patterns/Binary Search|Binary Search]]"
+pattern: "[[Binary Search]]"
 SubPattern: "[[Core Algorithm]]"
 confidence: "5"
 unique: true
