@@ -1,46 +1,65 @@
-# 🚀 Obsidian Vault Setup & Git Sync Guide
+# 🚀 Obsidian Environment Setup & Git Sync Guide
 
-> Instructions for Git cross-laptop synchronization and AI/Copilot vault environment initialization.
+> Instructions for cross-laptop synchronization, installed plugins, site engine preferences, and AI/Copilot environment initialization.
 
 ---
 
-## ⚡ 1. How Cross-Laptop Git Sync Works (Automatic Plugins)
+## 🔌 1. Installed Obsidian Community Plugins
 
-Obsidian stores all installed community plugins, themes, and configuration settings inside the **`.obsidian/`** folder:
-- `.obsidian/plugins/dataview/` $\rightarrow$ Dataview plugin binary (`main.js`, `manifest.json`, `styles.css`).
-- `.obsidian/community-plugins.json` $\rightarrow$ List of active enabled plugins.
+The repository is configured with the following 8 core community plugins:
+
+| Plugin | Purpose & Functionality |
+| :--- | :--- |
+| **`dataview`** | Metadata querying, pattern auto-linking, and dynamic problem table generation. |
+| **`obsidian-excalidraw-plugin`** | Interactive architecture diagrams and whiteboard visual note-taking. |
+| **`obsidian-linter`** | Automated formatting of Markdown headers, frontmatter YAML, and tag consistency. |
+| **`obsidian-git`** | Automatic scheduled Git commits, pushes, and backup synchronization. |
+| **`obsidian-tasks-plugin`** | Task management, due-date tracking, and interactive checklist queries. |
+| **`notebook-navigator`** | Enhanced file tree navigation and folder browsing sidebar. |
+| **`multi-column-markdown`** | Multi-column layout formatting for side-by-side note comparisons. |
+| **`obsidian-importer`** | Utility for importing notes from Notion, HTML, and external Markdown tools. |
+
+---
+
+## ⚡ 2. How Cross-Laptop Git Sync Works
+
+Obsidian stores all installed community plugins, binaries, and configurations inside the **`.obsidian/`** directory:
+- `.obsidian/plugins/` $\rightarrow$ Contains compiled plugin binaries (`main.js`, `manifest.json`, `styles.css`).
+- `.obsidian/community-plugins.json` $\rightarrow$ Lists enabled plugins.
 
 ### 💡 The Golden Rule:
-By committing the `.obsidian/` directory (specifically `.obsidian/plugins/` and `.obsidian/community-plugins.json`) to your Git repository, **you never need to manually install or configure plugins on new laptops**. 
+By committing `.obsidian/plugins/` and `.obsidian/community-plugins.json` to Git (configured in `.gitignore`), **you never need to manually install or configure plugins when switching laptops**. 
 
-When you run `git clone` or `git pull` on any device:
-1. Open Obsidian $\rightarrow$ "Open folder as vault" $\rightarrow$ select your `InterviewPrep` folder.
-2. **All plugins (Dataview, Excalidraw, Linter, etc.) are pre-installed and enabled out-of-the-box!**
+When running `git clone` or `git pull` on any device:
+1. Open Obsidian $\rightarrow$ "Open folder as vault" $\rightarrow$ select the repository folder.
+2. **All 8 plugins and configurations load automatically out-of-the-box!**
 
 ---
 
-## 🤖 2. Instructions for Copilot / AI Assistant
+## 🛠️ 3. Site Generator & CI/CD Preferences
 
-If you are using Copilot, Gemini, or an AI Coding Assistant on a new machine, prompt it with the following directive:
+- **Site Engine**: Quartz v5 (`npx quartz build -d docs`).
+- **Content Source**: `docs/` folder (Root page: `docs/index.md`).
+- **Quartz Dataview Transformer**: `quartz/plugins/transformers/dataview.ts` evaluates ` ```dataview ` blocks at build time and emits live links.
+- **Automated 404 Link Audit**: `npm run test:links` (runs `node scripts/check-links.mjs` scanning 3000+ internal hyperlinks).
+- **GitHub Actions Pipeline**: `.github/workflows/deploy.yaml` automatically builds Quartz, audits 404 links, and deploys to GitHub Pages on `git push origin main`.
 
-> *"Please check the `.obsidian/plugins/dataview` directory. If missing, fetch `main.js`, `manifest.json`, and `styles.css` from the latest release of `blacksmithgu/obsidian-dataview` on GitHub and place them in `.obsidian/plugins/dataview/`."*
+---
 
-### 🛠️ Shell Command for AI Setup (Run in terminal):
+## 🤖 4. Instructions for Copilot / AI Assistants
+
+If setting up a fresh environment with an AI assistant or terminal agent, prompt it with:
+
+> *"Please check `.obsidian/plugins/dataview`. If missing, fetch `main.js`, `manifest.json`, and `styles.css` from `blacksmithgu/obsidian-dataview` on GitHub and verify `npm run test:links`."*
+
+### Shell Command for Manual Plugin Recovery:
 ```bash
-# Create dataview plugin folder
+# Fetch Dataview binaries if missing
 mkdir -p .obsidian/plugins/dataview
-
-# Download latest release binaries
 curl -sL "https://github.com/blacksmithgu/obsidian-dataview/releases/latest/download/main.js" -o .obsidian/plugins/dataview/main.js
 curl -sL "https://github.com/blacksmithgu/obsidian-dataview/releases/latest/download/manifest.json" -o .obsidian/plugins/dataview/manifest.json
 curl -sL "https://github.com/blacksmithgu/obsidian-dataview/releases/latest/download/styles.css" -o .obsidian/plugins/dataview/styles.css
+
+# Test Quartz build and link integrity
+npm run test:links
 ```
-
----
-
-## 🔍 3. Verification Checklist
-
-To confirm your vault is fully operational on a new laptop:
-1. Open `DSA/README.md`.
-2. Open `DSA/Patterns/BFS.md` — verify that `## Related Problems` shows Dataview results or backlinks.
-3. Check `DSA/Problems.base` for live problem table rendering.
