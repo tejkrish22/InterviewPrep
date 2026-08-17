@@ -1,1 +1,1 @@
-export {}
+export { DataviewTransformer } from "./dataview"
