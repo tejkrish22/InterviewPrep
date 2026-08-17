@@ -244,8 +244,9 @@
     "public/static/giscus",
     "public/static/contentIndex.json",
     "public/index.xml",
-    "public/static/encryptedContentIndex.json",
     "public/CNAME",
+    "public/sitemap.xml",
+    "docs/index.md",
     "node_modules/@esbuild/darwin-arm64/README.md",
     "node_modules/@clack/core/README.md",
     "node_modules/@clack/core/CHANGELOG.md",
@@ -270,7 +271,6 @@
     "node_modules/mime-db/README.md",
     "node_modules/mime-db/HISTORY.md",
     "node_modules/mime-types/README.md",
-    "node_modules/mime-types/HISTORY.md",
     "Concepts/Computer Networks/Untitled.canvas"
   ]
 }
