@@ -1,3 +1,7 @@
+---
+title: "Home"
+---
+
 # 🚀 Software Engineering Interview Preparation
 
 Welcome to the **Software Engineering Interview Preparation Repository** — a curated, high-yield documentation site designed for FAANG and top Product-Based Company (PBC) software engineering interview preparation.
