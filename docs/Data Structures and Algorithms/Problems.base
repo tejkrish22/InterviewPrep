@@ -1,10 +1,19 @@
 filters:
   and:
-    - file.inFolder("DSA/Problems")
+    - file.inFolder("Data Structures and Algorithms/Problems")
 views:
   - type: table
     name: Problems
     order:
       - file.name
+      - link
       - pattern
+      - SubPattern
+      - unique
       - confidence
+      - file.ctime
+      - file.mtime
+
+    sort:
+      - property: file.ctime
+        direction: ASC
