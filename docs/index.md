@@ -14,17 +14,17 @@ This repository is organized into two core pillars:
 
 ## 📁 Repository Modules
 
-### 🧩 1. Data Structures & Algorithms (`DSA/`)
+### 🧩 1. Data Structures & Algorithms (`Data Structures and Algorithms/`)
 Explore the DSA module directly:
 
-- 📐 **[Pattern Cheat-Sheets](./DSA/Patterns/)**: 16 core patterns for rapid recognition:
-  - [Arrays](./DSA/Patterns/Arrays.md) | [Two Pointers](./DSA/Patterns/Two%20Pointers.md) | [Sliding Window](./DSA/Patterns/Sliding%20Window.md) | [Binary Search](./DSA/Patterns/Binary%20Search.md)
-  - [Stack](./DSA/Patterns/Stack.md) | [Queue](./DSA/Patterns/Queue.md) | [Heap](./DSA/Patterns/Heap.md)
-  - [Trees](./DSA/Patterns/Trees.md) | [BST](./DSA/Patterns/BST.md) | [Trie](./DSA/Patterns/Trie.md)
-  - [Graphs](./DSA/Patterns/Graphs.md) | [DFS](./DSA/Patterns/DFS.md) | [BFS](./DSA/Patterns/BFS.md) | [Union Find](./DSA/Patterns/Union%20Find.md)
-  - [Greedy](./DSA/Patterns/Greedy.md) | [Backtracking](./DSA/Patterns/Backtracking.md) | [Dynamic Programming](./DSA/Patterns/Dynamic%20Programming.md)
-- 📝 **[Problem Solutions](./DSA/Problems/)**: Solution breakdowns detailing Question, Intuition, C++ Implementation, Time/Space Complexity, and Key Pitfalls.
-- 📊 **[Problems Table](./DSA/Problems.base)**: Dynamic table tracking solved problems and confidence ratings.
+- 📐 **[Pattern Cheat-Sheets](./Data%20Structures%20and%20Algorithms/Patterns/)**: 16 core patterns for rapid recognition:
+  - [[Arrays]] | [[Two Pointers]] | [[Sliding Window]] | [[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]
+  - [[Stack]] | [[Queue]] | [[Heap]]
+  - [[Trees]] | [[BST]] | [[Trie]]
+  - [[Graphs]] | [[DFS]] | [[BFS]] | [[Union Find]]
+  - [[Greedy]] | [[Backtracking]] | [[Dynamic Programming]]
+- 📝 **[Problem Solutions](./Data%20Structures%20and%20Algorithms/Problems/)**: Solution breakdowns detailing Question, Intuition, C++ Implementation, Time/Space Complexity, and Key Pitfalls.
+- 📊 **[Problems Table](./Data%20Structures%20and%20Algorithms/Problems.base)**: Dynamic table tracking solved problems and confidence ratings.
 
 ---
 
@@ -63,4 +63,4 @@ Every DSA problem solution follows a 5-step structured format:
 
 ## ⚙️ Repository Setup & Tools
 
-- **Environment Guide**: See [Setup Instructions](../setup_vault_instructions.md) for environment configuration and cross-device Git synchronization.
+- **Environment Guide**: See [Setup Instructions](./setup_vault_instructions) for environment configuration and cross-device Git synchronization.

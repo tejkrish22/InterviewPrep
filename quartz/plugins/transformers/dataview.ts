@@ -10,21 +10,28 @@ export const DataviewTransformer: QuartzTransformerPlugin = () => {
         return src
       }
 
-      // Read all problem files in docs/DSA/Problems
-      const problemsDir = path.join(ctx.argv.directory, "DSA", "Problems")
+      // Read problem files from possible directories
+      const possibleDirs = [
+        path.join(ctx.argv.directory, "DSA", "Problems"),
+        path.join(ctx.argv.directory, "Data Structure and Algorithms", "Problems"),
+        path.join(ctx.argv.directory, "Data Structures and Algorithms", "Problems"),
+      ]
+
       let problemFiles: { name: string; content: string }[] = []
 
-      if (fs.existsSync(problemsDir)) {
-        const files = fs.readdirSync(problemsDir)
-        for (const file of files) {
-          if (file.endsWith(".md")) {
-            const filePath = path.join(problemsDir, file)
-            const content = fs.readFileSync(filePath, "utf-8")
-            const name = file.replace(/\.md$/, "")
-            problemFiles.push({
-              name,
-              content,
-            })
+      for (const dir of possibleDirs) {
+        if (fs.existsSync(dir)) {
+          const files = fs.readdirSync(dir)
+          for (const file of files) {
+            if (file.endsWith(".md")) {
+              const filePath = path.join(dir, file)
+              const content = fs.readFileSync(filePath, "utf-8")
+              const name = file.replace(/\.md$/, "")
+              problemFiles.push({
+                name,
+                content,
+              })
+            }
           }
         }
       }
@@ -44,7 +51,7 @@ export const DataviewTransformer: QuartzTransformerPlugin = () => {
       const replacementText =
         matchingProblems.length > 0
           ? matchingProblems
-              .map((p) => `- 🔍 [[dsa/problems/${p.name.toLowerCase().replace(/\s+/g, "-")}|${p.name}]]`)
+              .map((p) => `- 🔍 [[Data Structures and Algorithms/Problems/${p.name}|${p.name}]]`)
               .join("\n")
           : "*No problems logged yet under this pattern.*"
 

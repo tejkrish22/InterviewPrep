@@ -1,5 +1,5 @@
 ---
-pattern: "[[Binary Search]]"
+pattern: "[[Data Structures and Algorithms/Problems/Binary Search]]"
 SubPattern: "[[Core Algorithm]]"
 confidence: "5"
 unique: true
