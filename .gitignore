@@ -11,5 +11,7 @@ public/
 # Obsidian temporary state (window tabs/positions)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+docs/.obsidian/workspace.json
+docs/.obsidian/workspace-mobile.json
 
-# Keep .obsidian/plugins/ and community-plugins.json in Git so plugins automatically sync across laptops!
+# Keep docs/.obsidian/plugins/ and community-plugins.json in Git so plugins automatically sync across laptops!

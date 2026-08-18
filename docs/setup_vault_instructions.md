@@ -4,9 +4,21 @@
 
 ---
 
-## 🔌 1. Installed Obsidian Community Plugins
+## 📁 1. Vault Directory Location
 
-The repository is configured with the following 8 core community plugins:
+The **`docs/`** subfolder is configured as the official Obsidian Vault (`docs/.obsidian/`).
+
+### 💡 Opening in Obsidian:
+When launching Obsidian on any laptop:
+1. Click **Open folder as vault**.
+2. Select the **`InterviewPrep/docs/`** directory.
+3. This keeps your Obsidian workspace clean and focused on your Markdown notes (`DSA/Patterns`, `DSA/Problems`, etc.) without clutter from `node_modules/`, `quartz/`, or build configuration files.
+
+---
+
+## 🔌 2. Installed Obsidian Community Plugins
+
+The vault is configured with the following 8 core community plugins inside `docs/.obsidian/`:
 
 | Plugin | Purpose & Functionality |
 | :--- | :--- |
@@ -21,22 +33,22 @@ The repository is configured with the following 8 core community plugins:
 
 ---
 
-## ⚡ 2. How Cross-Laptop Git Sync Works
+## ⚡ 3. How Cross-Laptop Git Sync Works
 
-Obsidian stores all installed community plugins, binaries, and configurations inside the **`.obsidian/`** directory:
-- `.obsidian/plugins/` $\rightarrow$ Contains compiled plugin binaries (`main.js`, `manifest.json`, `styles.css`).
-- `.obsidian/community-plugins.json` $\rightarrow$ Lists enabled plugins.
+Obsidian stores all installed community plugins, binaries, and configurations inside **`docs/.obsidian/`**:
+- `docs/.obsidian/plugins/` $\rightarrow$ Contains compiled plugin binaries (`main.js`, `manifest.json`, `styles.css`).
+- `docs/.obsidian/community-plugins.json` $\rightarrow$ Lists enabled plugins.
 
 ### 💡 The Golden Rule:
-By committing `.obsidian/plugins/` and `.obsidian/community-plugins.json` to Git (configured in `.gitignore`), **you never need to manually install or configure plugins when switching laptops**. 
+By committing `docs/.obsidian/plugins/` and `docs/.obsidian/community-plugins.json` to Git (configured in `.gitignore`), **you never need to manually install or configure plugins when switching laptops**. 
 
 When running `git clone` or `git pull` on any device:
-1. Open Obsidian $\rightarrow$ "Open folder as vault" $\rightarrow$ select the repository folder.
+1. Open Obsidian $\rightarrow$ "Open folder as vault" $\rightarrow$ select the `InterviewPrep/docs` folder.
 2. **All 8 plugins and configurations load automatically out-of-the-box!**
 
 ---
 
-## 🛠️ 3. Site Generator & CI/CD Preferences
+## 🛠️ 4. Site Generator & CI/CD Preferences
 
 - **Site Engine**: Quartz v5 (`npx quartz build -d docs`).
 - **Content Source**: `docs/` folder (Root page: `docs/index.md`).
@@ -46,19 +58,19 @@ When running `git clone` or `git pull` on any device:
 
 ---
 
-## 🤖 4. Instructions for Copilot / AI Assistants
+## 🤖 5. Instructions for Copilot / AI Assistants
 
 If setting up a fresh environment with an AI assistant or terminal agent, prompt it with:
 
-> *"Please check `.obsidian/plugins/dataview`. If missing, fetch `main.js`, `manifest.json`, and `styles.css` from `blacksmithgu/obsidian-dataview` on GitHub and verify `npm run test:links`."*
+> *"Please check `docs/.obsidian/plugins/dataview`. If missing, fetch `main.js`, `manifest.json`, and `styles.css` from `blacksmithgu/obsidian-dataview` on GitHub and verify `npm run test:links`."*
 
 ### Shell Command for Manual Plugin Recovery:
 ```bash
-# Fetch Dataview binaries if missing
-mkdir -p .obsidian/plugins/dataview
-curl -sL "https://github.com/blacksmithgu/obsidian-dataview/releases/latest/download/main.js" -o .obsidian/plugins/dataview/main.js
-curl -sL "https://github.com/blacksmithgu/obsidian-dataview/releases/latest/download/manifest.json" -o .obsidian/plugins/dataview/manifest.json
-curl -sL "https://github.com/blacksmithgu/obsidian-dataview/releases/latest/download/styles.css" -o .obsidian/plugins/dataview/styles.css
+# Fetch Dataview binaries into docs/.obsidian if missing
+mkdir -p docs/.obsidian/plugins/dataview
+curl -sL "https://github.com/blacksmithgu/obsidian-dataview/releases/latest/download/main.js" -o docs/.obsidian/plugins/dataview/main.js
+curl -sL "https://github.com/blacksmithgu/obsidian-dataview/releases/latest/download/manifest.json" -o docs/.obsidian/plugins/dataview/manifest.json
+curl -sL "https://github.com/blacksmithgu/obsidian-dataview/releases/latest/download/styles.css" -o docs/.obsidian/plugins/dataview/styles.css
 
 # Test Quartz build and link integrity
 npm run test:links
