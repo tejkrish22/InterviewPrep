@@ -1,7 +1,7 @@
 ---
-pattern: "[[Data Structures and Algorithms/Problems/Binary Search]]"
+pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
 SubPattern: "[[Core Algorithm]]"
-confidence: "5"
+confidence: 5
 unique: true
 link: https://takeuforward.org/plus/dsa/problems/search-x-in-sorted-array?subject=dsa&approach=optimal&sidebar=open
 ---
@@ -14,15 +14,6 @@ Input: nums = [-1,0,3,5,9,12], target = 9
 Output: 4
 Explanation: The target integer 9 exists in nums and its index is 4
 
----
-## Algo
-
-1. Initialise the pointers `low` and `high`.
-2. Iterate
-	1. Find `mid`
-	2. Adjust `low` and `high`
-	3. Return `mid`, if found.
-3. Return `-1`, if not found.
 ---
 ## Code
 

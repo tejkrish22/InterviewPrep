@@ -13,7 +13,6 @@ views:
       - confidence
       - file.ctime
       - file.mtime
-
     sort:
       - property: file.ctime
         direction: ASC
