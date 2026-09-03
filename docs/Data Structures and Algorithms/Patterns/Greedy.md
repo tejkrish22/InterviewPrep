@@ -10,4 +10,5 @@
 ```dataview
 LIST FROM "Data Structures and Algorithms/Problems"
 WHERE contains(file.outlinks, this.file.link)
+SORT file.ctime asc
 ```

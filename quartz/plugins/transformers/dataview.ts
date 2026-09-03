@@ -17,7 +17,7 @@ export const DataviewTransformer: QuartzTransformerPlugin = () => {
         path.join(ctx.argv.directory, "Data Structures and Algorithms", "Problems"),
       ]
 
-      let problemFiles: { name: string; content: string }[] = []
+      let problemFiles: { name: string; content: string; ctimeMs: number }[] = []
 
       for (const dir of possibleDirs) {
         if (fs.existsSync(dir)) {
@@ -25,11 +25,13 @@ export const DataviewTransformer: QuartzTransformerPlugin = () => {
           for (const file of files) {
             if (file.endsWith(".md")) {
               const filePath = path.join(dir, file)
+              const stat = fs.statSync(filePath)
               const content = fs.readFileSync(filePath, "utf-8")
               const name = file.replace(/\.md$/, "")
               problemFiles.push({
                 name,
                 content,
+                ctimeMs: stat.ctimeMs || stat.mtimeMs,
               })
             }
           }
@@ -41,12 +43,14 @@ export const DataviewTransformer: QuartzTransformerPlugin = () => {
       const pageTitle = pageTitleMatch ? pageTitleMatch[1].trim() : ""
 
       // Filter problem files referencing this pattern title
-      const matchingProblems = problemFiles.filter((p) => {
-        if (!pageTitle) return false
-        const lowerTitle = pageTitle.toLowerCase()
-        const lowerContent = p.content.toLowerCase()
-        return lowerContent.includes(lowerTitle)
-      })
+      const matchingProblems = problemFiles
+        .filter((p) => {
+          if (!pageTitle) return false
+          const lowerTitle = pageTitle.toLowerCase()
+          const lowerContent = p.content.toLowerCase()
+          return lowerContent.includes(lowerTitle)
+        })
+        .sort((a, b) => a.ctimeMs - b.ctimeMs)
 
       const replacementText =
         matchingProblems.length > 0
