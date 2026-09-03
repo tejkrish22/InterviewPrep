@@ -3,7 +3,7 @@ pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]
 SubPattern:
 confidence: 4
 unique: false
-link:
+link: https://takeuforward.org/plus/dsa/problems/floor-and-ceil-in-sorted-array?subject=dsa&approach=optimal
 ---
 ---
 ## Question
