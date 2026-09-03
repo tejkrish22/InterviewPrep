@@ -10,6 +10,6 @@
 
 ## Related Problems
 ```dataview
-LIST FROM "DSA/Problems"
+LIST FROM "Data Structures and Algorithms/Problems"
 WHERE contains(file.outlinks, this.file.link)
 ```
