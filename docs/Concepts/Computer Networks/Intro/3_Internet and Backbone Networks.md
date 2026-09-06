@@ -12,7 +12,7 @@
 
 ## How phone connects to internet?
 
-![[backbone.png]]
+![[backbone.png|center]]
 
 ## Backbone Network
 

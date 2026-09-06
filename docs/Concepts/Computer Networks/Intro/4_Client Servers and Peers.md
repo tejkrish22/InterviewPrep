@@ -17,13 +17,13 @@ Client asks, Server responds
 2. Easier Control and management
 3. Centralised data and logic
 4. The same machine can be a client in one flow and a server in another.
-           ![[client_server.png]]
-           
+
+![[client_server.png|center|336]]
 
 
 ## Peer-to-Peer Architecture
 
- ![[Pasted image 20260906175607.png]]
+ ![[peer.png|center|287]]
 
 1. Peers can both request and provide
 2. Machines at the edge can participate in serving

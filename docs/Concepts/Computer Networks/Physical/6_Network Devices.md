@@ -1,6 +1,6 @@
 ## Intro
 
-![[Pasted image 20260813121806.png]]
+![[devices.png|center]]
 
 >A good network need
 > - Connect multiple devices
