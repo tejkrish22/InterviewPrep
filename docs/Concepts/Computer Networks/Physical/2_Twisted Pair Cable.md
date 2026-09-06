@@ -36,25 +36,9 @@ Twisting helps both wires experiences similar noise, so the receiver can cancel 
 6. Useful in noisy environments.
 
 ## RJ45 vs RJ11
---- start-multi-column: ID_tzmi
-```column-settings
-Number of Columns: 2
-Largest Column: standard
-```
 
-**Registered Jack 11**
-- Telephone Lines
-- Usually 4 or 6 pins
-- Smaller Connector
-
-
---- column-break ---
-
-**Registered Jack 45**
-- Ethernet
-- Usually 8 pins
-- Larger Connector
-
-
---- end-multi-column
-
+| **Registered Jack 11** | **Registered Jack 45** |
+| ---------------------- | ---------------------- |
+| Telephone Lines        | Ethernet               |
+| Usually 4 or 6 pins    | Usually 8 Pins         |
+| Smaller Connector      | Large Connector        |

@@ -1,6 +1,6 @@
 ---
 pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
-SubPattern:
+SubPattern: "[[Find the Sorted Half]]"
 confidence: 1
 unique: true
 link: https://takeuforward.org/plus/dsa/problems/search-in-rotated-sorted-array-i?subject=dsa&approach=binary-search

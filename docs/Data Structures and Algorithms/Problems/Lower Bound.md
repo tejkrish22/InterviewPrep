@@ -1,6 +1,6 @@
 ---
 pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
-SubPattern:
+SubPattern: "[[Upper and Lower Limits]]"
 confidence: 3
 unique: false
 link: https://takeuforward.org/plus/dsa/problems/lower-bound-?subject=dsa&approach=optimal
