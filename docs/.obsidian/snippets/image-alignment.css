@@ -1,13 +1,11 @@
-@use "./variables.scss" as *;
-
-// Center images with |center in alt text
+/* Center images with |center in alt text */
 img[alt*="center"] {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-// Right alignment with |right in alt text
+/* Optional: right alignment */
 img[alt*="right"] {
   float: right;
   clear: right;
@@ -16,7 +14,7 @@ img[alt*="right"] {
   margin-bottom: 2px;
 }
 
-// Left alignment with |left in alt text
+/* Optional: left alignment */
 img[alt*="left"] {
   float: left;
   clear: left;
