@@ -3,7 +3,7 @@
 At Layer 3 (Network Layer), data units are called **Datagrams**. 
 - **Header Size:** Variable from **20 bytes** (minimum, no options) up to **60 bytes** (maximum, with options).
 
-![IPv4 Datagram Header Format](../Images/ipv4_datagram.png)
+![[ipv4_datagram.png]]
 
 ---
 
@@ -28,8 +28,8 @@ At Layer 3 (Network Layer), data units are called **Datagrams**.
 
 When a datagram size exceeds the link's **MTU (Maximum Transmission Unit)**, intermediate routers split it into smaller fragments. Reassembly occurs **only at the final destination**.
 
-![IPv4 Fragmentation Mechanics 1](../Images/ipv4_frag_1.png)
-![IPv4 Fragmentation Mechanics 2](../Images/ipv4_frag_2.png)
+![[ipv4_frag_1.png]]
+![[ipv4_frag_2.png]]
 
 | Field | Size | Function |
 | :--- | :--- | :--- |
