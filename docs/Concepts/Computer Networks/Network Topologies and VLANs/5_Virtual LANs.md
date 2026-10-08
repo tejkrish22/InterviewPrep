@@ -44,17 +44,18 @@
 ## Common Use Cases
 
 1. **Departmental Isolation**: HR (`VLAN 10`), Eng (`VLAN 20`), Finance (`VLAN 30`) share physical infrastructure but remain logically separated.
-2. **Guest Wi-Fi**: Places guest users into an isolated VLAN to block access to internal corporate networks.
+2. **Guest Wi-Fi**: Places guest users into a separate VLAN, with firewall rules or ACLs blocking access to internal corporate networks.
 
 ---
 
 ## Why use VLANs if we already use separate IP Subnets?
 
-If departments use separate IP subnets (`192.168.10.x` vs `192.168.20.x`), why are VLANs mandatory?
+Different IP subnets can share one Layer 2 network. Why use separate VLANs for departments as well?
 
-1. **Security (Prevents IP Spoofing)**: Without VLANs, a user can manually change their laptop IP in OS settings to join another department's subnet. VLANs lock the physical switch port to a designated VLAN ID, dropping spoofed traffic.
+1. **Layer 2 Isolation**: Changing a device's IP address does not change its access-port VLAN membership. VLANs separate local frame delivery, but do not automatically validate source IP addresses or prevent IP spoofing.
 2. **Broadcast Containment**: Layer 2 broadcasts (like ARP requests) stay strictly inside their VLAN instead of flooding all devices on the physical switch.
 3. **Hardware Cost Savings**: Allows 1 physical switch to act as multiple isolated virtual switches instead of buying separate hardware per team.
+4. **Access Policies**: Use firewall rules or ACLs to restrict routed traffic between VLANs, and controls such as IP Source Guard to validate source IP addresses.
 
 ---
 

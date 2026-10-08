@@ -35,12 +35,13 @@
 ## Stateless Address Auto-Configuration (SLAAC)
 
 1. Devices create their own IPv6 address using the *prefix* info from the router.
-2. IPv4 uses NAT
-	1. private addresses inside
-	2. one public address outside
-3. IPv6 does not use NAT
-	1. as many unique addresses are available, devices can be addressed directly.
-	2. Firewall can still protect devices
+2. IPv4 networks often use NAT/PAT at the Internet edge.
+	1. Private addresses inside share public IPv4 addresses outside.
+	2. This is a deployment choice, not an IPv4 requirement.
+3. IPv6 generally removes the **need for NAT to conserve addresses**, rather than forbidding translation.
+	1. Its large address space lets devices have globally unique addresses.
+	2. Translation mechanisms still exist for specific deployments and IPv4 interoperability.
+	3. Firewalls control access whether or not translation is used.
 
 ## IPv6 Design Benefits
 

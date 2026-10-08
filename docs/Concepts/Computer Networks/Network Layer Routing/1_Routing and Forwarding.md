@@ -1,7 +1,7 @@
 ## Overview
 
 - **Routing (Control Plane):** The process of discovering network paths and building routing tables.
-- **Forwarding (Data Plane):** The real-time hardware action of moving individual packets from an input interface to the correct output interface.
+- **Forwarding (Data Plane):** Moving individual packets from an input interface to the correct output interface, implemented in software or specialized hardware.
 
 ---
 
@@ -10,7 +10,7 @@
 | Aspect | Routing (Control Plane) | Forwarding (Data Plane) |
 | :--- | :--- | :--- |
 | **Primary Goal** | Discover topology & build routing tables | Move single packet to next-hop interface |
-| **Execution** | Background / Periodic / On topology change | Hardware speed / Per-packet ($O(1)$ time) |
+| **Execution** | Background / Periodic / On topology change | Per-packet; speed depends on software or hardware implementation |
 | **Table Used** | Routing Information Base (**RIB**) | Forwarding Information Base (**FIB**) |
 | **Analogy** | Planning the route on a map | Driving through an intersection |
 
@@ -20,10 +20,10 @@
 
 | Property | Routing Information Base (**RIB**) | Forwarding Information Base (**FIB**) |
 | :--- | :--- | :--- |
-| **Plane & Memory** | Control Plane (Software / System RAM) | Data Plane (Hardware Line Cards / TCAM) |
+| **Plane & Memory** | Control Plane (Software / System RAM) | Data Plane (Software memory or specialized hardware) |
 | **Compiled From** | Routing Protocols (OSPF, BGP, RIP) & Static Routes | Extracted from the **best routes** in the RIB |
-| **Exact Content Stored** | • Destination Subnet Prefixes<br>• Next-Hop IP Addresses<br>• Protocol Metrics & Administrative Distance<br>• All candidate paths (selected & backup) | • Destination Subnet Prefixes<br>• **Egress Physical Interface** (e.g. `eth0`)<br>• Next-Hop MAC Address / L2 Frame Header |
-| **Lookup Speed** | Slow (Software processing) | Ultra-fast ($O(1)$ hardware ASIC speed) |
+| **Typical Content** | • Destination prefixes and next hops<br>• Protocol metrics and administrative distance<br>• Candidate/best routes, depending on implementation | • Destination prefixes<br>• Egress interface and next-hop information<br>• May reference separate neighbor/adjacency tables for MAC addresses |
+| **Lookup Role** | Route selection and management | Optimized for per-packet lookup; performance depends on implementation |
 
 ---
 
@@ -31,8 +31,10 @@
 
 | Route Type | Definition & Prefix | Purpose & Priority |
 | :--- | :--- | :--- |
-| **Direct Route** *(Directly Connected)* | Networks physically connected to a router interface.<br>Example: `192.168.1.0/24` on `eth0` | **Highest Priority** (Admin Distance = 0). Router uses ARP directly to find host MAC without intermediate hops. |
+| **Direct Route** *(Directly Connected)* | Networks attached to a router interface.<br>Example: `192.168.1.0/24` on `eth0` | Preferred over other route sources **for the same prefix** (Cisco AD = 0). If selected on IPv4 Ethernet, resolves the destination host's MAC directly. |
 | **Default Route** *(Gateway of Last Resort)* | Fallback route used when destination matches **no other entry**.<br>Prefix: `0.0.0.0/0` | **Lowest Specificity (`/0`)**. Forwards internet-bound or unknown traffic out to the upstream ISP router. |
+
+**AD vs. LPM:** Administrative distance helps select route sources for the **same prefix**. Forwarding uses **longest-prefix match** among installed routes: a `/32` route can beat a connected `/24` route.
 
 ---
 
@@ -68,4 +70,4 @@ The router checks its routing table:
 ---
 
 ### Hardware Acceleration (Interview Concept)
-- **TCAM (Ternary Content Addressable Memory):** Enterprise routers (Cisco, Arista, Juniper) perform Longest Prefix Match lookups across thousands of routes in **$O(1)$ constant time** using hardware TCAM chips.
+- **TCAM (Ternary Content Addressable Memory):** Some routers use parallel hardware matching for effectively constant-time lookups within the hardware's capacity. Other routers use different hardware or software lookup structures; forwarding is not universally TCAM-based or $O(1)$.

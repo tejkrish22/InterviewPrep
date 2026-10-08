@@ -1,14 +1,12 @@
 ## Intro
 
-1. At the bottom layer, network deals with
+1. The **Physical Layer** deals with bits and signals:
 	1. Electrical pulses on copper
 	2. Light pulses in fiber
 	3. Radio signals in Wifi
-	4. Frames instead of packets
-	5. MAC Addresses instead of IP routing.
-2. IP answers: Where is the larger network?
-3. MAC Answers: Where is the next hop?
-4. Physical Layer job is to
+2. The **Data Link Layer** handles frames and MAC addresses for local delivery to the next hop.
+3. The **Network Layer** uses IP addresses to route packets toward the destination network.
+4. The Physical Layer's job is to
 	1. Take raw bits
 	2. Convert them to real signals
 	3. Send them through medium

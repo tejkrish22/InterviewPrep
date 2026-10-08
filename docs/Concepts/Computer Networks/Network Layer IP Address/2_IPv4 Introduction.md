@@ -20,7 +20,7 @@
 
 ## Subnetting Example: Splitting `/24` into `/26`
 
-Subnetting borrows host bits to create smaller, isolated subnets.
+Subnetting borrows host bits to create smaller IP subnets. Separate VLANs or routed links provide Layer 2 broadcast isolation; subnetting alone does not.
 - **Subnet Mask (`/26`):** `255.255.255.192` (`11111111.11111111.11111111.11000000`)
 - **Formula:** Borrow 2 bits $\to$ $2^2 = 4$ subnets.
 - **Host Bits Remaining:** $32 - 26 = 6$ bits $\to$ $2^6 = 64$ total IPs per subnet ($64 - 2 = 62$ usable hosts).
@@ -37,12 +37,12 @@ Subnetting borrows host bits to create smaller, isolated subnets.
 ## Interview Deep-Dive: Broadcasting Across Subnets
 
 ### Does `192.168.1.255` broadcast to all 4 subnets?
-- **No.** Subnetting divides 1 large broadcast domain into 4 separate, isolated domains.
-- `192.168.1.255` is the broadcast IP **only for Subnet D**. Hosts in Subnets A, B, and C will ignore it.
+- **No.** With these `/26` prefixes, `192.168.1.255` is the broadcast IP **only for Subnet D**.
+- Different IP subnets can share one VLAN and receive the same Layer 2 broadcast frames. Separate VLANs or routed links create separate broadcast domains.
 
 ### Why don't broadcasts cross subnets?
-- Routers block Layer 3 broadcasts by default to prevent broadcast storms across network segments.
+- Routers do not forward Layer 2 broadcasts between links. IPv4 directed-broadcast forwarding is normally disabled to prevent amplification attacks.
 
 ### How to send data to all 4 subnets?
-1. **4 Directed Broadcasts:** Send 4 separate packets to `.63`, `.127`, `.191`, and `.255`.
-2. **IP Multicast (Production Standard):** Use multicast (e.g., `224.x.x.x`) so subscribed hosts across all subnets receive the stream.
+1. **Directed Broadcasts:** Packets to `.63`, `.127`, `.191`, and `.255` can reach their respective subnets only if the routers permit directed-broadcast forwarding. Do not assume this is enabled.
+2. **IP Multicast:** Use a routable multicast group with subscribed receivers and configured multicast routing between subnets; choosing a multicast address alone is not enough.

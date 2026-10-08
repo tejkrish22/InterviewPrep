@@ -9,8 +9,9 @@
 
 1. **Sender broadcasts** ARP request asking for MAC with given IP
 2. **Receiver sends** the ARP response with its  MAC directly to the sender.
-3. In the switch, where all devices are connected; the **ARP Cache will update**
-4. Thus next time the **cache info is re used** instead of querying again.
+3. The **sender updates its ARP cache** with the receiver's IP → MAC mapping and reuses it while valid.
+4. Separately, the **switch learns source MAC → port mappings** from incoming frames in its MAC address table, within each VLAN.
+5. A switch may have an ARP cache for its own IP functions; this is separate from normal Layer 2 switching.
 
 ## Different LAN ARP Flow
 

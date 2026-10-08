@@ -142,7 +142,7 @@
 	1. **Accessing** the medium
 	2. **Placing** the data on the medium
 	3. **Receiving** the data on the medium
-	4. CSMA / CS - Carrier Sense Multiple Access / Collision Detection
+	4. **CSMA/CD** - Carrier Sense Multiple Access with Collision Detection, used in shared half-duplex Ethernet.
 	5. Before sending, devices needs rules for using the link.
 
 ## Layer 1 - Physical

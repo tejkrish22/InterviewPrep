@@ -35,7 +35,7 @@
 | **80**      | HTTP                   | Transfer of web pages (unencrypted)              | TCP                    |
 | **110**     | POP3                   | Email retrieval (downloads emails locally)       | TCP                    |
 | **143**     | IMAP                   | Email access while keeping mail on server        | TCP                    |
-| **443**     | HTTPS                  | Secure web communication using TLS               | TCP                    |
+| **443**     | HTTPS                  | Secure web communication using TLS               | TCP; HTTP/3 uses QUIC over UDP |
 | **3306**    | MySQL                  | Database service for MySQL                       | TCP                    |
 | **5432**    | PostgreSQL             | Database service for PostgreSQL                  | TCP                    |
 | **6379**    | Redis                  | In-memory key-value data store                   | TCP                    |
@@ -49,6 +49,8 @@
 5. This flexibility allows multiple services to run on the same machine without conflict.
 
 ## Usage of Nginx / Load Balancer
+
+The examples below use HTTPS over TCP.
 
 > **Core Rule:** **IP address** brings the packet to the machine; **Port number** brings it to the specific process listening on that port.
 
@@ -74,7 +76,8 @@ example.com:443 ──> Nginx / Load Balancer ┼──> App B: 3000 (Internal W
 ---
 
 ### 3. Handling Multiple Apps Wanting Port 443 (Port Collisions)
-* **Constraint:** A single IP + Port + Protocol combination can only be bound by **one listening socket** at a time. Binding a second process yields: `Error: Address already in use`.
+* **Default:** Normally, only one listening socket can bind a given IP + Port + Protocol combination; a conflicting bind fails with `Address already in use`.
+* **Exception:** OS-supported mechanisms such as `SO_REUSEPORT` allow multiple appropriately configured sockets to share an endpoint.
 * **Solution:** Single front process (Nginx/HAProxy/Reverse Proxy) owns port `443` and routes incoming requests dynamically:
   * **Routing by Hostname (SNI/Host Header):**
     * `api.example.com` ──> App A (`8080`)

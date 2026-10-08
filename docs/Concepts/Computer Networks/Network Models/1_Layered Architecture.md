@@ -2,7 +2,7 @@
 
 1. Computer networking involves many jobs and doing these jobs by one single monolithic architecture is not good.
 2. Thats why we need layers
-3. Each layer would do one targeted job and serves the layer below.
+3. Each layer performs a targeted job, provides services to the layer above, and uses services from the layer below.
 
 ## Why layers help?
 
