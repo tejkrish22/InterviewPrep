@@ -1,0 +1,21 @@
+{
+  "name": "dataview",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build-time renderer for simple Obsidian Dataview LIST queries",
+  "type": "module",
+  "exports": {
+    ".": "./index.js"
+  },
+  "main": "./index.js",
+  "quartz": {
+    "name": "dataview",
+    "displayName": "Dataview (build-time)",
+    "category": "transformer",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "dependencies": [],
+    "defaultOrder": 5,
+    "defaultEnabled": true
+  }
+}

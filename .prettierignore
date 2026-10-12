@@ -1,0 +1,5 @@
+# Notes are formatted by markdownlint (`npm run lint:md`) to match Obsidian conventions.
+docs/
+public/
+.quartz/
+quartz/.quartz-cache/

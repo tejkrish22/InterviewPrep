@@ -7,6 +7,7 @@ public/
 
 # Quartz temporary files
 .quartz/
+.quartz-cache/
 
 # Obsidian temporary state (window tabs/positions)
 .obsidian/workspace.json
@@ -15,3 +16,6 @@ docs/.obsidian/workspace.json
 docs/.obsidian/workspace-mobile.json
 
 # Keep docs/.obsidian/plugins/ and community-plugins.json in Git so plugins automatically sync across laptops!
+
+# TypeScript incremental build info (created by `npm run check`)
+tsconfig.tsbuildinfo

@@ -1,18 +1,16 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Software Engineering Interview Prep
+  pageTitle: Quartz 5
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: tejkrish22.github.io/InterviewPrep
+  baseUrl: quartz.jzhao.xyz
   ignorePatterns:
     - private
     - templates
-    - Templates
-    - Templates/**
     - .obsidian
   theme:
     fontOrigin: googleFonts

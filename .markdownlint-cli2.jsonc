@@ -1,0 +1,43 @@
+// Markdown style rules for the Obsidian vault in docs/.
+// Run `npm run lint:md` to check and `npm run lint:md:fix` to auto-fix.
+// Rule reference: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+{
+  "globs": ["docs/**/*.md"],
+  "ignores": ["docs/.obsidian/**"],
+  "config": {
+    "default": true,
+
+    // Headings: `#` style, blank lines around them, no duplicate sibling headings.
+    "MD003": { "style": "atx" },
+    "MD024": { "siblings_only": true },
+
+    // Quartz renders the page title from the file name (or `title` frontmatter),
+    // so notes start with content or `##` headings rather than an H1.
+    "MD041": false,
+
+    // Lists: `-` bullets. Obsidian indents nested lists with tabs.
+    "MD004": { "style": "dash" },
+    "MD007": false,
+    "MD010": false,
+    // Numbered lists intentionally resume (2., 3., ...) after a code block.
+    "MD029": false,
+
+    // Long lines are normal in prose notes.
+    "MD013": false,
+
+    // A blank line separates two consecutive Obsidian callouts.
+    "MD028": false,
+
+    // `<br>` is the only way to break lines inside Obsidian tables.
+    "MD033": { "allowed_elements": ["br", "sub", "sup", "kbd", "mark", "u", "details", "summary"] },
+    // Table pipes don't need to be column-aligned.
+    "MD060": false,
+
+    // Consistent markers.
+    "MD035": { "style": "---" },
+    "MD046": { "style": "fenced" },
+    "MD048": { "style": "backtick" },
+    "MD049": { "style": "asterisk" },
+    "MD050": { "style": "asterisk" },
+  },
+}
