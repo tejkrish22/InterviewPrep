@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+# Runs the checks in .lintstagedrc.mjs on staged files. Bypass once with `git commit --no-verify`.
+
+if ! command -v npx >/dev/null 2>&1; then
+  echo "⚠ pre-commit: Node.js not found on PATH, skipping checks (CI still lints on push)." >&2
+  echo "  Install Node 22, or add it to PATH in ~/.config/husky/init.sh for GUI git clients." >&2
+  exit 0
+fi
+
+npx --no-install lint-staged

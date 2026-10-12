@@ -90,6 +90,17 @@ Run these before pushing (CI runs `npm run lint` and fails the deploy on errors)
 
 The **Obsidian Linter** plugin is configured to apply the same formatting on save, so most issues are fixed while you write.
 
+### Pre-commit hook
+
+`npm install` installs a Git pre-commit hook (husky + lint-staged, configured in `.lintstagedrc.mjs`). On every commit it:
+
+- auto-fixes staged notes with markdownlint and re-stages them;
+- runs `npm run lint:notes` on the whole vault when any note is staged;
+- formats staged code and config files with Prettier;
+- runs the `plugins/` tests when a plugin file is staged.
+
+If something can't be fixed automatically, the commit is stopped and your files are left as they were. Fix the reported issue and commit again, or bypass the hook once with `git commit --no-verify`. If Node.js isn't on `PATH` (for example in some GUI Git clients), the hook prints a warning and lets the commit through; CI still checks on push. To give GUI clients your Node, add it to `PATH` in `~/.config/husky/init.sh`.
+
 ### Conventions
 
 - **Formatting**: `#` headings with a blank line before and after; `-` bullets; `---` horizontal rules; fenced code blocks with a language (use `text` for diagrams); `*italic*` / `**bold**`. Tabs for nested lists are fine.
