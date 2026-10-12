@@ -6,18 +6,22 @@ unique: false
 link: https://takeuforward.org/plus/dsa/problems/lower-bound-?subject=dsa&approach=optimal
 ---
 ---
+
 ## Question
 
 Given a sorted array of nums and an integer x, write a program to find the **lower bound** of **x**.
 The lower bound algorithm finds the first and smallest index in a sorted array where the value at that index is greater than or equal to a given key i.e. x.
 If no such index is found, return the size of the array.
+
 ### Example
+
 **Input** : nums= [1,2,2,3], x = 2
 **Output**:1
 **Explanation**:
 Index 1 is the smallest index such that arr[1] >= x.
 
 ---
+
 ## Code
 
 ```cpp
@@ -54,7 +58,8 @@ public:
 };
 ```
 
-----
+---
+
 ## Complexity
 
 ### Time Complexity
@@ -67,6 +72,7 @@ public:
 1. O(1)
 
 ---
+
 ## Look out
 
 1. We need to find the equal or closest greater value

@@ -51,11 +51,10 @@
 | 1. High Redundancy | 1. Expensive         |
 | 2. Fault Tolerant  | 2. Complex to manage |
 
-
 ## Bus Topology
 
 1. All devices share one common backbone cable.
-2. Shared Ethernet, less cabling 
+2. Shared Ethernet, less cabling
 
 | Pros                     | Cons                                  |
 | ------------------------ | ------------------------------------- |
@@ -81,11 +80,11 @@
 | --------------------------- | --------------------------------------- |
 | 1. Highly Scalable          | 1. More cabling and complexity          |
 | 2. Structured and Organized | 2. Upper level devices become important |
+
 ## Hybrid Topology
 
 1. A network that combines two or more different topologies.
 2. Different parts of a real network have different requirements.
-
 
 | Pros                             | Cons                      |
 | -------------------------------- | ------------------------- |

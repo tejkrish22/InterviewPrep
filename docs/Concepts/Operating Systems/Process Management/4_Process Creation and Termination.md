@@ -15,7 +15,7 @@
 	5. Copy-on-write
 		1. Modern linux may initially share physical pages safely and copy a page only when one process writes
 
-##  Exec
+## Exec
 
 1. What is *exec* ?
 	1. does not create a new process
@@ -43,7 +43,7 @@
 2. A process can create child and uses `wait` command and waits for child termination.
 3. Ways a process terminates
 	1. Normal exit - 0
-	2. Error exit - non-zero 
+	2. Error exit - non-zero
 	3. Killed by signal - SIGTERM, SIGKILL etc
 	4. Supervisor Termination - timeout, restart policy
 4. On Termination, OS usually

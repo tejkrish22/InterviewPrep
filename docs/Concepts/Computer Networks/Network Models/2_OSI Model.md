@@ -42,8 +42,10 @@
 	2. **Physical** - raw bit stream transmission over hardware medium (signals, cables, radio)
 
 ## How data travel layer by layer?
+
 ![[osi_1.png|center]]
 ![[osi_2.png|center]]
+
 ## Layer 7 - Application
 
 1. Closest to the software the *user interfaces with*.
@@ -56,6 +58,7 @@
 	5. **FTP** - file transfer
 	6. **SSH** - secure remote login
 	7. **DHCP** - automatic IP assignment
+
 ## Layer 6 - Presentation
 
 1. Translating / Formatting
@@ -69,14 +72,14 @@
 		2. Lossless - Saves space without losing original data
 	4. Encryption
 
-## Layer 5 - Session 
+## Layer 5 - Session
 
 1. Manages the conversation between two systems.
 2. Starting interaction
 3. Coordinating back & forth messages
 4. Helping resume / synchronise the session if interrupted.
 
-## Layer 4 - Transport 
+## Layer 4 - Transport
 
 1. Responsible for end-to-end communication between applications i.e. `process to process`.
 2. Transport uses ***port numbers***.
@@ -85,7 +88,7 @@
 		1. Source Port
 		2. Destination Port
 		3. Sequence Number
-	2. **Reliability** 
+	2. **Reliability**
 		1. Acknowledgement
 		2. Repeat Request
 		3. Retransmission
@@ -122,7 +125,7 @@
 
 1. Hop-to-hop delivery on the same local link, using `MAC Address`
 2. Network layer decides the **next hop**; data link delivers data to that next hop in the current link.
-3. `Frame` contains 
+3. `Frame` contains
 	1. source MAC
 	2. destination MAC
 	3. Trailer (error checking data, FCS)

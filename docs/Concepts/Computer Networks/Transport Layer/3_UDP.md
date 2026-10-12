@@ -25,6 +25,7 @@
 | Source Port | Destination Port | Length  | Checksum | Payload  |
 | ----------- | ---------------- | ------- | -------- | -------- |
 | 16 Bits     | 16 Bits          | 16 Bits | 16 Bits  | variable |
+
 1. Header Size is 8 bytes
 2. Source Port
 	1. Identifies  application that generated the data

@@ -1,14 +1,14 @@
----
-notion-id: 33cd9a38-fc71-8042-97d1-ef06def15b5d
----
 ## What is Inheritance?
+
 **Inheritance** is an OOP feature where a **new class (Derived / Child)** is created from an **existing class (Base / Parent)**.
 The derived class:
+
 - **Reuses** base class members (code reusability)
 - Can **add new features** (extend)
 - Can **modify behavior** (override in polymorphism)
 
 **Syntax:**
+
 ```c++
 class Derived : access-specifier Base {
     // ...
@@ -16,27 +16,34 @@ class Derived : access-specifier Base {
 ```
 
 ---
+
 ## Why Inheritance is used (Advantages)
+
 - **Code reusability**: avoid rewriting common code.
 - **Extensibility**: add features on top of an existing class.
 - **Maintainability**: changes in base can benefit derived classes.
 - Foundation for **polymorphism** (runtime overriding using `virtual`).
 
 ---
+
 ## Key terms
+
 - **Base class / Parent class**: class being inherited from.
 - **Derived class / Child class**: class that inherits.
 - **"is-a" relationship**: inheritance models an *is-a* relation.
     - Example: `Car` is-a `Vehicle`.
 
 ---
+
 ## Access specifiers in inheritance (public/protected/private)
+
 Inheritance access specifier controls how base members are treated in the derived class.
 > Note: Base class `private` members are **not accessible directly** in a derived class (you cannot write `derivedObj.privateMember`).
 
 > But they are still **part of the derived object’s memory layout** (because the base subobject is inside the derived object). You can access/update them **indirectly** using the base class’s `public`/`protected` member functions.
 
 Example:
+
 ```c++
 class Base {
 private:
@@ -65,9 +72,13 @@ public:
 | `private` inheritance | `private` | `private` | not accessible |
 
 ---
+
 ## Types of inheritance (based on structure)
+
 ### 1) Single inheritance
+
 One derived class inherits from one base class.
+
 ```c++
 class Vehicle {
 public:
@@ -87,8 +98,11 @@ int main() {
 ```
 
 ---
+
 ### 2) Multilevel inheritance
+
 A class is derived from another derived class.
+
 ```c++
 class A {
 public:
@@ -114,8 +128,11 @@ int main() {
 ```
 
 ---
+
 ### 3) Hierarchical inheritance
+
 Multiple derived classes inherit from a single base class.
+
 ```c++
 class Shape {
 public:
@@ -134,8 +151,11 @@ public:
 ```
 
 ---
+
 ### 4) Multiple inheritance
+
 One derived class inherits from multiple base classes.
+
 ```c++
 class Camera {
 public:
@@ -161,14 +181,21 @@ int main() {
 ```
 
 ---
+
 ### 5) Hybrid inheritance
+
 Combination of two or more types (e.g., multiple + multilevel). In C++ this is possible.
 
 ---
+
 ## Diamond problem (Multiple inheritance issue)
+
 When two classes inherit from the same base, and a further class inherits from both, ambiguity can happen.
+
 ### Why it is called “diamond”
+
 The inheritance diagram looks like a diamond:
+
 ```javascript
   A
  / \
@@ -176,17 +203,23 @@ B   C
  \ /
   D
 ```
+
 `D` inherits from both `B` and `C`, and **both** `B` and `C` inherit from `A`.
+
 ### What exactly goes wrong?
+
 Without special handling, class `D` ends up containing **two separate copies of `A`**:
+
 - one `A` subobject via `B`
 - another `A` subobject via `C`
 
 That causes two main problems:
+
 1. **Ambiguity**: which `A` member are you referring to?
 2. **Duplication**: `A`’s data exists twice inside `D` (wasted memory + inconsistent state possible).
 
 ### Ambiguity example
+
 ```c++
 class A {
 public:
@@ -204,7 +237,9 @@ int main() {
     cout << d.C::x; // ✅ explicitly choose the other path
 }
 ```
+
 ### Duplication / inconsistent state example
+
 ```c++
 int main() {
     D d;
@@ -213,9 +248,12 @@ int main() {
     // Now D has TWO different x values (two different A subobjects)
 }
 ```
+
 ### How virtual inheritance fixes it
+
 If `B` and `C` inherit from `A` as **virtual**, C++ ensures that `D` contains **only one shared `A`** subobject.
 Key idea:
+
 - `virtual` inheritance says: “If this base appears multiple times through different paths, keep only one copy.”
 
 ```c++
@@ -226,7 +264,9 @@ class D : public B, public C {}; // D has two copies of A
 
 // D d; d.x; // ambiguous
 ```
+
 ### Solution: Virtual inheritance
+
 ```c++
 class A { public: int x = 10; };
 class B : virtual public A {};
@@ -240,7 +280,9 @@ int main() {
 ```
 
 ---
+
 ## Important interview points
+
 - Inheritance models an **is-a relationship**.
 - Base class constructor runs **before** derived class constructor.
 - Base class destructor runs **after** derived class destructor.

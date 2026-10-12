@@ -41,10 +41,13 @@
 ## Longest Prefix Match (LPM)
 
 ### What is it?
+
 When a router receives a packet, its destination IP might match **multiple subnet entries** in the routing table. **Longest Prefix Match (LPM)** dictates that the router selects the route with the **most specific (longest mask / largest prefix length)** match.
 
 ### Intuitive Analogy
+
 Imagine mailing a letter to: `123 Main St, Sector 5, Bangalore, India`.
+
 - Worker A knows how to deliver to **India** (`/8` - Very broad).
 - Worker B knows how to deliver to **Bangalore** (`/16` - Specific city).
 - Worker C knows how to deliver to **Sector 5, Bangalore** (`/24` - Exact neighborhood).
@@ -70,4 +73,5 @@ The router checks its routing table:
 ---
 
 ### Hardware Acceleration (Interview Concept)
+
 - **TCAM (Ternary Content Addressable Memory):** Some routers use parallel hardware matching for effectively constant-time lookups within the hardware's capacity. Other routers use different hardware or software lookup structures; forwarding is not universally TCAM-based or $O(1)$.

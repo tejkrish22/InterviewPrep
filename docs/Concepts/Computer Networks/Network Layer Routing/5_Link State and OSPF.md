@@ -4,12 +4,14 @@
 Distance Vector Routing, where routers learned routes by asking their neighbours for routing information. Routers did not know the complete network topology and relied on what neighbouring routers told them.
 
 Link State Routing takes a fundamentally different approach. Routers share link information, build a topology database, and calculate the best paths themselves. In OSPF, detailed topology knowledge is scoped to an area, not necessarily the whole network.
+
 ## Why link state over Distance Vector ?
 
 1. Slow convergence
 2. Routing loops
 3. Limited visibility
 4. Poor Scalability
+
 ## How Link State Works ?
 
 1. **Discover neighbours** directly connected to one router
@@ -20,6 +22,7 @@ Link State Routing takes a fundamentally different approach. Routers share link 
 6. Each router **runs Shortest Path First algorithm** (Based on Dijkstra's) to compute best paths.
 7. **Install the resulting routes** into the routing table.
 8. After convergence, routers in the **same area agree on its topology**. They need not know every link in other areas.
+
 ## OSPF
 
 1. OSPF stands for **Open Shortest Path First**, most common example of a Link State Routing protocol.
@@ -29,6 +32,7 @@ Link State Routing takes a fundamentally different approach. Routers share link 
 	3. Cost is commonly related to bandwidth.
 	4. It supports hierarchical designs using Areas.
 	5. It is widely used in enterprise environments.
+
 ## Advantages of Link State Routing
 
 - Faster convergence than Distance Vector protocols.
@@ -36,6 +40,7 @@ Link State Routing takes a fundamentally different approach. Routers share link 
 - Detailed visibility of topology within the area.
 - More accurate route calculations.
 - Reduced dependence on neighbour-only information.
+
 ## Disadvantages of Link State Routing
 
 - Requires more memory.

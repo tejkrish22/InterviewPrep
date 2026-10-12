@@ -1,6 +1,6 @@
 ## Intro
 
-1. Modern machines usually have multiple CPU cores. 
+1. Modern machines usually have multiple CPU cores.
 2. That changes scheduling because multiple tasks can truly run at the same time, not just appear to run through fast switching.
 3. Multicore scheduling therefore adds a second major question - the scheduler must decide *which task should run*, and also *which CPU core should run it*.
 
@@ -20,9 +20,9 @@
 
 1. Task migration means moving a runnable task from one core to another. It is used when the system needs to balance work across cores.
 2. Pros
-	1. Process migration helps utilise idle CPU cores, reduce process waiting time, and balance the workload across processors. 
+	1. Process migration helps utilise idle CPU cores, reduce process waiting time, and balance the workload across processors.
 	2. This improves overall CPU utilisation and system throughput.
-3. Cons 
+3. Cons
 	1. Hurt Cache Locality and add overhead
 
 ## Cache Locality in Multicore Scheduling

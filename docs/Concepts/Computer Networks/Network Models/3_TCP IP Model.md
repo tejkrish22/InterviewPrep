@@ -28,7 +28,7 @@
 4. Data Link
 	1. Ethernet
 	2. Frame
-5. Physical 
+5. Physical
 	1. Actual Transmission
 	2. bits / signals
 

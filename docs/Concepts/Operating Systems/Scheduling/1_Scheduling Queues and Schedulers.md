@@ -11,7 +11,7 @@
 
 ## Scheduling Queue
 
-1. A scheduling queue is a data structure used by the operating system to group processes that are in a similar state. 
+1. A scheduling queue is a data structure used by the operating system to group processes that are in a similar state.
 2. This lets the operating system pick processes from the correct place when the next action is possible.
 3. Different Queues are
 	1. New Queue

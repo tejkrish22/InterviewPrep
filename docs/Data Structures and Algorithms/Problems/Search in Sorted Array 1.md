@@ -6,6 +6,7 @@ unique: true
 link: https://takeuforward.org/plus/dsa/problems/search-in-rotated-sorted-array-i?subject=dsa&approach=binary-search
 ---
 ---
+
 ## Question
 
 Given an integer array nums, sorted in ascending order (with distinct values) and a target value k. The array is **rotated** at some pivot point that is unknown. Find the **index** at which k is present and if k is not present return -1.
@@ -17,6 +18,7 @@ Output: 4
 Explanation: Here, the target is 0. We can see that 0 is present in the given rotated sorted array, nums. Thus, we get output as 4, which is the index at which 0 is present in the array.
 
 ---
+
 ## Code
 
 ```cpp
@@ -63,7 +65,8 @@ class Solution {
 };
 ```
 
-----
+---
+
 ## Complexity
 
 ### Time Complexity
@@ -72,9 +75,10 @@ class Solution {
 
 ### Space Complexity
 
-1.  O (1)
+1. O (1)
 
 ---
+
 ## Look out
 
 1. The main crux of the question is ***one half is always sorted, find that half***.

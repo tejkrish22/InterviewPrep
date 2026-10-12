@@ -1,6 +1,3 @@
----
-notion-id: 349d9a38-fc71-8057-9bdd-c75fa3431442
----
 1. Consider the following function
 
 ```c++
@@ -13,6 +10,7 @@ int average (int arr[], int n){
 	return res;
 }
 ```
+
 2. If user provides n=0, then we will get runtime error caused by division by 0 error.
 3. So we should handle this some how.
 4. Some of the unusual conditions are
@@ -25,6 +23,7 @@ int average (int arr[], int n){
     6. throw - used to throw an exception
     7. catch - one or more catch blocks are used to handle the exception
 6. Code
+
 ```c++
 int main () {
 	int x,y;
@@ -39,6 +38,7 @@ int main () {
 	}
 }
 ```
+
 7. Multiple throws and catch
 
 ```c++
@@ -67,7 +67,9 @@ int main()
     return 0;
 }
 ```
+
 8. User Defined Exceptions
+
 ```c++
 #include <iostream>
 #include <exception>
@@ -110,4 +112,3 @@ int main() {
     }
 }
 ```
-

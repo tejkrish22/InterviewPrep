@@ -23,7 +23,7 @@
 	3. heap - dynamic allocations
 	4. stack - function call, local variables
 2. Execution state
-	1. Program counter - next instruction 
+	1. Program counter - next instruction
 	2. Stack pointer - current stack position
 	3. Registers - temporary CPU values
 3. Resources and Identity
@@ -33,12 +33,12 @@
 	4. Credentials
 	5. User ID and Group ID
 	6. Resource limits
+
 ## Parent Process
 
 1. PID : Process ID used by OS tools and system calls
 2. PPID: Parent Process ID
-3. Ex: Shell starts a command 
+3. Ex: Shell starts a command
 	1. Shell is parent process
 	2. Command Execution is child process
 4. **Zombie Process:** It is a child process that has already finished executing, but whose parent has not collected its exit status.
-

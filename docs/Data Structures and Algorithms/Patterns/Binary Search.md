@@ -13,6 +13,18 @@
 
 ## Sub Patterns
 
+### Core Algorithm
+
+The classic search for a target in a sorted array. Shrink `[low, high]` by comparing `arr[mid]` with the target until it is found or the range is empty.
+
+```dataview
+LIST FROM "Data Structures and Algorithms/Problems"
+WHERE SubPattern = [[Core Algorithm]]
+SORT file.name ASC
+```
+
+---
+
 ### Upper and Lower Limits
 
 Finding boundaries in a sorted array — lower bound, upper bound, first/last occurrence, floor/ceil. The key decision is whether `mid` belongs to the left or right half based on the comparison (`<` vs `<=`).
@@ -20,7 +32,7 @@ Finding boundaries in a sorted array — lower bound, upper bound, first/last oc
 ```dataview
 LIST FROM "Data Structures and Algorithms/Problems"
 WHERE SubPattern = [[Upper and Lower Limits]]
-SORT file.ctime asc
+SORT file.name ASC
 ```
 
 ---
@@ -32,7 +44,7 @@ For **rotated sorted arrays**. The crux: *one half is always sorted* — identif
 ```dataview
 LIST FROM "Data Structures and Algorithms/Problems"
 WHERE SubPattern = [[Find the Sorted Half]]
-SORT file.ctime asc
+SORT file.name ASC
 ```
 
 ---
@@ -44,7 +56,7 @@ The search space is the **answer range**, not an array index. Formulate a monoto
 ```dataview
 LIST FROM "Data Structures and Algorithms/Problems"
 WHERE SubPattern = [[Binary Search On Answer]]
-SORT file.ctime asc
+SORT file.name ASC
 ```
 
 ---
@@ -55,7 +67,6 @@ Problems using Binary Search that don't fall neatly into a sub-pattern above.
 
 ```dataview
 LIST FROM "Data Structures and Algorithms/Problems"
-WHERE SubPattern != [[Upper and Lower Limits]] and SubPattern != [[Find the Sorted Half]] and SubPattern != [[Binary Search On Answer]]
-SORT file.ctime asc
+WHERE pattern = [[Binary Search]] AND SubPattern != [[Core Algorithm]] AND SubPattern != [[Upper and Lower Limits]] AND SubPattern != [[Find the Sorted Half]] AND SubPattern != [[Binary Search On Answer]]
+SORT file.name ASC
 ```
-

@@ -11,4 +11,3 @@
 2. Starvation: Lower priority queues may rarely run
 3. Incorrect classification: Placing a process in the wrong queue can reduce performance
 4. Dynamic adaption is missing
-

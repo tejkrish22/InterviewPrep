@@ -1,15 +1,22 @@
-# Union Find (Disjoint Set Union - DSU)
+---
+aliases:
+  - Disjoint Set Union
+  - DSU
+---
 
 ## Recognition Cues
+
 - Dynamic connectivity, connected components in undirected graph, Kruskal's MST.
 - Path Compression + Union by Rank ($O(\alpha(N)) \approx O(1)$).
 
 ## Common Pitfalls
+
 - Path compression: `parent[i] = find(parent[i])`.
 
 ## Related Problems
+
 ```dataview
 LIST FROM "Data Structures and Algorithms/Problems"
-WHERE contains(file.outlinks, this.file.link)
-SORT file.ctime asc
+WHERE pattern = [[Union Find]]
+SORT file.name ASC
 ```

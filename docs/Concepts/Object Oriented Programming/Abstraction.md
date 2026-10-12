@@ -1,22 +1,26 @@
----
-notion-id: 33cd9a38-fc71-80c6-ac4e-ec9effc0b96c
----
 ## Abstraction (in C++ OOP)
+
 **Abstraction** means showing only the **essential features** of something and hiding the **implementation details**.
 In C++, abstraction is commonly achieved using:
+
 - **Abstract classes**
 - **Interfaces (interface-like classes)**
 - **Virtual functions** and **pure virtual functions**
 
 ---
+
 ## 1) Virtual methods (Virtual functions)
+
 A **virtual function** is a member function in the base class that you expect derived classes to **override**, enabling **runtime polymorphism**.
+
 ### Key points
+
 - Declared using the keyword `virtual` in the base class.
 - When you call a virtual function through a **base class pointer/reference**, the **derived version** runs (late binding).
 - A base class that will be used polymorphically should have a **virtual destructor**.
 
 ### Example (virtual method)
+
 ```c++
 #include <bits/stdc++.h>
 using namespace std;
@@ -45,12 +49,17 @@ int main() {
 ```
 
 ---
+
 ## 2) Pure virtual methods
+
 A **pure virtual function** is a virtual function with **no base implementation requirement**, written as:
+
 ```c++
 virtual void func() = 0;
 ```
+
 ### Key points
+
 - Makes the class **abstract** (cannot create objects of that class).
 - Forces derived classes to implement/override it (otherwise derived class also becomes abstract).
 - Used to define a **contract**: “every derived class must provide this behavior.”
@@ -58,9 +67,13 @@ virtual void func() = 0;
 > Note: A pure virtual function *can still* have a definition in the base class, but it’s still pure (`= 0`). This is used sometimes for shared helper behavior.
 
 ---
+
 ## 3) Abstract class
+
 An **abstract class** is a class that contains **at least one pure virtual function**.
+
 ### Key points
+
 - You **cannot instantiate** an abstract class.
     - `Shape s;` ❌ not allowed
 - You *can* create **pointers/references** to an abstract class:
@@ -68,6 +81,7 @@ An **abstract class** is a class that contains **at least one pure virtual funct
 - Used when you want a common base type + shared code, but still want to enforce that derived classes implement some operations.
 
 ### Example (abstract class)
+
 ```c++
 #include <bits/stdc++.h>
 using namespace std;
@@ -109,14 +123,19 @@ int main() {
 ```
 
 ---
+
 ## 4) Interface class (C++ style)
+
 C++ does not have a separate `interface` keyword like Java. Instead, we create an **interface-like class**:
+
 ### Interface-like class rules (common convention)
+
 - Contains **only pure virtual functions**
 - Has a **virtual destructor**
 - Has **no data members** (or at least no state)
 
 ### Example (interface-like class)
+
 ```c++
 #include <bits/stdc++.h>
 using namespace std;
@@ -142,6 +161,7 @@ int main() {
 ```
 
 ---
+
 ## Abstract class vs Interface class (quick comparison)
 
 | Feature | Abstract class | Interface-like class |
@@ -152,7 +172,9 @@ int main() {
 | How it’s made in C++ | At least one `= 0` function | Mostly all functions are `= 0` |
 
 ---
+
 ## Interview points (must remember)
+
 - `virtual` enables **runtime polymorphism**.
 - `= 0` makes a function **pure virtual**.
 - A class with at least one pure virtual function is an **abstract class**.

@@ -24,5 +24,3 @@
 	3. Undersea cables
 2. Simple Analogy - Backbone networks are highways of internet.
 3. Purpose - Move huge internet traffic between regions, countries, ISPs and Data Centres.
-
-

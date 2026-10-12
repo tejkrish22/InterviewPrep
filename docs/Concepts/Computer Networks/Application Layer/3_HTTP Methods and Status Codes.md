@@ -1,6 +1,6 @@
 ## HTTP Methods
 
-1. HTTP methods describe the action that the client wants to perform on a resource. 
+1. HTTP methods describe the action that the client wants to perform on a resource.
 2. Every HTTP request contains a method that tells the server what operation should be performed on the requested URL.
 
 | Method  | Means                          | Example                                            | Safe / Idempotent   |
@@ -62,7 +62,7 @@
 6. 4xx Client Side Errors
 	1. These errors occur because something is wrong with the request sent by the client.
 	2. 400 Bad Request - Invalid request
-	3. 401 Unauthorized - User is not authenticated 
+	3. 401 Unauthorized - User is not authenticated
 	4. 403 Forbidden  - User is authenticated but does not have permission
 	5. 404 Not found - Requested resource does not exist
 	6. 405 Method Not Allowed - The method is not supported for this resource

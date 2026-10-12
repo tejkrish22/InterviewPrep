@@ -1,9 +1,8 @@
----
-notion-id: 33cd9a38-fc71-80e1-8b48-c42dd29401b5
----
 ## What is Encapsulation?
+
 **Encapsulation** is the OOP principle of **bundling data (attributes) and methods (functions) together** inside a class *and* **restricting direct access** to that data.
 In C++, encapsulation is mainly achieved using **access specifiers**:
+
 - `private`: accessible only inside the class (best for data members)
 - `public`: accessible from outside (best for the interface)
 - `protected`: accessible in class + derived classes
@@ -17,30 +16,40 @@ In C++, encapsulation is mainly achieved using **access specifiers**:
 | `private` | ✅ Yes | ❌ No | ❌ No |
 
 ---
+
 ## Why Encapsulation is important
+
 - **Data protection / integrity**: prevents invalid values from being set directly.
 - **Controlled access**: you decide *how* the data can be read/changed.
 - **Maintainability**: internal implementation can change without breaking user code.
 - **Abstraction**: users of the class focus on *what it does*, not *how it stores data*.
 
 ---
+
 ## Getters and Setters (Core of Encapsulation)
+
 When attributes are `private`, we expose controlled access via:
+
 ### Getter (Accessor)
+
 - A function that **returns the value** of a private attribute.
 - Should usually be marked `const`.
 
 Example:
+
 ```c++
 double getBalance() const {
     return balance;
 }
 ```
+
 ### Setter (Mutator)
+
 - A function that **updates the value** of a private attribute.
 - Should **validate input** before modifying the state.
 
 Example:
+
 ```c++
 void setBalance(double b) {
     if (b < 0) return;      // validation
@@ -49,7 +58,9 @@ void setBalance(double b) {
 ```
 
 ---
+
 ## Example: Encapsulation with proper getters/setters
+
 ```c++
 #include <bits/stdc++.h>
 using namespace std;
@@ -96,7 +107,9 @@ public:
 ```
 
 ---
+
 ## Best practices (Interview-friendly)
+
 1. **Keep data members** `private` by default.
 2. Use **getters** for reading and mark them `const`.
 3. Use **setters** only when needed, and always **validate** input.
@@ -106,7 +119,9 @@ public:
 5. Avoid exposing raw pointers/references to internal data unless necessary.
 
 ---
+
 ## Common pitfalls
+
 - Public attributes → no control, hard to enforce rules.
 - Setters without validation → object can enter an invalid state.
 - Getters returning non-const references → external code can modify private data indirectly.

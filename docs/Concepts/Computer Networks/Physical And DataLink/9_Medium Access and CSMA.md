@@ -4,7 +4,7 @@
 	1. Two devices may transmit at the same time
 	2. Their signals interfere
 	3. This is called a Collision
-2. Common in 
+2. Common in
 	1. Shared Ethernet
 	2. Old hubs
 	3. Half-Duplex Communication

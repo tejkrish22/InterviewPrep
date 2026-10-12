@@ -44,6 +44,3 @@
 	3. compares with received CRC
 	4. figures our error happened or not
 3. Ethernet uses CRC through the FCS field.
-
-
-

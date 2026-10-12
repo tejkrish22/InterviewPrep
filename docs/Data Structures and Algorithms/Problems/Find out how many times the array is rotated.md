@@ -6,9 +6,11 @@ unique: false
 link: https://takeuforward.org/plus/dsa/problems/find-out-how-many-times-the-array-is-rotated?subject=dsa&approach=binary-search
 ---
 ---
+
 ## Question
 
 Given an integer array nums of size n, sorted in ascending order with distinct values. The array has been **right** **rotated** an unknown number of times, between 0 and n-1 (including). Determine the **number** of rotations performed on the array.
+
 ### Example
 
 Input : nums = [4, 5, 6, 7, 0, 1, 2, 3]
@@ -16,6 +18,7 @@ Output: 4
 Explanation: The original array should be [0, 1, 2, 3, 4, 5, 6, 7]. So, we can notice that the array has been rotated 4 times.
 
 ---
+
 ## Code
 
 ```cpp
@@ -53,7 +56,8 @@ public:
 };
 ```
 
-----
+---
+
 ## Complexity
 
 ### Time Complexity
@@ -65,6 +69,7 @@ public:
 1. O (1)
 
 ---
+
 ## Look out
 
 1. This question is similar to [[Find Minimum In Sorted Array]].

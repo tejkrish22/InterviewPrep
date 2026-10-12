@@ -1,9 +1,9 @@
 
 > Routers may temporarily have incomplete, delayed, or inconsistent information about the network. When this happens, packets may stop making progress toward their destination and instead begin circulating between routers - Routing Loop.
 
-## Example 
+## Example
 
-1. Consider two Routers A and B, and a packet needs to reach Network X. 
+1. Consider two Routers A and B, and a packet needs to reach Network X.
 2. Router A believes the best path to Network X is through Router B.
 3. The packet is forwarded to Router B.
 4. Router B, however, believes the best path to Network X is through Router A.
@@ -16,6 +16,7 @@
 2. Router CPU wastage
 3. Increased packet delay
 4. Network Instability
+
 ## Preventions Mechanisms
 
 1. TTL (time to live)
@@ -32,6 +33,7 @@
 4. Eventually, if TTL reaches 0, the packet is discarded.
 5. The router typically sends an ICMP Time Exceeded message back to the sender.
 6. TTL is not actually a routing-loop prevention algorithm, It does not stop loops from forming, but it ensures that packets do not circulate forever inside the network.
+
 ## Split Horizon
 
 1. Split Horizon is a rule commonly used in distance-vector routing protocols.
@@ -60,14 +62,14 @@
 4. The goal is to spread failure information quickly throughout the network.
 5. When neighbouring routers receive the update, they immediately understand that the route should no longer be used.
 
-
 > [!NOTE] Difference between Poison Reverse and Route Poisoning
->  - **Poison Reverse:** Advertises a route as unreachable back toward the neighbour from which it was learned.
->  - **Route Poisoning:** Advertises a failed route as unreachable to all neighbouring routers.
+>
+> - **Poison Reverse:** Advertises a route as unreachable back toward the neighbour from which it was learned.
+> - **Route Poisoning:** Advertises a failed route as unreachable to all neighbouring routers.
+>
 ## Hold Down Timers
 
 1. Hold-Down Timers improve routing stability after failures.
 2. When a router detects that a route has failed, it does not immediately trust new updates for that route.
 3. Instead, it starts a hold-down timer and temporarily ignores suspicious updates.
 4. This waiting period allows incorrect or delayed routing information to disappear before new routes are accepted.
-

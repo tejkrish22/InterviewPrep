@@ -6,9 +6,11 @@ unique: false
 link: https://takeuforward.org/plus/dsa/problems/find-nth-root-of-a-number?subject=dsa&approach=binary-search&tab=editorial
 ---
 ---
+
 ## Question
 
 Given two numbers N and M, find the **Nth** root of M. The Nth root of a number M is defined as a number X such that when X is raised to the power of N, it equals M. If the Nth root is not an integer, return -1.
+
 ### Example
 
 Input: N = 3, M = 27
@@ -16,6 +18,7 @@ Output: 3
 Explanation: The cube root of 27 is equal to 3.
 
 ---
+
 ## Code
 
 ```cpp
@@ -63,7 +66,8 @@ class Solution {
 
 ```
 
-----
+---
+
 ## Complexity
 
 ### Time Complexity
@@ -76,6 +80,7 @@ class Solution {
 1. O (1)
 
 ---
+
 ## Look out
 
 1. Overflow issues

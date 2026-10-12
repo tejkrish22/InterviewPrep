@@ -13,7 +13,7 @@ Twisting helps both wires experiences similar noise, so the receiver can cancel 
 ## Used In
 
 1. Ethernet LANS
-2. Homes 
+2. Homes
 3. Offices
 
 ## Types
@@ -26,6 +26,7 @@ Twisting helps both wires experiences similar noise, so the receiver can cancel 
 4. No grounding needed
 5. Lighter and thinner
 6. Normal LANS
+
 ### Shielded Twisted Pair
 
 1. Has metallic shielding

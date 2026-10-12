@@ -1,6 +1,3 @@
----
-notion-id: 34bd9a38-fc71-808b-93dc-d638fc7cb36a
----
 1. C++ can read files and write to files
 2. The useful classes for working with files in C++ are:
     1. fstreambase
@@ -43,6 +40,7 @@ int main() {
     return 0;
 }
 ```
+
 7. In C++, `ofstream` is used for writing to files. Internally, it already uses buffering, and you can also use `std::ios::sync_with_stdio(false)` for faster console I/O (not related to file buffering directly).
 
 ```c++
@@ -69,6 +67,7 @@ int main() {
     return 0;
 }
 ```
+
 8. In C++, `ifstream` is used to read data from a file. You can read line-by-line using `getline()` which is similar to Java’s BufferedReader approach.
 
 ```c++
@@ -98,6 +97,7 @@ int main() {
     return 0;
 }
 ```
+
 9. C++ does not have a direct equivalent of Java’s try-with-resources. Instead, it uses RAII (Resource Acquisition Is Initialization).
 10. In RAII, resources are acquired in an object’s constructor and automatically released in its destructor. File streams follow RAII: when the stream object goes out of scope, it automatically closes the file.
 
@@ -123,6 +123,7 @@ int main() {
     return 0;
 }
 ```
+
 11. Logging Application Data
 
 ```c++

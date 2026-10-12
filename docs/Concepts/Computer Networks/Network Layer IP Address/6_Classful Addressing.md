@@ -2,9 +2,8 @@
 
 1. Before CIDR - Classless Inter-Domain Routing, IPv4 addresses are divided into fixed classes
 2. This was called classful addressing.
-3. Fixed sizes were simple but not flexible. 
+3. Fixed sizes were simple but not flexible.
 4. After CIDR, you can have /20, /24, /27
-
 
 | Class | First Octet Range | Default Mask | Network Bits | Host Bits | Use                 |
 | ----- | ----------------- | ------------ | ------------ | --------- | ------------------- |
@@ -13,6 +12,7 @@
 | C     | 192 - 223         | /24          | 24           | 8         | Small Networks      |
 | D     | 224 - 239         | NA           | NA           | NA        | Used for Multicast  |
 | E     | 240 - 255         | NA           | NA           | NA        | Reserved            |
+
 ## Special Ranges
 
 1. 0.x.x.x Range

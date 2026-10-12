@@ -65,6 +65,7 @@ A Gantt chart is a timeline displaying CPU allocation per process over time.
 ![[gantt_chart.png]]
 
 **Example Metrics Calculation for P1:**
+
 - **Arrival Time (AT):** 2
 - **First Execution Time:** 5
 - **Completion Time (CT):** 11

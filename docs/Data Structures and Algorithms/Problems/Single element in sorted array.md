@@ -6,9 +6,11 @@ unique: true
 link: https://takeuforward.org/plus/dsa/problems/single-element-in-sorted-array?subject=dsa&approach=optimal
 ---
 ---
+
 ## Question
 
 Given an array nums sorted in non-decreasing order. Every number in the array except one appears twice. Find the **single** number in the array.
+
 ### Example
 
 Input :nums = [1, 1, 2, 2, 3, 3, 4, 5, 5, 6, 6]
@@ -16,6 +18,7 @@ Output:4
 Explanation: Only the number 4 appears once in the array.
 
 ---
+
 ## Code
 
 ```cpp
@@ -63,7 +66,8 @@ public:
 };
 ```
 
-----
+---
+
 ## Complexity
 
 ### Time Complexity
@@ -75,6 +79,7 @@ public:
 1. O (1)
 
 ---
+
 ## Look out
 
 1. Before the single frequency element is encountered each pair occurs in (even, odd) fashion, after the encounter it becomes (odd, even).

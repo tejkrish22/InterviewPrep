@@ -3,14 +3,16 @@ pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]
 SubPattern: "[[Upper and Lower Limits]]"
 confidence: 3
 unique: false
-link:
+link: https://takeuforward.org/plus/dsa/problems/upper-bound?subject=dsa&approach=optimal
 ---
 ---
+
 ## Question
 
 Given a sorted array of nums and an integer x, write a program to find the **upper bound** of **x**.
 The **upper bound** of **x** is defined as the **smallest index** i such that **nums[i] > x**.
 If no such index is found, return the size of the array.
+
 ### Example
 
 **Input** : n= 4, nums = [1,2,2,3], x = 2
@@ -19,6 +21,7 @@ If no such index is found, return the size of the array.
 Index 3 is the smallest index such that arr[3] > x.
 
 ---
+
 ## Code
 
 ```cpp
@@ -55,7 +58,8 @@ public:
 };
 ```
 
-----
+---
+
 ## Complexity
 
 ### Time Complexity
@@ -67,6 +71,7 @@ public:
 1. O(1)
 
 ---
+
 ## Look out
 
 1. The difference between [[Lower Bound]] and [[Upper Bound]] is that ; in [[Upper Bound]]we update answer only if current element is strictly greater.

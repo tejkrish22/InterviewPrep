@@ -6,31 +6,33 @@ unique: false
 link:
 ---
 ---
-## Question
 
+## Question
 
 ### Example
 
-
 ---
+
 ## Code
 
 ```cpp
 
 ```
 
-----
+---
+
 ## Complexity
 
 ### Time Complexity
 
-1. 
+1. O(...)
 
 ### Space Complexity
 
-1. 
+1. O(...)
 
 ---
+
 ## Look out
 
-1. 
+1. ...

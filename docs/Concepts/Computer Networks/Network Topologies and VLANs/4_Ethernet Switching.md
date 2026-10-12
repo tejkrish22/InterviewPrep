@@ -11,6 +11,7 @@
 ## MAC Address Table
 
 Stores dynamic mappings in switch memory:
+
 - **Fields:** `MAC Address` | `VLAN ID` | `Port Number` | `Aging Timer`
 - **Aging Timer:** Removes stale entries (default ~300s) when devices disconnect or move.
 

@@ -6,9 +6,11 @@ unique: true
 link: https://takeuforward.org/plus/dsa/problems/find-minimum-in-rotated-sorted-array?subject=dsa&approach=binary-search&tab=editorial
 ---
 ---
+
 ## Question
 
 Given an integer array nums of size N, sorted in ascending order with distinct values, and then **rotated** an unknown number of times (between 1 and N), find the **minimum** element in the array.
+
 ### Example
 
 Input : nums = [4, 5, 6, 7, 0, 1, 2, 3]
@@ -16,6 +18,7 @@ Output: 0
 Explanation: Here, the element 0 is the minimum element in the array.
 
 ---
+
 ## Code
 
 ```cpp
@@ -56,7 +59,8 @@ class Solution {
 };
 ```
 
-----
+---
+
 ## Complexity
 
 ### Time Complexity
@@ -68,6 +72,7 @@ class Solution {
 1. O(1)
 
 ---
+
 ## Look out
 
 1. Find the sorted half

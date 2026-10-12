@@ -6,15 +6,19 @@ unique: true
 link: https://takeuforward.org/plus/dsa/problems/search-x-in-sorted-array?subject=dsa&approach=optimal&sidebar=open
 ---
 ---
+
 ## Question
 
 Given a sorted array of integers nums with 0-based indexing, find the **index** of a specified **target** integer. If the target is found in the array, return its index. If the target is not found, return -1.
+
 ### Example
+
 Input: nums = [-1,0,3,5,9,12], target = 9
 Output: 4
 Explanation: The target integer 9 exists in nums and its index is 4
 
 ---
+
 ## Code
 
 ```cpp
@@ -50,13 +54,14 @@ public:
 };
 ```
 
-----
+---
+
 ## Complexity
 
 ### Time Complexity
 
 1. **O(log(N))** (where N is the size of the given array)  
-2. In each step, the search space is divided into two halves. 
+2. In each step, the search space is divided into two halves.
 3. In the worst case, this process will continue until the search space can no longer be divided and the number of divisions required to reduce the array size to one is log(N), making the overall time complexity O(log(N)).
 
 ### Space Complexity
@@ -65,6 +70,7 @@ public:
 2. Using only a couple of variables.
 
 ---
+
 ## Look out
 
 1. `while (low<=high)`

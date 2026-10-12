@@ -1,9 +1,8 @@
----
-notion-id: 33cd9a38-fc71-8036-8a55-ec31ea677746
----
 ## What is Polymorphism?
+
 **Polymorphism** means **“many forms”**. In OOP, it allows the **same interface (function name / call)** to behave **differently** depending on the object.
 In C++, polymorphism is mainly of two types:
+
 1. **Compile-time (Static) polymorphism** → decided at compile time
     - **Function (method) overloading**
     - **Operator overloading**
@@ -11,11 +10,15 @@ In C++, polymorphism is mainly of two types:
     - **Method overriding** using `virtual` functions
 
 ---
+
 ## 1) Compile-time Polymorphism (Static)
+
 ### A) Method / Function Overloading
+
 **Overloading** means defining **multiple functions with the same name** but **different parameter lists** (different number/type/order of parameters).
 ✅ Resolved at **compile time**.
 Rules / Notes:
+
 - Return type alone **cannot** differentiate overloads.
 - Overloading can happen in the same class (common).
 
@@ -47,9 +50,12 @@ int main() {
 ```
 
 ---
+
 ### B) Operator Overloading (brief)
+
 C++ allows giving special meaning to operators for user-defined types.
 Example (idea): `Complex c3 = c1 + c2;` where `+` is overloaded.
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -105,10 +111,14 @@ int main() {
 ```
 
 ---
+
 ## 2) Run-time Polymorphism (Dynamic)
+
 ### Method Overriding (Virtual Functions)
+
 **Overriding** means a derived class provides its **own implementation** of a base class method with the **same signature**.
 ✅ Resolved at **run time** using:
+
 - `virtual` keyword in base class
 - base class pointer/reference calling derived object
 
@@ -152,6 +162,7 @@ int main() {
 ```
 
 ---
+
 ## Overloading vs Overriding (Very important)
 
 | Feature | Overloading | Overriding |
@@ -163,13 +174,17 @@ int main() {
 | Purpose | Multiple ways to call a function | Change behavior in derived class |
 
 ---
+
 ## Virtual function notes (Interview points)
+
 - If a function is **not virtual**, calling it through a base pointer will use **base version** (early binding).
 - Use `override` in derived class to catch mistakes (signature mismatch).
 - Always prefer a **virtual destructor** in a polymorphic base class.
 
 ---
+
 ## Quick example: Without `virtual` (what goes wrong)
+
 ```c++
 class Base {
 public:
@@ -189,7 +204,9 @@ int main() {
 ```
 
 ---
+
 ## Summary
+
 - **Polymorphism** = one interface, many forms.
 - **Overloading** → compile-time polymorphism.
 - **Overriding (virtual)** → run-time polymorphism.

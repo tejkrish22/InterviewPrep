@@ -9,7 +9,7 @@
 | **Isolation**  | NA                 | Isolated from other process          | Not Isolated inside same process           |
 | **Sharing**    | NA                 | Limited sharing with other processes | Shares memory and resources of the process |
 
-1. Thread shares 
+1. Thread shares
 	1. code
 	2. heap
 	3. globals

@@ -6,6 +6,7 @@ unique: true
 link: https://takeuforward.org/plus/dsa/problems/search-in-rotated-sorted-array-2?subject=dsa&approach=optimal&sidebar=open
 ---
 ---
+
 ## Question
 
 Given an integer array nums, sorted in ascending order (may contain duplicate values) and a target value **k**. Now the array is **rotated** at some pivot point unknown to you. Return True if k is present and otherwise, return False.
@@ -17,6 +18,7 @@ Output: True
 Explanation: The element 3 is present in the array. So, the answer is True.
 
 ---
+
 ## Code
 
 ```cpp
@@ -72,7 +74,8 @@ class Solution {
 };
 ```
 
-----
+---
+
 ## Complexity
 
 ### Time Complexity
@@ -81,9 +84,10 @@ class Solution {
 
 ### Space Complexity
 
-1.  O (1)
+1. O (1)
 
 ---
+
 ## Look out
 
 1. The main crux of the question is ***one half is always sorted, find that half***.

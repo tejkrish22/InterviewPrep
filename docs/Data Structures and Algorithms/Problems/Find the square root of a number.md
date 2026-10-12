@@ -6,9 +6,11 @@ unique: true
 link: https://takeuforward.org/plus/dsa/problems/find-square-root-of-a-number?subject=dsa&approach=binary-search&tab=submissions
 ---
 ---
+
 ## Question
 
 Given a positive integer n. Find and return its **square root**. If n is not a perfect square, then return the floor value of sqrt(n).
+
 ### Example
 
 Input: n = 36
@@ -16,6 +18,7 @@ Output: 6
 Explanation: 6 is the square root of 36.
 
 ---
+
 ## Code
 
 ```cpp
@@ -44,7 +47,8 @@ class Solution {
 
 ```
 
-----
+---
+
 ## Complexity
 
 ### Time Complexity
@@ -56,6 +60,7 @@ class Solution {
 1. O (1)
 
 ---
+
 ## Look out
 
 1. Integer overflows during addition and multiplication.

@@ -6,9 +6,11 @@ unique: false
 link: https://takeuforward.org/plus/dsa/problems/first-and-last-occurrence?subject=dsa&approach=optimal
 ---
 ---
+
 ## Question
 
 Given an array of integers nums sorted in non-decreasing order, find the **starting** and **ending** position of a given target value. If the target is not found in the array, return [-1, -1].
+
 ### Example
 
 Input: nums = [5, 7, 7, 8, 8, 10], target = 8
@@ -16,6 +18,7 @@ Output: [3, 4]
 Explanation:The target is 8, and it appears in the array at indices 3 and 4, so the output is [3,4]
 
 ---
+
 ## Code
 
 ```cpp
@@ -75,7 +78,8 @@ public:
 };
 ```
 
-----
+---
+
 ## Complexity
 
 ### Time Complexity
@@ -87,6 +91,7 @@ public:
 1. O (1)
 
 ---
+
 ## Look out
 
-1. 
+1.

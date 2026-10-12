@@ -9,7 +9,7 @@
 5. Congestion Control
 6. Full Duplex Communication
 
-## TCP Segment 
+## TCP Segment
 
 1. TCP Segment mainly consists of header and payload.
 2. Unlike UDP, TCP header size varies from 20 - 60 bytes.
@@ -54,5 +54,3 @@
 	1. Client -> Server (SYN) | seq = x
 	2. Client <- Server (SYN+ACK) | seq = y, ack = x+1
 	3. Client -> Server (ACK) | seq = x +1, ack y+1
-
-

@@ -3,7 +3,7 @@
 1. Congestion happens in the network.
 2. The router must receive these packets, temporarily store them in queues, process them, and forward them according to its routing table.
 3. However, every router has a finite capacity. Its buffers are limited, its processing power is limited, and its outgoing links can transmit only a certain amount of traffic at a time.
-4. If incoming traffic exceeds the router's capacity, packets begin accumulating in its queues. 
+4. If incoming traffic exceeds the router's capacity, packets begin accumulating in its queues.
 5. Eventually the router reaches a point where it can no longer accept additional packets efficiently.
 6. TCP should be able to handle the congestion.
 
@@ -38,6 +38,7 @@ The growth and recovery rules below describe **classic TCP Reno**; other algorit
 	5. Multiplicative Decrease
 		1. Eventually, packet loss may occur again.
 		2. When TCP interprets packet loss as a congestion signal, it reacts aggressively by reducing the congestion window.
+
 ## Fast Recovery
 
 1. Two classic indications of possible packet loss are:
@@ -69,6 +70,7 @@ The growth and recovery rules below describe **classic TCP Reno**; other algorit
 |Prevents receiver buffer overflow|Reduces the risk of network congestion|
 |Based on Receiver Window (rwnd)|Based on Congestion Window (cwnd)|
 |Focuses on receiver capacity|Focuses on network capacity|
+
 ## TCP Connection Termination
 
 1. Normal TCP connection termination commonly uses four packets, but not always. Either side can initiate it.

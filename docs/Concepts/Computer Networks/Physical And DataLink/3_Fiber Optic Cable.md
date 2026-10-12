@@ -14,7 +14,7 @@
 	1. Innermost glass or plastic part
 	2. Carries the light signal
 2. Cladding
-	1. Surrounds the core 
+	1. Surrounds the core
 	2. Reflects the light back into the core
 	3. Keeps lights travelling forward
 3. Coating

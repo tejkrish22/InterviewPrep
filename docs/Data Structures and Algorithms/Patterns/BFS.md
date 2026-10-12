@@ -1,15 +1,21 @@
-# BFS (Breadth-First Search)
+---
+aliases:
+  - Breadth-First Search
+---
 
 ## Recognition Cues
+
 - Shortest path in unweighted graphs or uniform-cost grid traversals, level-order traversal.
 - Uses `std::queue`. Guarantees shortest path on first arrival to target node.
 
 ## Common Pitfalls
+
 - **Visited Timing:** Mark node visited when **enqueuing** (not dequeuing) to prevent duplicate additions and TLE.
 
 ## Related Problems
+
 ```dataview
 LIST FROM "Data Structures and Algorithms/Problems"
-WHERE contains(file.outlinks, this.file.link)
-SORT file.ctime asc
+WHERE pattern = [[BFS]]
+SORT file.name ASC
 ```

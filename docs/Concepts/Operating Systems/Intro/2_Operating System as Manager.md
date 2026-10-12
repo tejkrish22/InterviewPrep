@@ -61,7 +61,7 @@
 	3. DMA - OS uses DMA for efficient data transfer
 	4. Buffers - OS uses buffers for temporary I/O data.
 
-## System Calls 
+## System Calls
 
 1. Apps requests OS services using system calls
 2. Ex:
@@ -69,10 +69,7 @@
 	2. allocate memory
 	3. open / read / write memory
 3. The flow, when App needs a service or resource
-	1. App makes a system call 
+	1. App makes a system call
 	2. Kernel validates, checks permissions, and parameters
 	3. Kernel performs required action on hardware or resources
 	4. Result is returned to the application
-
-
-

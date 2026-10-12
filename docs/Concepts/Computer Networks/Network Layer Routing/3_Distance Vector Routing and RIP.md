@@ -1,4 +1,5 @@
 > In dynamic routing, and in Interior Gateway protocols (IGPs); distance vector routing is earliest and most important approach.
+>
 ## Core Idea
 
 1. Each router communicates only with its immediate neighbours and shares its view of how far different destinations are.

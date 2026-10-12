@@ -29,7 +29,7 @@
 	3. who owns file
 	4. read / write / execute permissions
 2. The OS uses user identity, group, ownership, permissions and the requested operation to decide if access is allowed.
-   
+
 ## Layer 4: Controlled Device Access
 
 1. When app requests device access

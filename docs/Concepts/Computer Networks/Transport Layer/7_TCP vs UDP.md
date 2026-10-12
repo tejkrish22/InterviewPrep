@@ -11,5 +11,3 @@
 | Performance     | Reliability adds overhead and possible retransmission delays | Lower built-in overhead; not guaranteed faster |
 | Primary Goal    | Reliable, ordered byte stream | Minimal, connectionless datagram delivery |
 | Usage           | HTTP/1.1, HTTP/2, FTP, Email   | DNS commonly, real-time voice/video, QUIC (HTTP/3) |
-
-

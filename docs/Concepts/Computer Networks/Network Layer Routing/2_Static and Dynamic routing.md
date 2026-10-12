@@ -21,7 +21,7 @@ Routers populate their Routing Information Base (RIB) using either **Static Rout
 
 An **Autonomous System (AS)** is a collection of networks under a single administrative entity (e.g., Google `AS15169`, ISP network).
 
-```
+```text
    ┌─────────────────────────┐             ┌─────────────────────────┐
    │   Autonomous System 1   │   eBGP      │   Autonomous System 2   │
    │  ┌──────┐     ┌──────┐  │ ──────────> │  ┌──────┐     ┌──────┐  │
@@ -60,6 +60,7 @@ An **Autonomous System (AS)** is a collection of networks under a single adminis
 | **iBGP** | Internal BGP | Between routers **within the same** Autonomous System | `200`               | Split Horizon rule (Do not re-advertise iBGP route to iBGP peer) |
 
 ### 2. BGP Best Path Selection Hierarchy (Interview Order)
+
 When a router receives multiple BGP routes for the same prefix, it chooses the best path based on this priority order:
 
 1. **Highest Local Preference:** Local administrator's explicit path choice within the AS.

@@ -10,7 +10,9 @@
 	1. Take raw bits
 	2. Convert them to real signals
 	3. Send them through medium
+
 ---
+
 ## Bandwidth vs Throughput
 
 1. `Bandwidth` : Capacity of the link to carry data, usually measured in bits/second.

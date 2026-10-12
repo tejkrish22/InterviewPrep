@@ -13,4 +13,3 @@
 5. Standardisation
 
 > Networking is not one thing. It is a stack of cooperating responsibilities.
-

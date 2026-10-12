@@ -12,5 +12,3 @@
 	1. Wifi
 	2. Cellular
 	3. Radio Waves
-
-

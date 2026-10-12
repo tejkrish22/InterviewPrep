@@ -1,6 +1,7 @@
 ## Overview
 
-At Layer 3 (Network Layer), data units are called **Datagrams**. 
+At Layer 3 (Network Layer), data units are called **Datagrams**.
+
 - **Header Size:** Variable from **20 bytes** (minimum, no options) up to **60 bytes** (maximum, with options).
 
 ![[ipv4_datagram.png]]

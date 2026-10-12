@@ -6,11 +6,13 @@ unique: false
 link: https://takeuforward.org/plus/dsa/problems/koko-eating-bananas?subject=dsa&approach=binary-search&tab=submissions
 ---
 ---
+
 ## Question
 
 A monkey is given n piles of bananas, where the 'ith' pile has nums[i] bananas. An integer h represents the total time in hours to eat all the bananas.
 Each hour, the monkey chooses a non-empty pile of bananas and eats k bananas. If the pile contains fewer than k bananas, the monkey eats all the bananas in that pile and does not consume any more bananas in that hour.
 Determine the **minimum** number of bananas the monkey must eat per hour to finish all the bananas within h hours.
+
 ### Example
 
 Input: n = 4, nums = [7, 15, 6, 3], h = 8
@@ -18,6 +20,7 @@ Output: 5
 Explanation: If Koko eats 5 bananas/hr, he will take 2, 3, 2, and 1 hour to eat the piles accordingly. So, he will take 8 hours to complete all the piles.
 
 ---
+
 ## Code
 
 ```cpp
@@ -59,7 +62,8 @@ class Solution {
 
 ```
 
-----
+---
+
 ## Complexity
 
 ### Time Complexity
@@ -71,6 +75,7 @@ class Solution {
 1. O(1)
 
 ---
+
 ## Look out
 
 1. Always look out for declaring `long long`, `double` to avoid overflow or precision loss issues

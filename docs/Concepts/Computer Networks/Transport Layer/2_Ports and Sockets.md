@@ -13,6 +13,7 @@
 	4. Internally, the operating system maintains information that maps port numbers to applications and processes.
 	5. It determines which application is associated with the port.
 	6. The data is delivered to the correct application process.
+
 ## Port Number Range
 
 1. Port numbers range from **0 to 65535** - 2^16
@@ -22,6 +23,7 @@
 | 0-1023      | Well Known              | Standardised services and Protocols |
 | 1024-49151  | Registered Ports        | User apps and registered services   |
 | 49152-65535 | Dynamic/ephemeral ports | Temporary Client-Side connections   |
+
 ## Well Known Ports
 
 | **Port(s)** | **Protocol / Service** | **Description**                                  | **Transport Protocol** |
@@ -40,6 +42,7 @@
 | **5432**    | PostgreSQL             | Database service for PostgreSQL                  | TCP                    |
 | **6379**    | Redis                  | In-memory key-value data store                   | TCP                    |
 | **27017**   | MongoDB                | NoSQL database service                           | TCP                    |
+
 ## Are these port numbers mandatory ?
 
 1. A common misconception is that a service can only run on its default port, that is not true.
@@ -55,32 +58,35 @@ The examples below use HTTPS over TCP.
 > **Core Rule:** **IP address** brings the packet to the machine; **Port number** brings it to the specific process listening on that port.
 
 ### 1. How a Packet Reaches the Right Process
-```
+
+```text
 Client Browser ──> Server IP:443 ──> Server OS checks Dest Port (443) ──> Listening Process (Nginx / Load Balancer)
 ```
 
 ### 2. Why Internal App Ports Are Hidden Behind Nginx / Reverse Proxy
+
 Instead of exposing application ports directly (`8080`, `3000`, `9000`), public traffic hits a single entry point (port `443`).
 
-```
+```text
                      ┌──> App A: 8080 (Internal API)
 example.com:443 ──> Nginx / Load Balancer ┼──> App B: 3000 (Internal Web)
                      └──> App C: 9000 (Internal Admin)
 ```
 
-* **Security:** Backend app ports remain hidden behind firewall/VPC.
-* **TLS Termination:** Centralized SSL/TLS certificate handling.
-* **Simplified URLs:** Users connect over clean standard ports (`80`/`443`) without specifying custom port numbers.
-* **Load Balancing & Routing:** Smooth distribution of traffic across internal instances.
+- **Security:** Backend app ports remain hidden behind firewall/VPC.
+- **TLS Termination:** Centralized SSL/TLS certificate handling.
+- **Simplified URLs:** Users connect over clean standard ports (`80`/`443`) without specifying custom port numbers.
+- **Load Balancing & Routing:** Smooth distribution of traffic across internal instances.
 
 ---
 
 ### 3. Handling Multiple Apps Wanting Port 443 (Port Collisions)
-* **Default:** Normally, only one listening socket can bind a given IP + Port + Protocol combination; a conflicting bind fails with `Address already in use`.
-* **Exception:** OS-supported mechanisms such as `SO_REUSEPORT` allow multiple appropriately configured sockets to share an endpoint.
-* **Solution:** Single front process (Nginx/HAProxy/Reverse Proxy) owns port `443` and routes incoming requests dynamically:
-  * **Routing by Hostname (SNI/Host Header):**
-    * `api.example.com` ──> App A (`8080`)
-    * `admin.example.com` ──> App B (`9000`)
-  * **Routing by Path:**
-    * `example.com/dashboard` ──> App C (`3000`)
+
+- **Default:** Normally, only one listening socket can bind a given IP + Port + Protocol combination; a conflicting bind fails with `Address already in use`.
+- **Exception:** OS-supported mechanisms such as `SO_REUSEPORT` allow multiple appropriately configured sockets to share an endpoint.
+- **Solution:** Single front process (Nginx/HAProxy/Reverse Proxy) owns port `443` and routes incoming requests dynamically:
+  - **Routing by Hostname (SNI/Host Header):**
+    - `api.example.com` ──> App A (`8080`)
+    - `admin.example.com` ──> App B (`9000`)
+  - **Routing by Path:**
+    - `example.com/dashboard` ──> App C (`3000`)

@@ -3,7 +3,7 @@
 ## One Switch, Many LANs
 
 1. Network behaviour is not only decided by cable layout, but also decided by
-	1.  Switching Behaviour
+	1. Switching Behaviour
 	2. MAC Learning
 	3. VLAN Membership
 	4. Broadcast Domains

@@ -1,7 +1,7 @@
 ## IPv6 Base Header
 
 1. Fields
-	1. Version - 4 
+	1. Version - 4
 	2. Traffic Class - 8
 	3. Flow Label - 20
 	4. Payload Length - 16
@@ -12,7 +12,7 @@
 2. Total fixed 40 bytes, unlike IPv4's variable
 3. Optional info goes into extension headers
 
-## IPv6 Datagram Design 
+## IPv6 Datagram Design
 
 1. Fixed size base header
 2. Simple forwarding by router

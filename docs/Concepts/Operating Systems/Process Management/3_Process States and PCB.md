@@ -2,7 +2,8 @@
 
 > **Process State:** What is happening to the process right now ?
 
-> **PCB: ** Kernel-side record of everything needed to manage the process
+> **PCB:** Kernel-side record of everything needed to manage the process
+>
 ## Beginner Process States
 
 1. New
@@ -12,7 +13,9 @@
 5. Terminated
 
 ## Process State Flow
+
 ![[process_state_flow.png|440]]
+
 ## Linux states
 
 1. Running or Runnable

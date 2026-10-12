@@ -1,15 +1,21 @@
-# Heap (Priority Queue)
+---
+aliases:
+  - Priority Queue
+---
 
 ## Recognition Cues
+
 - Top K largest/smallest, dynamic median in data stream, merge K sorted lists.
 - Top K Largest $\rightarrow$ Min-Heap of size $K$. Top K Smallest $\rightarrow$ Max-Heap of size $K$.
 
 ## Common Pitfalls
+
 - C++ `priority_queue` is MAX-heap by default; use `greater<T>` for Min-heap.
 
 ## Related Problems
+
 ```dataview
 LIST FROM "Data Structures and Algorithms/Problems"
-WHERE contains(file.outlinks, this.file.link)
-SORT file.ctime asc
+WHERE pattern = [[Heap]]
+SORT file.name ASC
 ```

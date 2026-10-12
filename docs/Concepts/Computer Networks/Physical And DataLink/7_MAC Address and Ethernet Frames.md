@@ -24,6 +24,7 @@ Sizes below are in **bytes** for an untagged Ethernet transmission. The 7-byte p
 | Preamble | SFD | Destination MAC | Source MAC | Ether Type / Length | Data    | FCS |
 | -------- | --- | --------------- | ---------- | ------------------- | ------- | --- |
 | 7        | 1   | 6               | 6          | 2                   | 46-1500 | 4   |
+
 1. Preamble: Helps receiver synchronise the clock and signals
 2. SFD: Marks the start of the frame
 3. Destination MAC: Who should receive it

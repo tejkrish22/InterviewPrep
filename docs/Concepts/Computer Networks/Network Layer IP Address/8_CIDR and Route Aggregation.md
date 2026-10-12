@@ -1,4 +1,4 @@
-##  Classless Inter-Domain Routing
+## Classless Inter-Domain Routing
 
 > Modern way to represent and allocate IP networks.
 
@@ -18,104 +18,6 @@
 	4. `192.168.3.0/24`
 4. Routing table tells for a given destination IP what is the next hop's IP.
 5. Assume for the above given 4 IPs, the next hop is same; then you can replace all 4 entries into 1.
-6. This saves entries in routing table. 
+6. This saves entries in routing table.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-l 
+l

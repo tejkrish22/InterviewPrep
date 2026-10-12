@@ -1,37 +1,47 @@
----
-notion-id: 33cd9a38-fc71-8057-8978-cfb29f50dd6d
----
 ## Object Cloning (Copying objects in C++)
+
 **Object cloning** means creating a new object that is a **copy** of an existing object.
 In C++, copying can happen via:
+
 - **Copy constructor** (copy while creating a new object)
 - **Copy assignment operator** (copy into an existing object)
 
 If a class manages resources (like `new` memory, file handles, sockets), you must think about:
+
 - **Shallow copy** vs **Deep copy**
 - (Rule of 3/5) implementing copy/move properly
 
 ---
+
 ## 1) Copy constructor
+
 Used when a **new object** is created from an existing object.
 **Signature:**
+
 ```c++
 ClassName(const ClassName& other);
 ```
+
 ### When is it called?
+
 - `T b = a;` (copy initialization)
 - `T b(a);` (direct initialization)
 - Passing an object **by value** to a function
 - Returning an object **by value** (copy elision may optimize this)
 
 ---
+
 ## 2) Copy assignment operator
+
 Used when an **existing object** is assigned the value of another existing object.
 **Signature:**
+
 ```c++
 ClassName& operator=(const ClassName& other);
 ```
+
 ### When is it called?
+
 ```c++
 T a;
 T b;
@@ -40,26 +50,35 @@ b = a; // copy assignment
 ```
 
 ---
+
 ## 3) Shallow copy vs Deep copy
+
 ### Shallow copy
+
 - Copies member-by-member **as-is**.
 - If the class has a **pointer**, only the pointer address is copied.
 - Both objects now point to the **same heap memory**.
 
 Problems:
+
 - **Double free** (both destructors try to `delete` the same pointer)
 - Unexpected side effects (changing data through one object affects the other)
 
 ### Deep copy
+
 - Creates a **new separate copy** of dynamically allocated memory.
 - Each object owns its **own** resource.
 
 ---
+
 ## 4) Why default copy is dangerous for pointers
+
 If you don’t write a custom copy constructor/assignment, C++ generates a default one that typically does a **shallow copy**.
 
 ---
+
 ## 5) Example: Shallow copy problem (raw pointer)
+
 ```c++
 #include <bits/stdc++.h>
 using namespace std;
@@ -89,7 +108,9 @@ int main() {
 ```
 
 ---
+
 ## 6) Deep copy using copy constructor + copy assignment (elaborated)
+
 ```c++
 #include <bits/stdc++.h>
 using namespace std;
@@ -153,8 +174,11 @@ int main() {
 ```
 
 ---
+
 ## 7) Rule of 3 (must remember)
+
 If your class defines any one of these, you usually need all three:
+
 1. Destructor
 2. Copy constructor
 3. Copy assignment operator
@@ -162,7 +186,9 @@ If your class defines any one of these, you usually need all three:
 Reason: owning raw resources requires correct copy + cleanup behavior.
 
 ---
+
 ## 8) Interview-friendly summary
+
 - **Copy constructor**: called when creating a new object from another object.
 - **Copy assignment**: called when assigning into an existing object.
 - **Shallow copy**: copies pointer address → shared memory → bugs.

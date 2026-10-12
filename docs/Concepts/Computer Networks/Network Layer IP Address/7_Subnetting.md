@@ -1,9 +1,13 @@
 > What if we want to divide our network into smaller sub networks ?
 
 ## Subnetting /24 to /26
+
 ![[24_to_26_subnet.png|523]]
+
 ## /26 Subnet Ranges
+
 ![[26_subnet_ranges.png|530]]
+
 ## Network, Host and Broadcast
 
 1. Network ID

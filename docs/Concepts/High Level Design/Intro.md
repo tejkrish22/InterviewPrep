@@ -1,6 +1,3 @@
----
-notion-id: 352d9a38-fc71-80a9-9028-df1de7b76bff
----
 Consider the case of starting a Pizza shop with one chef
 
 | # | Analogy (Pizza Shop) | What’s Happening | System Design Term |
