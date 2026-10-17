@@ -17,12 +17,9 @@ The notes are organized into two parts:
 
 ## Data Structures & Algorithms
 
-- **[Pattern Cheat Sheets](./Data%20Structures%20and%20Algorithms/Patterns/)**: 17 core patterns with recognition cues and common pitfalls:
-  - [[Arrays]] | [[Two Pointers]] | [[Sliding Window]] | [[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]
-  - [[Stack]] | [[Queue]] | [[Heap]]
-  - [[Trees]] | [[BST]] | [[Trie]]
-  - [[Graphs]] | [[DFS]] | [[BFS]] | [[Union Find]]
-  - [[Greedy]] | [[Backtracking]] | [[Dynamic Programming]]
+- **[Pattern Cheat Sheets](./Data%20Structures%20and%20Algorithms/Patterns/)**: Core patterns with recognition cues and common pitfalls:
+  - [[Arrays]] | [[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]
+
 - **[Problem Solutions](./Data%20Structures%20and%20Algorithms/Problems/)**: solved problems (Binary Search so far), each tagged with its pattern, sub-pattern, and a confidence rating.
 - **[Problems Table](./Data%20Structures%20and%20Algorithms/Problems.base)**: a table of all solved problems with their pattern and confidence.
 
