@@ -4,6 +4,9 @@ filters:
 views:
   - type: table
     name: Problems
+    groupBy:
+      property: tags
+      direction: ASC
     order:
       - file.name
       - link
@@ -11,6 +14,9 @@ views:
       - SubPattern
       - unique
       - confidence
+      - tags
     sort:
+      - property: tags
+        direction: DESC
       - property: file.ctime
         direction: ASC

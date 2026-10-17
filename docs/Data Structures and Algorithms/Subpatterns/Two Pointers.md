@@ -1,3 +1,7 @@
+---
+parent: "[[Arrays]]"
+---
+
 ## Recognition Cues
 
 - Sorted arrays, pair/triplet searching, container with most water, trapping rain water.

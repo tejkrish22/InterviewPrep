@@ -4,6 +4,7 @@ SubPattern:
 confidence:
 unique: false
 link:
+tags:
 ---
 ---
 
