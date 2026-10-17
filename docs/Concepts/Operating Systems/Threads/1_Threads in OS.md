@@ -1,15 +1,15 @@
 ## What is Thread?
 
 1. A thread is a scheduled execution path inside a process.
-2. A thread has private execution state, but its shares the process environment
+2. A thread has private execution state, but it shares the process environment
 3. Each thread keeps its own
 	1. Program Counter - next instruction
 	2. CPU registers - current working values
 	3. Stack - function calls and local variables
-	4. State - ready, running, blocker or finished
+	4. State - ready, running, blocked or finished
 4. Threads within the same process share
 	1. Code
-	2. Head
+	2. Heap
 	3. Global Variables
 	4. Open Files
 	5. Address space

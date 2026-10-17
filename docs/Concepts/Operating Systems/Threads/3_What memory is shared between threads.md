@@ -2,7 +2,7 @@
 
 1. A process provides one shared environment, and multiple threads execute inside it.
 2. Each thread has its own current execution path, but it does not get a separate process memory space.
-3. Shared process environment: address space + process 0 level resources
+3. Shared process environment: address space + process-level resources
 4. Private thread execution state: the data needed to continue one thread’s current execution.
 
 ## Shared Between Threads
