@@ -1,4 +1,4 @@
-## Recognition Cues
+ . # Recognition Cues
 
 - Subarray sum equals K, prefix sums, contiguous array queries.
 - Prefix sums allow $O(1)$ range sum queries: `sum(L...R) = P[R] - P[L-1]`.
