@@ -33,7 +33,7 @@ The notes are organized into two parts:
 - **[C++](./Concepts/C++%20Notes/)**: Smart pointers (`std::unique_ptr`, `std::shared_ptr`), exception handling, file handling, and templates.
 - **[Cloud Computing](./Concepts/Cloud%20Computing/)**: Cloud computing basics and service models, AWS fundamentals, IAM, and EC2.
 - **[High-Level System Design](./Concepts/High%20Level%20Design/)**: An overview of system design building blocks through a pizza-shop analogy: scaling, microservices, load balancing, caching, queues, rate limiting, and consistency.
-- **[Learn LLM & AI](./Concepts/Learn%20LLM/)**: A 3-week course log covering Ollama, frontier model APIs, Gradio, tools, agentic AI, Hugging Face, tokenizers, transformers, and quantization.
+- **[Learn LLM & AI](./Concepts/Learn%20LLM/)**: Modular guides covering LLM foundations and transformer architecture, inference APIs and Ollama, prompt engineering and Gradio UIs, tool calling, agentic AI, the Hugging Face ecosystem, quantization, and RAG.
 
 ---
 
