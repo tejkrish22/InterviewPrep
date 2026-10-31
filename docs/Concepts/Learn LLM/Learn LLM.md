@@ -68,7 +68,6 @@ Grounding LLMs with dynamic external knowledge:
 - **[[4_RAG Pipelines and Context Management]]**: LangChain `Retriever` vs `LLM` abstractions, model temperature mechanics, Gradio UI, and conversational query rewriting.
 - **[[5_RAG Evaluation and Metrics]]**: Golden datasets, retrieval metrics (MRR, nDCG, Keyword Coverage), and LLM-as-a-judge with Pydantic structured scoring.
 - **[[6_Advanced RAG Techniques]]**: 10 production optimization techniques and building a pure-Python RAG pipeline without LangChain.
-- **[[Rag week summary]]**: Master weekly curriculum summary covering Day 1 through Day 5 video and notebook walkthroughs.
 
 ---
 
