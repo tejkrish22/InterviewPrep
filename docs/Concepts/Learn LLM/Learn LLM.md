@@ -63,6 +63,12 @@ Open-source tooling, libraries, and model compression:
 Grounding LLMs with dynamic external knowledge:
 
 - **[[1_Intro to RAG]]**: Solving static cutoff dates and hallucinations; the 3-phase pipeline: Retrieval $\to$ Prompt Augmentation $\to$ Grounded Generation.
+- **[[2_Vector Embeddings and Semantic Search]]**: Auto-encoding vs auto-regressive models, token vs vector representations, latent space geometry, and distance metrics.
+- **[[3_Chunking and Vector Databases]]**: Document text splitters, chunk size and overlap trade-offs, ChromaDB, and visualizing embeddings with t-SNE.
+- **[[4_RAG Pipelines and Context Management]]**: LangChain `Retriever` vs `LLM` abstractions, model temperature mechanics, Gradio UI, and conversational query rewriting.
+- **[[5_RAG Evaluation and Metrics]]**: Golden datasets, retrieval metrics (MRR, nDCG, Keyword Coverage), and LLM-as-a-judge with Pydantic structured scoring.
+- **[[6_Advanced RAG Techniques]]**: 10 production optimization techniques and building a pure-Python RAG pipeline without LangChain.
+- **[[Rag week summary]]**: Master weekly curriculum summary covering Day 1 through Day 5 video and notebook walkthroughs.
 
 ---
 
