@@ -11,3 +11,17 @@ img,
 p:has(img) {
   text-align: center !important;
 }
+
+// Enable horizontal scrolling for wide Mermaid diagrams
+.mermaid {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  max-width: 100% !important;
+
+  svg {
+    max-width: none !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+}

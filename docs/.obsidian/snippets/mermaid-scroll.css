@@ -1,0 +1,40 @@
+/* Enable horizontal scrolling for Mermaid diagrams in Obsidian (Reading View & Live Preview) */
+.mermaid,
+.block-language-mermaid,
+.cm-embed-block:has(.mermaid) {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  max-width: 100% !important;
+}
+
+/* Allow wide Mermaid SVGs to expand to their natural readable width instead of being shrunk or clipped */
+.mermaid svg,
+.block-language-mermaid svg {
+  max-width: none !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+/* Smooth custom scrollbar for Mermaid diagrams */
+.mermaid::-webkit-scrollbar,
+.block-language-mermaid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.mermaid::-webkit-scrollbar-track,
+.block-language-mermaid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mermaid::-webkit-scrollbar-thumb,
+.block-language-mermaid::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg, rgba(128, 128, 128, 0.3));
+  border-radius: 4px;
+}
+
+.mermaid::-webkit-scrollbar-thumb:hover,
+.block-language-mermaid::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-bg-hover, rgba(128, 128, 128, 0.5));
+}
+
