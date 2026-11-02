@@ -9,7 +9,6 @@ views:
       direction: ASC
     order:
       - file.name
-      - link
       - pattern
       - SubPattern
       - unique
