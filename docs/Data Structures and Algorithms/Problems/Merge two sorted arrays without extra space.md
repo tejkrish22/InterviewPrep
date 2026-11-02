@@ -1,0 +1,87 @@
+---
+pattern: "[[Arrays]]"
+SubPattern: "[[Two Pointers]]"
+confidence: 1
+unique: true
+link: https://takeuforward.org/practice/dsa/merge-two-sorted-arrays-without-extra-space?source=planly&plan=dsa&task=34311091&subject=strivers-180-master-dsa-patterns&tab=problem&solution=optimal-iii
+tags:
+  - striver180
+---
+---
+
+## Question
+
+Given two integer arrays nums1 and nums2. Both arrays are sorted in non-decreasing order. Merge both the arrays into a single array sorted in non-decreasing order.
+
+- The final sorted array should be stored inside the array nums1 and it should be done in-place.
+- nums1 has a length of m + n, where the first m elements denote the elements of nums1 and rest are 0s.
+- nums2 has a length of n.
+
+### Example
+
+Input: nums1 = [-5, -2, 4, 5, 0, 0, 0], nums2 = [-3, 1, 8]
+Output: [-5, -3, -2, 1, 4, 5, 8]
+Explanation:
+The merged array is: [-5, -3, -2, 1, 4, 5, 8], where [-5, -2, 4, 5] are from nums1 and [-3, 1, 8] are from nums2
+
+---
+
+## Code
+
+```cpp
+class Solution {
+public:
+    // Function to merge two sorted arrays nums1 and nums2
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        int i = m-1, j = n-1;
+        int ind = n + m - 1;
+
+        // Until all the elements from nums2 are placed
+        while(j >= 0) {
+            // If nums1[i] >= nums2[j]
+            if(i >= 0 && nums1[i] >= nums2[j]) {
+                // Place the element
+                nums1[ind] = nums1[i];
+                
+                // Move both indices back by one place
+                ind--, i--;
+            }
+            // Otherwise
+            else {
+                // Place the element
+                nums1[ind] = nums2[j];
+                
+                // Move both indices back by one place
+                ind--, j--;
+            }
+        }
+
+        return;
+    }
+};
+
+```
+
+---
+
+## Complexity
+
+### Time Complexity
+
+1. O(n+m)
+
+### Space Complexity
+
+1. O(1)
+
+---
+
+## Look out
+
+1. Also solved with gap method with shell sort
+
+---
+
+## Related Problems
+
+1.
