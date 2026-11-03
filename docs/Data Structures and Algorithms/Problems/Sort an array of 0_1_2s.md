@@ -1,7 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
-confidence: 3
+streak: 0
+last_reviewed:
+next_review: 2026-11-09
+trigger:
 unique: false
 link: https://takeuforward.org/practice/dsa/sort-an-array-of-0's-1's-and-2's?category=two-pointers&source=strivers-180-master-dsa-patterns
 tags:
@@ -24,6 +27,22 @@ The nums array in sorted order has 2 zeroes, 2 ones and 1 two
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+public:
+    void sortZeroOneTwo(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+    }
+};
+```
+
+- TC: O(n log n)
+- SC: O(1)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -58,17 +77,8 @@ public:
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O(n)
-
-### Space Complexity
-
-1. O(1)
+- TC: O(n)
+- SC: O(1)
 
 ---
 

@@ -1,7 +1,10 @@
 ---
 pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
 SubPattern: "[[Find the Sorted Half]]"
-confidence: 1
+streak: 0
+last_reviewed:
+next_review: 2026-11-08
+trigger:
 unique: true
 link: https://takeuforward.org/plus/dsa/problems/find-minimum-in-rotated-sorted-array?subject=dsa&approach=binary-search&tab=editorial
 ---
@@ -20,6 +23,28 @@ Explanation: Here, the element 0 is the minimum element in the array.
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+public:
+    int findMin(vector<int> &arr) {
+        int n = arr.size();
+        int ans = INT_MAX;
+        // Linear scan for the minimum
+        for (int i = 0; i < n; i++) {
+            ans = min(ans, arr[i]);
+        }
+        return ans;
+    }
+};
+```
+
+- TC: O(n)
+- SC: O(1)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -59,17 +84,8 @@ class Solution {
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O (log n)
-
-### Space Complexity
-
-1. O(1)
+- TC: O(log n)
+- SC: O(1)
 
 ---
 

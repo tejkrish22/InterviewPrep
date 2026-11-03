@@ -1,7 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern:
-confidence: 5
+streak: 1
+last_reviewed:
+next_review: 2026-11-15
+trigger:
 unique: false
 link: https://neetcode.io/problems/is-anagram/question
 tags:
@@ -24,6 +27,25 @@ Output: true
 
 ## Code
 
+### Brute Force
+
+```cpp
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        // anagrams are identical once sorted
+        sort(s.begin(), s.end());
+        sort(t.begin(), t.end());
+        return s == t;
+    }
+};
+```
+
+- TC: O(m log m + n log n)
+- SC: O(1)
+
+### Optimal 1
+
 ```cpp
 class Solution {
 public:
@@ -45,17 +67,8 @@ public:
 
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O(m+n)
-
-### Space Complexity
-
-1. O(1)
+- TC: O(m+n)
+- SC: O(1)
 
 ---
 

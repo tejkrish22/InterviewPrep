@@ -1,7 +1,10 @@
 ---
 pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
 SubPattern: "[[Upper and Lower Limits]]"
-confidence: 4
+streak: 1
+last_reviewed:
+next_review: 2026-11-14
+trigger:
 unique: false
 link: https://takeuforward.org/plus/dsa/problems/floor-and-ceil-in-sorted-array?subject=dsa&approach=optimal
 ---
@@ -21,6 +24,34 @@ Explanation: The floor of 5 in the array is 4, and the ceiling of 5 in the array
 
 ## Code
 
+### Brute Force
+
+```cpp
+class Solution {
+public:
+    vector<int> getFloorAndCeil(vector<int> nums, int x) {
+        int n = nums.size();
+        int fl = -1, ce = -1;
+        for (int i = 0; i < n; i++) {
+            // Largest element <= x
+            if (nums[i] <= x) {
+                fl = nums[i];
+            }
+            // Smallest element >= x
+            if (nums[i] >= x && ce == -1) {
+                ce = nums[i];
+            }
+        }
+        return {fl, ce};
+    }
+};
+```
+
+- TC: O(n)
+- SC: O(1)
+
+### Optimal 1
+
 ```cpp
 class Solution {
 public:
@@ -34,8 +65,8 @@ public:
 
         while (low<=high){
             int mid = (low+high)/2;
-            # If eligible candidate we need to find next candidate who is 
-            # greater than the current
+            // If eligible candidate we need to find next candidate who is 
+            // greater than the current
             if (arr[mid]<=x) {
                 ans = arr[mid];
                 low = mid+1;
@@ -57,8 +88,8 @@ public:
 
         while (low<=high){
             int mid = (low+high)/2;
-            # If eligible candidate we need to find next candidate who is 
-            # smaller than the current
+            // If eligible candidate we need to find next candidate who is 
+            // smaller than the current
             if (arr[mid]>=x) {
                 ans = arr[mid];
                 high = mid-1;
@@ -76,18 +107,9 @@ public:
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O (log n)
-2. Standard Binary Search
-
-### Space Complexity
-
-1. O (1)
+- TC: O(log n)
+    - Standard Binary Search
+- SC: O(1)
 
 ---
 

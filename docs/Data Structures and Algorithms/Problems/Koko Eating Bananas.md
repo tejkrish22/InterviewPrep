@@ -1,7 +1,10 @@
 ---
 pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
 SubPattern: "[[Binary Search On Answer]]"
-confidence: 3
+streak: 0
+last_reviewed:
+next_review: 2026-11-11
+trigger:
 unique: false
 link: https://takeuforward.org/plus/dsa/problems/koko-eating-bananas?subject=dsa&approach=binary-search&tab=submissions
 ---
@@ -22,6 +25,35 @@ Explanation: If Koko eats 5 bananas/hr, he will take 2, 3, 2, and 1 hour to eat 
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+   public:
+    int minimumRateToEatBananas(vector<int> arr, int limit) {
+        int n = arr.size();
+        int maxi = *max_element(arr.begin(), arr.end());
+
+        // Try every rate from 1 to max(arr)
+        for (int k = 1; k <= maxi; k++) {
+            long long hrs = 0;
+            for (int i = 0; i < n; i++) {
+                hrs += ceil((double)arr[i] / k);
+            }
+            if (hrs <= limit) {
+                return k;
+            }
+        }
+        return -1;
+    }
+};
+```
+
+- TC: O(n x max(arr))
+- SC: O(1)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -62,17 +94,8 @@ class Solution {
 
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O(n x log(max))
-
-### Space Complexity
-
-1. O(1)
+- TC: O(n x log(max))
+- SC: O(1)
 
 ---
 

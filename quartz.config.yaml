@@ -16,6 +16,8 @@ configuration:
     - Templates
     - Templates/**
     - .obsidian
+    # Obsidian-only page: Bases embeds and Dataview queries don't render on the site
+    - "**/DSA Dashboard.md"
   theme:
     fontOrigin: googleFonts
     cdnCaching: true

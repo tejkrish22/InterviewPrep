@@ -1,7 +1,10 @@
 ---
 pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
 SubPattern: "[[Upper and Lower Limits]]"
-confidence: 5
+streak: 1
+last_reviewed:
+next_review: 2026-11-16
+trigger:
 unique: false
 link: https://takeuforward.org/plus/dsa/problems/first-and-last-occurrence?subject=dsa&approach=optimal
 ---
@@ -20,6 +23,30 @@ Explanation:The target is 8, and it appears in the array at indices 3 and 4, so 
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution{
+public:
+    vector<int> searchRange(vector<int> &arr, int target) {
+        int n = arr.size();
+        int first = -1, last = -1;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == target) {
+                if (first == -1) first = i;
+                last = i;
+            }
+        }
+        return {first, last};
+    }
+};
+```
+
+- TC: O(n)
+- SC: O(1)
+
+### Optimal 1
 
 ```cpp
 class Solution{
@@ -78,17 +105,8 @@ public:
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O (log n)
-
-### Space Complexity
-
-1. O (1)
+- TC: O(log n)
+- SC: O(1)
 
 ---
 

@@ -1,7 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
-confidence: 1
+streak: 0
+last_reviewed: 2026-11-03
+next_review: 2026-11-06
+trigger: "Water between walls: process the shorter side, its running max is the water level"
 unique: false
 link: https://takeuforward.org/practice/dsa/trapping-rainwater?source=planly&plan=dsa&task=34311092&subject=strivers-180-master-dsa-patterns&tab=solution&sidebar=1&solution=optimal-approach
 tags:
@@ -23,7 +26,30 @@ Explanation: As seen from the diagram 1+1+2+1+1=6 unit of water can be trapped
 
 ## Code
 
-### Prefix Sum Based
+### Brute Force
+
+```cpp
+class Solution {
+public:
+    int trap(vector<int> &height) {
+        int n = height.size();
+        int total = 0;
+        for (int i = 0; i < n; i++) {
+            // tallest wall on each side of i (including i)
+            int leftMax = 0, rightMax = 0;
+            for (int j = 0; j <= i; j++) leftMax = max(leftMax, height[j]);
+            for (int j = i; j < n; j++) rightMax = max(rightMax, height[j]);
+            total += min(leftMax, rightMax) - height[i];
+        }
+        return total;
+    }
+};
+```
+
+- TC: O(n^2)
+- SC: O(1)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -106,7 +132,10 @@ public:
 };
 ```
 
-### Two Pointer Based
+- TC: O(n)
+- SC: O(n)
+
+### Optimal 2
 
 ```cpp
 class Solution {
@@ -169,17 +198,8 @@ public:
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O(n)
-
-### Space Complexity
-
-1. O(1)
+- TC: O(n)
+- SC: O(1)
 
 ---
 

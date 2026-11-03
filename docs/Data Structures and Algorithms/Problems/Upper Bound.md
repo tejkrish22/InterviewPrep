@@ -1,7 +1,10 @@
 ---
 pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
 SubPattern: "[[Upper and Lower Limits]]"
-confidence: 3
+streak: 0
+last_reviewed:
+next_review: 2026-11-13
+trigger:
 unique: false
 link: https://takeuforward.org/plus/dsa/problems/upper-bound?subject=dsa&approach=optimal
 ---
@@ -23,6 +26,27 @@ Index 3 is the smallest index such that arr[3] > x.
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution{
+public:
+    int upperBound(vector<int> &arr, int x){
+        int n = arr.size();
+        // first index whose value is > x
+        for (int i = 0; i < n; i++){
+            if (arr[i] > x) return i;
+        }
+        return n;
+    }
+};
+```
+
+- TC: O(n)
+- SC: O(1)
+
+### Optimal 1
 
 ```cpp
 class Solution{
@@ -58,17 +82,8 @@ public:
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O(log n)
-
-### Space Complexity
-
-1. O(1)
+- TC: O(log n)
+- SC: O(1)
 
 ---
 

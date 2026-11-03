@@ -3,7 +3,37 @@ filters:
     - file.inFolder("Data Structures and Algorithms/Problems")
 views:
   - type: table
-    name: Problems
+    name: Due Today
+    filters:
+      and:
+        - next_review <= today()
+        - streak < 3
+    order:
+      - file.name
+      - SubPattern
+      - streak
+      - next_review
+      - trigger
+    sort:
+      - property: next_review
+        direction: ASC
+  - type: table
+    name: Next 7 Days
+    filters:
+      and:
+        - next_review > today()
+        - next_review <= today() + "7d"
+        - streak < 3
+    order:
+      - file.name
+      - SubPattern
+      - streak
+      - next_review
+    sort:
+      - property: next_review
+        direction: ASC
+  - type: table
+    name: All Problems
     groupBy:
       property: tags
       direction: ASC
@@ -11,28 +41,13 @@ views:
       - file.name
       - pattern
       - SubPattern
+      - streak
+      - last_reviewed
+      - next_review
       - unique
-      - confidence
       - tags
     sort:
       - property: tags
         direction: DESC
       - property: file.ctime
-        direction: ASC
-  - type: table
-    name: Review Queue
-    filters:
-      and:
-        - confidence <= 3
-    order:
-      - file.name
-      - pattern
-      - SubPattern
-      - confidence
-      - last_reviewed
-      - trigger
-    sort:
-      - property: last_reviewed
-        direction: ASC
-      - property: confidence
         direction: ASC

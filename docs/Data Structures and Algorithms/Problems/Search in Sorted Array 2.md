@@ -1,7 +1,10 @@
 ---
 pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
 SubPattern: "[[Find the Sorted Half]]"
-confidence: 1
+streak: 0
+last_reviewed:
+next_review: 2026-11-07
+trigger:
 unique: true
 link: https://takeuforward.org/plus/dsa/problems/search-in-rotated-sorted-array-2?subject=dsa&approach=optimal&sidebar=open
 ---
@@ -21,10 +24,31 @@ Explanation: The element 3 is present in the array. So, the answer is True.
 
 ## Code
 
+### Brute Force
+
 ```cpp
 class Solution {
    public:
-    int search(vector<int> &arr, int k) {
+    bool search(vector<int> &arr, int k) {
+        int n = arr.size();
+        // linear scan
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == k) return true;
+        }
+        return false;
+    }
+};
+```
+
+- TC: O(n)
+- SC: O(1)
+
+### Optimal 1
+
+```cpp
+class Solution {
+   public:
+    bool search(vector<int> &arr, int k) {
         int n = arr.size();
 
         int low = 0;
@@ -32,7 +56,7 @@ class Solution {
 
         while (low <= high) {
             int mid = (low + high) / 2;
-            if (arr[mid] == k) return mid;
+            if (arr[mid] == k) return true;
             
             // Edge Case: If all the three pointer have same element
 			// then the sorted part can't be figured out
@@ -41,6 +65,7 @@ class Solution {
 			if (arr[low]==arr[mid] and arr[mid]==arr[high]){
 				low = low + 1;
 				high = high - 1;
+				continue;
 			}
             
             // Identify the sorted half, it is guaranteed that one half is
@@ -69,22 +94,14 @@ class Solution {
                 }
             }
         }
-        return -1;
+        return false;
     }
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O (log n)
-
-### Space Complexity
-
-1. O (1)
+- TC: O(log n) on average, O(n) in the worst case
+    - With many duplicates, the trim step can shrink the range by only 2 per step
+- SC: O(1)
 
 ---
 
@@ -94,7 +111,7 @@ class Solution {
 2. After finding which half is sorted, find if the target is present in the sorted half else move to unsorted half and repeat the procedure.
 3. Handling duplicates — the key difference from [[Search in Sorted Array 1]] :
 	1. When `arr[low] == arr[mid] == arr[high]`, we **cannot determine** which half is sorted. Example: `[3, 3, 1, 2, 3, 3, 3]` — both halves look identical from the endpoints.
-	2. The fix is to **shrink both ends**: `low++`, `high--`. This is safe because `arr[mid] != k` was already checked.
+	2. The fix is to **shrink both ends**: `low++`, `high--`, then `continue` to recompute `mid`. This is safe because `arr[mid] != k` was already checked.
 4. **When `arr[low] == arr[mid]` but `arr[mid] != arr[high]`:** No special handling needed. The code enters the "left half is sorted" branch (`arr[low] <= arr[mid]`). Since all elements from `low` to `mid` are the same value and `arr[mid] != k`, the target can't be in the left half. The inner condition `arr[low] <= k and k < arr[mid]` fails, and we correctly move `low = mid + 1`.
 5. **Comparison signs in the sorted-half check — be precise:**
 

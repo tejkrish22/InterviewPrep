@@ -1,7 +1,10 @@
 ---
 pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
 SubPattern: "[[Find the Sorted Half]]"
-confidence: 1
+streak: 0
+last_reviewed:
+next_review: 2026-11-07
+trigger:
 unique: true
 link: https://takeuforward.org/plus/dsa/problems/search-in-rotated-sorted-array-i?subject=dsa&approach=binary-search
 ---
@@ -20,6 +23,27 @@ Explanation: Here, the target is 0. We can see that 0 is present in the given ro
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+   public:
+    int search(vector<int> &arr, int k) {
+        int n = arr.size();
+        // linear scan
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == k) return i;
+        }
+        return -1;
+    }
+};
+```
+
+- TC: O(n)
+- SC: O(1)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -65,17 +89,8 @@ class Solution {
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O (log n)
-
-### Space Complexity
-
-1. O (1)
+- TC: O(log n)
+- SC: O(1)
 
 ---
 

@@ -18,7 +18,10 @@ const PATTERNS_DIR = "Data Structures and Algorithms/Patterns"
 const SUBPATTERNS_DIR = "Data Structures and Algorithms/Subpatterns"
 const UNSAFE_NAME = /[?,:#^[\]|\\*"<>]/
 const GENERAL_KEYS = ["title", "aliases", "tags", "description", "draft"]
-const PROBLEM_SECTIONS = ["Question", "Code", "Complexity", "Look out"]
+const PROBLEM_SECTIONS = ["Question", "Code", "Look out"]
+// Excluded from the website in quartz.config.yaml, so its Dataview queries only need to work in Obsidian.
+const OBSIDIAN_ONLY = new Set(["Data Structures and Algorithms/DSA Dashboard.md"])
+const DATE = /^\d{4}-\d{2}-\d{2}$/
 
 const errors = []
 const report = (file, message) => errors.push(`${file}: ${message}`)
@@ -114,25 +117,36 @@ function checkGeneralTypes(file, fm) {
 }
 
 function checkProblem(file, fm, body) {
-  checkAllowedKeys(file, fm, [
+  const keys = [
     "pattern",
     "SubPattern",
-    "confidence",
+    "streak",
+    "last_reviewed",
+    "next_review",
+    "trigger",
     "unique",
     "link",
-    ...GENERAL_KEYS,
-  ])
-  for (const key of ["pattern", "SubPattern", "confidence", "unique", "link"]) {
+  ]
+  checkAllowedKeys(file, fm, [...keys, ...GENERAL_KEYS])
+  for (const key of keys) {
     if (!(key in fm)) report(file, `frontmatter \`${key}\` is missing (use the DSA Template)`)
   }
   checkLinkField(file, fm, "pattern", PATTERNS_DIR, { required: true })
   checkLinkField(file, fm, "SubPattern", SUBPATTERNS_DIR, { required: false })
-  if (
-    "confidence" in fm &&
-    !(Number.isInteger(fm.confidence) && fm.confidence >= 1 && fm.confidence <= 5)
-  ) {
-    report(file, "frontmatter `confidence` must be an integer from 1 to 5")
+  if ("streak" in fm && !(Number.isInteger(fm.streak) && fm.streak >= 0 && fm.streak <= 3)) {
+    report(file, "frontmatter `streak` must be an integer from 0 to 3")
   }
+  for (const key of ["last_reviewed", "next_review"]) {
+    const value = fm[key]
+    const ok =
+      value === undefined ||
+      value === null ||
+      value instanceof Date ||
+      (typeof value === "string" && DATE.test(value))
+    if (!ok) report(file, `frontmatter \`${key}\` must be empty or a YYYY-MM-DD date`)
+  }
+  if ("trigger" in fm && fm.trigger !== null && typeof fm.trigger !== "string")
+    report(file, "frontmatter `trigger` must be empty or a string")
   if ("unique" in fm && typeof fm.unique !== "boolean")
     report(file, "frontmatter `unique` must be true or false")
   if ("link" in fm && !/^https?:\/\/\S+$/.test(String(fm.link ?? ""))) {
@@ -195,7 +209,7 @@ for (const file of notes) {
       `H1 heading "${h1[0]}" found; Quartz already shows the file name as the title, so start at ##`,
     )
   }
-  if (body.includes("```dataview")) {
+  if (body.includes("```dataview") && !OBSIDIAN_ONLY.has(file)) {
     const rendered = Dataview().textTransform({ argv: { directory: VAULT } }, body)
     for (const warning of rendered.matchAll(/Unsupported Dataview clause on the website: (.*)/g)) {
       report(file, `dataview query can't be rendered on the website: ${warning[1]}`)

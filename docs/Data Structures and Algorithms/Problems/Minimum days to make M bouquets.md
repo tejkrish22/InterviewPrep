@@ -1,7 +1,10 @@
 ---
 pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
 SubPattern: "[[Binary Search On Answer]]"
-confidence: 4
+streak: 1
+last_reviewed:
+next_review: 2026-11-14
+trigger:
 unique: false
 link: https://takeuforward.org/plus/dsa/problems/minimum-days-to-make-m-bouquets?subject=dsa&approach=binary-search
 ---
@@ -20,6 +23,41 @@ Explanation: On the 12th the first 4 flowers and the last 3 flowers would have a
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+   public:
+    int roseGarden(int n, vector<int> arr, int k, int m) {
+        if (n < (m * k)) return -1;
+        int low = *min_element(arr.begin(), arr.end());
+        int high = *max_element(arr.begin(), arr.end());
+        // try every day in order; the first feasible day is the minimum
+        for (int day = low; day <= high; day++) {
+            int currentRoses = 0;
+            int currentBoqs = 0;
+            for (int i = 0; i < n; i++) {
+                if (arr[i] <= day)
+                    currentRoses += 1;
+                else
+                    currentRoses = 0;
+                if (currentRoses == k) {
+                    currentBoqs += 1;
+                    currentRoses = 0;
+                }
+            }
+            if (currentBoqs >= m) return day;
+        }
+        return -1;
+    }
+};
+```
+
+- TC: O((max-min+1) x n)
+- SC: O(1)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -68,17 +106,9 @@ class Solution {
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O (log(max-min+1) x n)
-
-### Space Complexity
-
-1. O (1)
+- TC: O(log(max-min+1) x n)
+- SC: O(n)
+    - `func` takes `arr` by value and modifies the copy on every call
 
 ---
 

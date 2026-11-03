@@ -1,7 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
-confidence: 3
+streak: 0
+last_reviewed:
+next_review: 2026-11-09
+trigger:
 unique: false
 link: https://takeuforward.org/practice/dsa/3-sum?category=two-pointers&source=strivers-180-master-dsa-patterns
 tags:
@@ -29,6 +32,39 @@ nums[4] + nums[2] + nums[3] = 0
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+public:
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        set<vector<int>> tripletSet;
+        int n = nums.size();
+
+        // Try every triplet
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                for (int k = j + 1; k < n; k++) {
+                    if (nums[i] + nums[j] + nums[k] == 0) {
+                        vector<int> temp = {nums[i], nums[j], nums[k]};
+                        // Sort so duplicate triplets collapse in the set
+                        sort(temp.begin(), temp.end());
+                        tripletSet.insert(temp);
+                    }
+                }
+            }
+        }
+
+        return vector<vector<int>>(tripletSet.begin(), tripletSet.end());
+    }
+};
+```
+
+- TC: O(n^3 x log(no. of unique triplets))
+- SC: O(no. of unique triplets)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -76,17 +112,8 @@ public:
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O(N^2 x log(no. of unique triplets))
-
-### Space Complexity
-
-1. O(2 x no. of the unique triplets) + O(N)
+- TC: O(N^2 x log(no. of unique triplets))
+- SC: O(2 x no. of the unique triplets) + O(N)
 
 ---
 

@@ -15,6 +15,6 @@ parent: "[[Arrays]]"
 
 ```dataview
 LIST FROM "Data Structures and Algorithms/Problems"
-WHERE pattern = [[Two Pointers]]
+WHERE SubPattern = [[Two Pointers]]
 SORT file.name ASC
 ```

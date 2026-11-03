@@ -6,5 +6,7 @@
   "obsidian-linter",
   "multi-column-markdown",
   "dataview",
-  "obsidian-tasks-plugin"
+  "obsidian-tasks-plugin",
+  "homepage",
+  "templater-obsidian"
 ]

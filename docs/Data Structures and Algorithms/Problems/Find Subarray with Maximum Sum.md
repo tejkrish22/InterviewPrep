@@ -1,7 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Linear Scan]]"
-confidence: 2
+streak: 0
+last_reviewed:
+next_review: 2026-11-08
+trigger:
 unique: true
 link: https://takeuforward.org/practice/dsa/kadane's-algorithm?source=planly&planly_plan=dsa&planly_task_id=30201060&planly_day_id=3829451&planly_session_id=291659&subject=strivers-180-master-dsa-patterns&tab=problem&solution=follow-up&sidebar=1
 tags:
@@ -24,6 +27,32 @@ The subarray from index 0 to index 4 has the largest sum = 15
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int n = nums.size();
+        long long maxi = LLONG_MIN;
+        // Try every subarray
+        for (int i = 0; i < n; i++) {
+            long long sum = 0;
+            for (int j = i; j < n; j++) {
+                sum += nums[j];
+                maxi = max(maxi, sum);
+            }
+        }
+        return maxi;
+    }
+};
+```
+
+- TC: O(n^2)
+- SC: O(1)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -60,17 +89,8 @@ public:
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O(n)
-
-### Space Complexity
-
-1. O(1)
+- TC: O(n)
+- SC: O(1)
 
 ---
 

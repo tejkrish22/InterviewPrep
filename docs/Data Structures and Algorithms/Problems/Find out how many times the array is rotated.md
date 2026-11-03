@@ -1,7 +1,10 @@
 ---
 pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
 SubPattern: "[[Find the Sorted Half]]"
-confidence: 3
+streak: 0
+last_reviewed:
+next_review: 2026-11-10
+trigger:
 unique: false
 link: https://takeuforward.org/plus/dsa/problems/find-out-how-many-times-the-array-is-rotated?subject=dsa&approach=binary-search
 ---
@@ -20,6 +23,30 @@ Explanation: The original array should be [0, 1, 2, 3, 4, 5, 6, 7]. So, we can n
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+public:
+    int findKRotation(vector<int> &arr)  {
+        int n = arr.size();
+        // Index of the minimum element is the rotation count
+        int ind = 0;
+        for (int i = 1; i < n; i++) {
+            if (arr[i] < arr[ind]) {
+                ind = i;
+            }
+        }
+        return ind;
+    }
+};
+```
+
+- TC: O(n)
+- SC: O(1)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -56,17 +83,8 @@ public:
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O (log n)
-
-### Space Complexity
-
-1. O (1)
+- TC: O(log n)
+- SC: O(1)
 
 ---
 

@@ -1,7 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
-confidence: 1
+streak: 0
+last_reviewed:
+next_review: 2026-11-06
+trigger:
 unique: true
 link: https://takeuforward.org/practice/dsa/merge-two-sorted-arrays-without-extra-space?source=planly&plan=dsa&task=34311091&subject=strivers-180-master-dsa-patterns&tab=problem&solution=optimal-iii
 tags:
@@ -27,6 +30,37 @@ The merged array is: [-5, -3, -2, 1, 4, 5, 8], where [-5, -2, 4, 5] are from num
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        // Extra array to hold the merged result
+        vector<int> temp;
+        int i = 0, j = 0;
+        while (i < m && j < n) {
+            if (nums1[i] <= nums2[j]) {
+                temp.push_back(nums1[i++]);
+            } else {
+                temp.push_back(nums2[j++]);
+            }
+        }
+        while (i < m) temp.push_back(nums1[i++]);
+        while (j < n) temp.push_back(nums2[j++]);
+
+        for (int k = 0; k < m + n; k++) {
+            nums1[k] = temp[k];
+        }
+    }
+};
+```
+
+- TC: O(m+n)
+- SC: O(m+n)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -62,17 +96,8 @@ public:
 
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O(n+m)
-
-### Space Complexity
-
-1. O(1)
+- TC: O(n+m)
+- SC: O(1)
 
 ---
 

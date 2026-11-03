@@ -1,7 +1,10 @@
 ---
 pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
 SubPattern: "[[Binary Search On Answer]]"
-confidence: 3
+streak: 0
+last_reviewed:
+next_review: 2026-11-12
+trigger:
 unique: true
 link: https://takeuforward.org/plus/dsa/problems/find-square-root-of-a-number?subject=dsa&approach=binary-search&tab=submissions
 ---
@@ -20,6 +23,31 @@ Explanation: 6 is the square root of 36.
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+   public:
+    int floorSqrt(int n) {
+        int ans = 0;
+        // Largest i such that i*i <= n
+        for (int i = 0; i <= n; i++) {
+            if ((long long)i * i <= n) {
+                ans = i;
+            } else {
+                break;
+            }
+        }
+        return ans;
+    }
+};
+```
+
+- TC: O(sqrt(n))
+- SC: O(1)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -47,17 +75,8 @@ class Solution {
 
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O (log n)
-
-### Space Complexity
-
-1. O (1)
+- TC: O(log n)
+- SC: O(1)
 
 ---
 

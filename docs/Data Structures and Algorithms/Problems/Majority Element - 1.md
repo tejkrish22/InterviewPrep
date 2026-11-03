@@ -1,7 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Linear Scan]]"
-confidence: 5
+streak: 1
+last_reviewed:
+next_review: 2026-11-16
+trigger: moore's voting algorithm, choose candidate and verify candidate
 unique: true
 link: https://takeuforward.org/practice/dsa/majority-element-i?category=linear-scan&source=strivers-180-master-dsa-patterns
 tags:
@@ -25,6 +28,35 @@ The number 7 appears 5 times in the 9 sized array
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+public:
+    int majorityElement(vector<int>& arr) {
+        int n = arr.size();
+        // Count occurrences of every element
+        for (int i = 0; i < n; i++) {
+            int cnt = 0;
+            for (int j = 0; j < n; j++) {
+                if (arr[j] == arr[i]) {
+                    cnt++;
+                }
+            }
+            if (cnt > n / 2) {
+                return arr[i];
+            }
+        }
+        return -1;
+    }
+};
+```
+
+- TC: O(n^2)
+- SC: O(1)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -63,17 +95,8 @@ public:
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O(n)
-
-### Space Complexity
-
-1. O(1)
+- TC: O(n)
+- SC: O(1)
 
 ---
 

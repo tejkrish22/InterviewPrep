@@ -1,7 +1,10 @@
 ---
 pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
 SubPattern: "[[Upper and Lower Limits]]"
-confidence: 4
+streak: 1
+last_reviewed:
+next_review: 2026-11-13
+trigger:
 unique: false
 link: https://takeuforward.org/plus/dsa/problems/search-insert-position?subject=dsa&approach=optimal
 ---
@@ -21,6 +24,27 @@ Explanation: The target value 5 is found at index 2 in the sorted array. Hence, 
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+   public:
+    int searchInsert(vector<int> &arr, int target) {
+        int n = arr.size();
+        // first index whose value is >= target
+        for (int i = 0; i < n; i++) {
+            if (arr[i] >= target) return i;
+        }
+        return n;
+    }
+};
+```
+
+- TC: O(n)
+- SC: O(1)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -58,17 +82,8 @@ class Solution {
 
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O (log n)
-
-### Space Complexity
-
-1. O (1)
+- TC: O(log n)
+- SC: O(1)
 
 ---
 

@@ -20,8 +20,9 @@ The notes are organized into two parts:
 - **[Pattern Cheat Sheets](./Data%20Structures%20and%20Algorithms/Patterns/)**: Core patterns with recognition cues and common pitfalls:
   - [[Arrays]] | [[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]
 
-- **[Problem Solutions](./Data%20Structures%20and%20Algorithms/Problems/)**: solved problems (Binary Search so far), each tagged with its pattern, sub-pattern, and a confidence rating.
-- **[Problems Table](./Data%20Structures%20and%20Algorithms/Problems.base)**: a table of all solved problems with their pattern and confidence.
+- **[Problem Solutions](./Data%20Structures%20and%20Algorithms/Problems/)**: solved problems, each tagged with its pattern, sub-pattern, and revision schedule.
+- **[Problems Table](./Data%20Structures%20and%20Algorithms/Problems.base)**: problems due for revision today, coming up this week, and the full list.
+- **[[DSA Framework]]**: the daily routine and revision rules used for these notes.
 
 ---
 
@@ -44,14 +45,17 @@ Every DSA problem follows the same structure (see the DSA Template):
 ```markdown
 ---
 pattern: "[[Pattern]]"         # e.g. Binary Search
-SubPattern: "[[Sub-pattern]]"  # optional, e.g. Binary Search On Answer
-confidence: 3                  # 1 (shaky) to 5 (solid)
+SubPattern: "[[Sub-pattern]]"  # e.g. Binary Search On Answer
+streak: 0                      # clean re-solves in a row; 3 = retired
+last_reviewed: 2026-11-03
+next_review: 2026-11-04        # empty when retired
+trigger: "When I see X, I try Y"
 unique: false
 link: https://...              # problem statement
 ---
 
 ## Question       # problem statement, with an ### Example
-## Code           # C++ solution
-## Complexity     # ### Time Complexity and ### Space Complexity
+## Key Insight    # the idea that unlocks the optimal solution
+## Code           # ### Brute Force and ### Optimal 1 in C++, each with TC and SC
 ## Look out       # edge cases and pitfalls
 ```

@@ -1,7 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern:
-confidence: 4
+streak: 1
+last_reviewed:
+next_review: 2026-11-15
+trigger:
 unique: false
 link: https://neetcode.io/problems/two-integer-sum/question
 tags:
@@ -23,6 +26,29 @@ Output: [0,1]
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& arr, int target) {
+        int n = arr.size();
+        // Try every pair
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (arr[i] + arr[j] == target) return {i, j};
+            }
+        }
+        return {-1, -1};
+    }
+};
+```
+
+- TC: O(n^2)
+- SC: O(1)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -46,17 +72,8 @@ class Solution {
 
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O(n)
-
-### Space Complexity
-
-1. O(n)
+- TC: O(n)
+- SC: O(n)
 
 ---
 

@@ -1,7 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Linear Scan]]"
-confidence: 1
+streak: 0
+last_reviewed:
+next_review: 2026-11-05
+trigger:
 unique: true
 link: https://takeuforward.org/practice/dsa/majority-element-ii?category=linear-scan&source=strivers-180-master-dsa-patterns&sidebar=0&tab=solution&solution=optimal
 tags:
@@ -24,6 +27,40 @@ Therefore the elements appearing 3 or more times is : [1]
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+public:
+    vector<int> majorityElementTwo(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> result;
+        for (int i = 0; i < n; i++) {
+            // Skip if already added
+            if (find(result.begin(), result.end(), nums[i]) != result.end()) {
+                continue;
+            }
+            int cnt = 0;
+            for (int j = 0; j < n; j++) {
+                if (nums[j] == nums[i]) {
+                    cnt++;
+                }
+            }
+            if (cnt > n / 3) {
+                result.push_back(nums[i]);
+            }
+        }
+        return result;
+    }
+};
+```
+
+- TC: O(n^2)
+- SC: O(1)
+    - Excluding the output list, which holds at most 2 elements
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -112,17 +149,8 @@ public:
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O(n)
-
-### Space Complexity
-
-1. O(1)
+- TC: O(n)
+- SC: O(1)
 
 ---
 

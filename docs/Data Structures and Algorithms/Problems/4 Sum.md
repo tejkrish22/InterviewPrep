@@ -1,7 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
-confidence: 2
+streak: 0
+last_reviewed:
+next_review: 2026-11-08
+trigger:
 unique: false
 link: https://takeuforward.org/practice/dsa/4-sum?category=two-pointers&source=strivers-180-master-dsa-patterns
 tags:
@@ -28,6 +31,42 @@ nums[1] + nums[0] + nums[2] + nums[3] = 7
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+public:
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        set<vector<int>> quadSet;
+        int n = nums.size();
+
+        // Try every quadruplet
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                for (int k = j + 1; k < n; k++) {
+                    for (int l = k + 1; l < n; l++) {
+                        long long sum = (long long)nums[i] + nums[j] + nums[k] + nums[l];
+                        if (sum == target) {
+                            vector<int> temp = {nums[i], nums[j], nums[k], nums[l]};
+                            // Sort so duplicate quadruplets collapse in the set
+                            sort(temp.begin(), temp.end());
+                            quadSet.insert(temp);
+                        }
+                    }
+                }
+            }
+        }
+
+        return vector<vector<int>>(quadSet.begin(), quadSet.end());
+    }
+};
+```
+
+- TC: O(n^4 x log(no. of unique quadruplets))
+- SC: O(no. of unique quadruplets)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -84,17 +123,8 @@ public:
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O(n^3)
-
-### Space Complexity
-
-1. O(1)
+- TC: O(n^3)
+- SC: O(1)
 
 ---
 

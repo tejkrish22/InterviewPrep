@@ -26,6 +26,9 @@
     "TQ_show_tree": "checkbox",
     "TQ_show_urgency": "checkbox",
     "Date": "date",
-    "confidence": "number"
+    "streak": "number",
+    "last_reviewed": "date",
+    "next_review": "date",
+    "trigger": "text"
   }
 }

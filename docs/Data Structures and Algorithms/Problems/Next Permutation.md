@@ -1,7 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
-confidence: 1
+streak: 0
+last_reviewed:
+next_review: 2026-11-05
+trigger:
 unique: false
 link: https://takeuforward.org/practice/dsa/next-permutation?source=planly&plan=dsa&task=34311090&subject=strivers-180-master-dsa-patterns&tab=solution&solution=optimal
 tags:
@@ -32,6 +35,56 @@ The next permutation of [1,2,3] is [1,3,2].
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+public:
+    // Generate every permutation (as index choices)
+    void generate(vector<int>& nums, vector<int>& cur, vector<bool>& used, vector<vector<int>>& all) {
+        int n = nums.size();
+        if ((int)cur.size() == n) {
+            all.push_back(cur);
+            return;
+        }
+        for (int i = 0; i < n; i++) {
+            if (used[i]) continue;
+            used[i] = true;
+            cur.push_back(nums[i]);
+            generate(nums, cur, used, all);
+            cur.pop_back();
+            used[i] = false;
+        }
+    }
+
+    void nextPermutation(vector<int>& nums) {
+        int n = nums.size();
+        vector<vector<int>> all;
+        vector<int> cur;
+        vector<bool> used(n, false);
+        generate(nums, cur, used, all);
+        sort(all.begin(), all.end());
+
+        // first permutation strictly greater than nums
+        for (auto& p : all) {
+            if (p > nums) {
+                nums = p;
+                return;
+            }
+        }
+        // nums was the last permutation, wrap to the smallest
+        nums = all[0];
+    }
+};
+```
+
+- TC: O(n! x n x n log n)
+    - Generating all n! permutations costs O(n! x n); sorting them takes O(n! log(n!)) = O(n! x n log n) comparisons, each O(n).
+- SC: O(n! x n)
+    - All permutations are stored.
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -73,17 +126,8 @@ public:
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O(n)
-
-### Space Complexity
-
-1. O(1)
+- TC: O(n)
+- SC: O(1)
 
 ---
 

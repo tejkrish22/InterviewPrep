@@ -1,7 +1,10 @@
 ---
 pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
 SubPattern: "[[Upper and Lower Limits]]"
-confidence: 3
+streak: 0
+last_reviewed:
+next_review: 2026-11-12
+trigger:
 unique: false
 link: https://takeuforward.org/plus/dsa/problems/lower-bound-?subject=dsa&approach=optimal
 ---
@@ -24,10 +27,33 @@ Index 1 is the smallest index such that arr[1] >= x.
 
 ## Code
 
+### Brute Force
+
 ```cpp
 class Solution{
 public:
-    int upperBound(vector<int> &arr, int x){
+    int lowerBound(vector<int> &arr, int x){
+        int n = arr.size();
+        // First index with value >= x
+        for (int i = 0; i < n; i++) {
+            if (arr[i] >= x) {
+                return i;
+            }
+        }
+        return n;
+    }
+};
+```
+
+- TC: O(n)
+- SC: O(1)
+
+### Optimal 1
+
+```cpp
+class Solution{
+public:
+    int lowerBound(vector<int> &arr, int x){
         int n = arr.size();
         // Initialize the pointers
         int low = 0;
@@ -58,18 +84,9 @@ public:
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O(log n)
-2. Every iteration search space is becoming half
-
-### Space Complexity
-
-1. O(1)
+- TC: O(log n)
+    - Every iteration search space is becoming half
+- SC: O(1)
 
 ---
 

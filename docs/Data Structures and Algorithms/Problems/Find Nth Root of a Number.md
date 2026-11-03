@@ -1,7 +1,10 @@
 ---
 pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
 SubPattern: "[[Binary Search On Answer]]"
-confidence: 2
+streak: 0
+last_reviewed:
+next_review: 2026-11-08
+trigger:
 unique: false
 link: https://takeuforward.org/plus/dsa/problems/find-nth-root-of-a-number?subject=dsa&approach=binary-search&tab=editorial
 ---
@@ -20,6 +23,32 @@ Explanation: The cube root of 27 is equal to 3.
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+public:
+    int NthRoot(int n, int m) {
+        // Try every candidate root
+        for (int x = 0; x <= m; x++) {
+            long long p = 1;
+            for (int i = 0; i < n; i++) {
+                p *= x;
+                if (p > m) break;
+            }
+            if (p == m) return x;
+            if (p > m) return -1;
+        }
+        return -1;
+    }
+};
+```
+
+- TC: O(m x n)
+- SC: O(1)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -66,18 +95,10 @@ class Solution {
 
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. In worst case O (n x log m)
-2. If we use binary exponentiation for power calculation then, O (log n x log m)
-
-### Space Complexity
-
-1. O (1)
+- TC: O(n x log m)
+    - This is the worst case.
+    - If binary exponentiation is used for the power calculation, it becomes O(log n x log m).
+- SC: O(1)
 
 ---
 

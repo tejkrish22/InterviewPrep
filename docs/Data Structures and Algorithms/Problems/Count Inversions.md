@@ -1,7 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Divide and Conquer]]"
-confidence: 1
+streak: 0
+last_reviewed:
+next_review: 2026-11-04
+trigger: "Count pairs i<j with a[i]>a[j]: merge sort, add mid-left+1 when the right element is smaller"
 unique: false
 link: https://takeuforward.org/practice/dsa/count-inversions?category=divide-and-conquer&source=strivers-180-master-dsa-patterns
 tags:
@@ -28,7 +31,7 @@ Output: 5
 
 ## Code
 
-### Manual Count
+### Brute Force
 
 ```cpp
 class Solution {
@@ -59,7 +62,10 @@ public:
 };
 ```
 
-### Using Merge Sort
+- TC: O(n^2)
+- SC: O(1)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -149,17 +155,8 @@ public:
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O(n x log(n))
-
-### Space Complexity
-
-1. O(n)
+- TC: O(n x log(n))
+- SC: O(n)
 
 ---
 

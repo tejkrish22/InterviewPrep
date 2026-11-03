@@ -1,7 +1,10 @@
 ---
 pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
 SubPattern: "[[Binary Search On Answer]]"
-confidence: 3
+streak: 0
+last_reviewed:
+next_review: 2026-11-11
+trigger:
 unique: false
 link: https://takeuforward.org/plus/dsa/problems/find-the-smallest-divisor?subject=dsa&approach=binary-search&sidebar=open
 ---
@@ -23,6 +26,35 @@ The sum is 9(1 + 1 + 2 + 2 + 3) if we choose 2 as a divisor. Upon dividing all 
 ---
 
 ## Code
+
+### Brute Force
+
+```cpp
+class Solution {
+   public:
+    int smallestDivisor(vector<int>& arr, int limit) {
+        int n = arr.size();
+        int maxi = *max_element(arr.begin(), arr.end());
+
+        // Try every divisor from 1 to max(arr)
+        for (int d = 1; d <= maxi; d++) {
+            long long sum = 0;
+            for (int i = 0; i < n; i++) {
+                sum += ceil((double)arr[i] / (double)d);
+            }
+            if (sum <= limit) {
+                return d;
+            }
+        }
+        return -1;
+    }
+};
+```
+
+- TC: O(max(arr) * n)
+- SC: O(1)
+
+### Optimal 1
 
 ```cpp
 class Solution {
@@ -61,17 +93,8 @@ class Solution {
 };
 ```
 
----
-
-## Complexity
-
-### Time Complexity
-
-1. O (log(max(arr)) * n)
-
-### Space Complexity
-
-1. O(1)
+- TC: O(log(max(arr)) * n)
+- SC: O(1)
 
 ---
 
