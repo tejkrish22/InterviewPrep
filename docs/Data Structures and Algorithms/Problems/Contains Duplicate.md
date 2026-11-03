@@ -5,7 +5,7 @@ confidence: 5
 unique: false
 link: https://neetcode.io/practice/practice/neetcode150?topics=Arrays%20%26%20Hashing,Two%20Pointers,Sliding%20Window,Binary%20Search,Linked%20List,Stack,Trees,Heap%20%2F%20Priority%20Queue,Graphs,Advanced%20Graphs,Greedy,Backtracking
 tags:
-  - "#nc150"
+  - nc150
 ---
 ---
 

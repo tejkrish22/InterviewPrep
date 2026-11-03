@@ -19,3 +19,20 @@ views:
         direction: DESC
       - property: file.ctime
         direction: ASC
+  - type: table
+    name: Review Queue
+    filters:
+      and:
+        - confidence <= 3
+    order:
+      - file.name
+      - pattern
+      - SubPattern
+      - confidence
+      - last_reviewed
+      - trigger
+    sort:
+      - property: last_reviewed
+        direction: ASC
+      - property: confidence
+        direction: ASC

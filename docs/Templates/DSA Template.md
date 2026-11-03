@@ -2,6 +2,8 @@
 pattern:
 SubPattern:
 confidence:
+last_reviewed:
+trigger:
 unique: false
 link:
 tags:
