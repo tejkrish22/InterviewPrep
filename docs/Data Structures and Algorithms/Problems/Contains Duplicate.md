@@ -2,6 +2,7 @@
 pattern: "[[Arrays]]"
 SubPattern:
 streak: 1
+times_reviewed: 0
 last_reviewed:
 next_review: 2026-11-15
 trigger:

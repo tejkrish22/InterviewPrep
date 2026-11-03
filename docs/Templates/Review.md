@@ -17,21 +17,22 @@ const today = moment();
 let message = "";
 await app.fileManager.processFrontMatter(file, (fm) => {
   fm.last_reviewed = today.format("YYYY-MM-DD");
+  fm.times_reviewed = (Number(fm.times_reviewed) || 0) + 1;
   if (outcome === "clean") {
     fm.streak = (Number(fm.streak) || 0) + 1;
     if (fm.streak >= 3) {
       fm.next_review = null;
-      message = "Retired after 3 clean solves.";
+      message = `Retired after 3 clean solves. (Reviewed ${fm.times_reviewed} times)`;
       return;
     }
     const days = fm.streak === 1 ? 7 : 21;
     fm.next_review = today.clone().add(days, "days").format("YYYY-MM-DD");
-    message = `Streak ${fm.streak}. Next review in ${days} days.`;
+    message = `Streak ${fm.streak}. Next review in ${days} days. (Reviewed ${fm.times_reviewed} time${fm.times_reviewed > 1 ? "s" : ""})`;
   } else {
     fm.streak = 0;
     const days = outcome === "failed" ? 1 : 3;
     fm.next_review = today.clone().add(days, "days").format("YYYY-MM-DD");
-    message = `Next review in ${days} day${days > 1 ? "s" : ""}.`;
+    message = `Next review in ${days} day${days > 1 ? "s" : ""}. (Reviewed ${fm.times_reviewed} time${fm.times_reviewed > 1 ? "s" : ""})`;
     if (outcome === "failed") message += " Rewrite the trigger and Key Insight now.";
   }
 });

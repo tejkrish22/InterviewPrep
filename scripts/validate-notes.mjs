@@ -121,6 +121,7 @@ function checkProblem(file, fm, body) {
     "pattern",
     "SubPattern",
     "streak",
+    "times_reviewed",
     "last_reviewed",
     "next_review",
     "trigger",
@@ -135,6 +136,9 @@ function checkProblem(file, fm, body) {
   checkLinkField(file, fm, "SubPattern", SUBPATTERNS_DIR, { required: false })
   if ("streak" in fm && !(Number.isInteger(fm.streak) && fm.streak >= 0 && fm.streak <= 3)) {
     report(file, "frontmatter `streak` must be an integer from 0 to 3")
+  }
+  if ("times_reviewed" in fm && !(Number.isInteger(fm.times_reviewed) && fm.times_reviewed >= 0)) {
+    report(file, "frontmatter `times_reviewed` must be an integer >= 0")
   }
   for (const key of ["last_reviewed", "next_review"]) {
     const value = fm[key]

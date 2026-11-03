@@ -26,6 +26,7 @@ TABLE WITHOUT ID
   "<progress value='" + length(filter(rows, (r) => contains(r.file.tags, "#striver180"))) + "' max='179'></progress>" AS "",
   length(rows) AS "All notes",
   length(filter(rows, (r) => r.streak >= 3)) AS "Retired",
+  sum(rows.times_reviewed) AS "Total reviews",
   length(filter(rows, (r) => r.next_review AND r.next_review <= date(today))) AS "Due now",
   length(filter(rows, (r) => r.last_reviewed AND r.last_reviewed >= date(today) - dur(7 days))) AS "Reviewed or added (7d)"
 FROM "Data Structures and Algorithms/Problems"

@@ -2,6 +2,7 @@
 pattern: "[[Arrays]]"
 SubPattern: "[[Linear Scan]]"
 streak: 0
+times_reviewed: 0
 last_reviewed:
 next_review: 2026-11-06
 trigger:

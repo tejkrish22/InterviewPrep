@@ -2,6 +2,7 @@
 pattern: "[[Arrays]]"
 SubPattern: "[[Divide and Conquer]]"
 streak: 0
+times_reviewed: 0
 last_reviewed:
 next_review: 2026-11-04
 trigger: "Count pairs i<j with a[i]>a[j]: merge sort, add mid-left+1 when the right element is smaller"

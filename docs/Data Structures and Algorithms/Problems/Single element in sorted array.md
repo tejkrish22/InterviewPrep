@@ -2,6 +2,7 @@
 pattern: "[[Data Structures and Algorithms/Patterns/Binary Search|Binary Search]]"
 SubPattern:
 streak: 0
+times_reviewed: 0
 last_reviewed:
 next_review: 2026-11-10
 trigger:

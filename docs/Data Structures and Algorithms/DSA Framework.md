@@ -9,6 +9,7 @@ A simple daily system for working through Striver's 180 sheet in about 10 to 12 
 > I have been preparing DSA for a year and have solved about 350 problems (mostly Striver), but I still forget solutions and struggle with unseen problems. I am now doing Striver's 180 sheet on the TUF platform and keep notes in my `InterviewPrep` repo (Obsidian + VS Code, one note per problem from a template, tracked in `Problems.base`).
 >
 > Review my current DSA setup and propose a framework, in a single markdown file, that:
+>
 > 1. Fits a fixed daily routine I can follow every day, including bad days.
 > 2. Has a revision schedule that shows exactly which problems are due today.
 > 3. Builds pattern recognition so I can solve new problems, not just recall old ones.
@@ -22,19 +23,22 @@ A simple daily system for working through Striver's 180 sheet in about 10 to 12 
 ### 1. Why You Forget (Current Setup Review)
 
 What already works:
+
 - One note per problem with a fixed template.
 - `pattern` and `SubPattern` links, plus pattern notes with "Recognition Cues".
 - A `confidence` field and a Base table.
 
 What is missing:
+
 - **No schedule.** `confidence` records how you felt once, but nothing tells you *when* to look at a problem again. Without a due date, revision never happens.
 - **Notes record the solution, not the insight.** The code is copied from TUF. What you need to remember is the one idea that unlocks the problem, and that is rarely written down.
 - **Re-reading instead of re-solving.** Reading a solution feels like knowing it. Only solving it again from a blank editor proves it.
 - **Pattern notes are not being fed.** Recognition Cues are written once and not updated as you solve more problems, so they never become your "how to spot it" guide.
 
 Small bugs found:
+
 - In [[Two Pointers]], the Dataview query uses `WHERE pattern = [[Two Pointers]]`. Problems store it in `SubPattern`, so the list is empty. It should be `WHERE SubPattern = [[Two Pointers]]`. The other subpattern notes have no problem list at all.
-- [[Arrays]] starts with ` . # Recognition Cues`, which breaks the heading.
+- [[Arrays]] starts with `. # Recognition Cues`, which breaks the heading.
 
 ---
 
@@ -56,6 +60,7 @@ What practitioners and prep guides agree on, and what it changed in this plan.
 | The 180 sheet is 179 problems in 17 modules | [TUF](https://takeuforward.org/prep-hub/strivers-180-master-dsa-patterns) | About 10 to 12 weeks at this pace |
 
 Limits of this research:
+
 - Reddit and TUF pages blocked fetching, so Reddit views come from search snippets only.
 - Several sources sell study tools. Treat them as experience reports, not evidence.
 - No source has real data on problems per day or exact intervals. Those numbers are reasonable defaults, not proven ones.
@@ -85,6 +90,7 @@ Two things every day: **revise what is due, then learn new problems.** Nothing e
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
 streak: 1
+times_reviewed: 0
 last_reviewed: 2026-11-03
 next_review: 2026-11-10
 trigger: "Water trapped between walls: process the shorter side, its running max is the level"
@@ -98,6 +104,7 @@ tags:
 | Field | Meaning |
 | --- | --- |
 | `streak` | Clean solves in a row (0 to 3). Replaces `confidence` |
+| `times_reviewed` | Lifetime count of times re-visited / reviewed |
 | `last_reviewed` | Date of the last attempt |
 | `next_review` | Date the problem is due again. Empty means retired |
 | `trigger` | One line: "When I see X, I try Y" |
@@ -186,6 +193,7 @@ No new sheet problems on Sunday.
 #### Problems You Already Solved Before
 
 Many sheet problems are in your earlier 350. Do not skip them, treat them as a review:
+
 - Solve cold with the 15 minute cap, no note open.
 - Clean: write a short note (`trigger`, Key Insight, code), set `streak: 1` and `next_review` in 7 days.
 - Otherwise: full note, handled as a new problem.
@@ -203,6 +211,7 @@ Leave them alone. Do not import or re-note them. The 180 sheet covers the import
 pattern:
 SubPattern:
 streak: 0
+times_reviewed: 0
 last_reviewed:
 next_review:
 trigger:
@@ -284,6 +293,7 @@ To log a review, open the problem note and run **Templater: Insert Templates/Rev
 ### 11. Setup Status
 
 Done:
+
 - DSA Template uses `streak`, `last_reviewed`, `next_review`, `trigger` and has a Key Insight section.
 - `Problems.base` has three views: **Due Today** (default), **Next 7 Days** and **All Problems**.
 - `streak`, `last_reviewed` and `next_review` are typed as number and dates in Obsidian, so dates get a date picker.
@@ -291,6 +301,7 @@ Done:
 - Fixed the [[Two Pointers]] Dataview query and the [[Arrays]] heading.
 
 Your part:
+
 - Most old notes have an empty `trigger`. Fill it in the first time each one comes up for review.
 
 ---

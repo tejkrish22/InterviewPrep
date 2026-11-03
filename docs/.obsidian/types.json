@@ -27,6 +27,7 @@
     "TQ_show_urgency": "checkbox",
     "Date": "date",
     "streak": "number",
+    "times_reviewed": "number",
     "last_reviewed": "date",
     "next_review": "date",
     "trigger": "text"

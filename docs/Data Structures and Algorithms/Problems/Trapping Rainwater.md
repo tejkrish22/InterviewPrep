@@ -2,6 +2,7 @@
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
 streak: 0
+times_reviewed: 0
 last_reviewed: 2026-11-03
 next_review: 2026-11-06
 trigger: "Water between walls: process the shorter side, its running max is the water level"

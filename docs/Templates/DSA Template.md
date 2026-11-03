@@ -2,6 +2,7 @@
 pattern:
 SubPattern:
 streak: 0
+times_reviewed: 0
 last_reviewed: <% tp.date.now("YYYY-MM-DD") %>
 next_review: <% tp.date.now("YYYY-MM-DD", 1) %>
 trigger:

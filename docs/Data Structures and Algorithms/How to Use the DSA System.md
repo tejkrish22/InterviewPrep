@@ -14,11 +14,12 @@ A practical guide to the daily DSA routine in Obsidian. For the reasoning behind
 | Review command | `Ctrl+P` → "Templater: Insert Templates/Review.md" | Logs a review and schedules the next one |
 | DSA Template | `Templates/DSA Template.md` | Applied automatically to new notes in the Problems folder |
 
-Each problem note tracks four properties:
+Each problem note tracks five properties:
 
 | Property | Meaning |
 | --- | --- |
 | `streak` | Clean re-solves in a row. 3 means retired |
+| `times_reviewed` | Lifetime count of times re-visited / reviewed |
 | `last_reviewed` | Date of the last attempt |
 | `next_review` | Date it is due again. Empty means retired |
 | `trigger` | One line: "When I see X, I try Y" |
@@ -91,6 +92,7 @@ No new sheet problems.
 ### Problems You Solved Before
 
 Many sheet problems are in your earlier practice. Treat them as a review:
+
 - Solve cold within 15 minutes, no note open.
 - Clean: write a short note (`trigger`, Key Insight, code). Then run the Review command and pick **Clean**, which sets streak 1 and a review in 7 days.
 - Otherwise: write a full note as a new problem.

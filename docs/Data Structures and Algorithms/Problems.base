@@ -42,6 +42,7 @@ views:
       - pattern
       - SubPattern
       - streak
+      - times_reviewed
       - last_reviewed
       - next_review
       - unique

@@ -47,6 +47,7 @@ Every DSA problem follows the same structure (see the DSA Template):
 pattern: "[[Pattern]]"         # e.g. Binary Search
 SubPattern: "[[Sub-pattern]]"  # e.g. Binary Search On Answer
 streak: 0                      # clean re-solves in a row; 3 = retired
+times_reviewed: 0              # lifetime count of reviews / re-visits
 last_reviewed: 2026-11-03
 next_review: 2026-11-04        # empty when retired
 trigger: "When I see X, I try Y"
