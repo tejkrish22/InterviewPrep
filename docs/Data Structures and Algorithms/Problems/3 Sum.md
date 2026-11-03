@@ -127,3 +127,4 @@ public:
 ## Related Problems
 
 1. [[2 Sum]]
+2. [[4 Sum]]

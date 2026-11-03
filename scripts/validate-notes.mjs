@@ -195,6 +195,8 @@ for (const file of notes) {
     checkProblem(file, fm, body)
   } else if (file.startsWith(`${SUBPATTERNS_DIR}/`)) {
     checkSubpattern(file, fm)
+  } else if (file.startsWith("Data Structures and Algorithms/Archive/")) {
+    // Archived problems retain their problem schema without active problem section checks.
   } else {
     checkAllowedKeys(file, fm, GENERAL_KEYS)
   }
