@@ -8,5 +8,6 @@
   "dataview",
   "obsidian-tasks-plugin",
   "homepage",
-  "templater-obsidian"
+  "templater-obsidian",
+  "calendar"
 ]
