@@ -1,15 +1,14 @@
 ---
 pattern: "[[Arrays]]"
-SubPattern:
-streak: 1
-times_reviewed: 0
-last_reviewed:
-next_review: 2026-11-15
-trigger:
+SubPattern: "[[Hashing]]"
+streak: 2
+times_reviewed: 1
+last_reviewed: 2026-11-05
+next_review: 2026-11-26
+trigger: Traverse the array while maintaining hashmap of visited
 unique: false
-link: https://neetcode.io/problems/two-integer-sum/question
+link: https://takeuforward.org/practice/dsa/two-sum
 tags:
-  - nc150
 ---
 ---
 
