@@ -4,7 +4,7 @@ SubPattern: "[[Linear Scan]]"
 streak: 0
 times_reviewed: 0
 last_reviewed:
-next_review: 2026-11-08
+next_review: 2026-11-13
 trigger:
 unique: true
 link: https://takeuforward.org/practice/dsa/kadane's-algorithm?source=planly&planly_plan=dsa&planly_task_id=30201060&planly_day_id=3829451&planly_session_id=291659&subject=strivers-180-master-dsa-patterns&tab=problem&solution=follow-up&sidebar=1

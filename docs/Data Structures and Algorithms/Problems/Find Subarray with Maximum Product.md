@@ -4,7 +4,7 @@ SubPattern: "[[Linear Scan]]"
 streak: 0
 times_reviewed: 0
 last_reviewed:
-next_review: 2026-11-06
+next_review: 2026-11-12
 trigger:
 unique: false
 link: https://takeuforward.org/practice/dsa/maximum-product-subarray-in-an-array?source=planly&planly_plan=dsa&planly_task_id=30201062&planly_day_id=3829451&planly_session_id=291759&subject=strivers-180-master-dsa-patterns&tab=solution&solution=optimal

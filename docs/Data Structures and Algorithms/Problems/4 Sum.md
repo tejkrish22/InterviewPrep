@@ -4,7 +4,7 @@ SubPattern: "[[Two Pointers]]"
 streak: 0
 times_reviewed: 0
 last_reviewed:
-next_review: 2026-11-08
+next_review: 2026-11-13
 trigger:
 unique: false
 link: https://takeuforward.org/practice/dsa/4-sum?category=two-pointers&source=strivers-180-master-dsa-patterns

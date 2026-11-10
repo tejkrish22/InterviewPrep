@@ -297,7 +297,9 @@ Done:
 - DSA Template uses `streak`, `last_reviewed`, `next_review`, `trigger` and has a Key Insight section.
 - `Problems.base` has three views: **Due Today** (default), **Next 7 Days** and **All Problems**.
 - `streak`, `last_reviewed` and `next_review` are typed as number and dates in Obsidian, so dates get a date picker.
-- The 30 existing notes are scheduled from 2026-11-04 to 2026-11-16, weakest first. That is 2 a day, or 4 on Sundays, so new problems still fit under the cap of 5. Old confidence 4 or 5 starts at `streak: 1`, everything else at 0.
+- All pending problem notes are scheduled to start from **Wednesday, 2026-11-11** onwards, balanced at 3 problems per day (Wed–Sat), leaving Sunday open for blind practice.
+- **Auto Load-Balancing Active:** `Review.md` and `DSA Template.md` automatically check the vault and push dates forward if a target day already has 5 reviews or falls on Sunday.
+- **Rebalance Utility Added:** `Templates/Rebalance Reviews.md` is available via `Ctrl+P` to evenly redistribute overdue reviews whenever you miss days or need to reset your schedule.
 - Fixed the [[Two Pointers]] Dataview query and the [[Arrays]] heading.
 
 Your part:

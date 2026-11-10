@@ -4,7 +4,7 @@ SubPattern: "[[Linear Scan]]"
 streak: 0
 times_reviewed: 0
 last_reviewed:
-next_review: 2026-11-05
+next_review: 2026-11-11
 trigger:
 unique: true
 link: https://takeuforward.org/practice/dsa/majority-element-ii?category=linear-scan&source=strivers-180-master-dsa-patterns&sidebar=0&tab=solution&solution=optimal

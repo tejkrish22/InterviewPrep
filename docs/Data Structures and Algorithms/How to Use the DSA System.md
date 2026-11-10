@@ -11,8 +11,9 @@ A practical guide to the daily DSA routine in Obsidian. For the reasoning behind
 | **DSA Dashboard** (Obsidian only) | Opens when Obsidian starts | Shows what is due today, progress, weak sub-patterns and notes missing a trigger |
 | `Problems.base` | `Data Structures and Algorithms/` | Tables: **Due Today**, **Next 7 Days**, **All Problems** |
 | Problem notes | `Data Structures and Algorithms/Problems/` | One note per problem, with the revision schedule in its properties |
-| Review command | `Ctrl+P` → "Templater: Insert Templates/Review.md" | Logs a review and schedules the next one |
-| DSA Template | `Templates/DSA Template.md` | Applied automatically to new notes in the Problems folder |
+| Review command | `Ctrl+P` → "Templater: Insert Templates/Review.md" | Logs a review and auto load-balances the next date (cap $\le 5$) |
+| Rebalance command | `Ctrl+P` → "Templater: Insert Templates/Rebalance Reviews.md" | Redistributes overdue reviews evenly across days after missed days |
+| DSA Template | `Templates/DSA Template.md` | Applied automatically to new notes in the Problems folder with auto load-balanced scheduling |
 
 Each problem note tracks five properties:
 
@@ -107,5 +108,6 @@ Many sheet problems are in your earlier practice. Treat them as a review:
 | New note shows `<% ... %>` text | It was created outside the Problems folder or inserted with the wrong command. Delete it and create it inside `Problems/` |
 | Logged the wrong outcome | Edit `streak` and `next_review` in the note's Properties panel |
 | Dashboard Progress row shows raw HTML | Delete the `<progress>` line in the Progress query |
-| Too many reviews piling up | Keep the cap of 5, do 2 new problems instead of 3, and clear the rest on Sunday |
+| Too many reviews piling up / missed days | Run `Ctrl+P` → **Templater: Insert Templates/Rebalance Reviews.md** to spread overdue reviews evenly, keep the cap of 5, and clear the rest on Sunday |
+| Auto load-balancing | `Review.md` and `DSA Template.md` automatically push target dates forward if a day already has 5 reviews or falls on Sunday |
 | Want to see the whole schedule | Open `Problems.base` and select **All Problems** |

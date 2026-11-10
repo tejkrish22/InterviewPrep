@@ -4,7 +4,7 @@ SubPattern: "[[Divide and Conquer]]"
 streak: 0
 times_reviewed: 1
 last_reviewed: 2026-11-05
-next_review: 2026-11-06
+next_review: 2026-11-11
 trigger: Leverage merge sort technique, count the pairs before merging
 unique: false
 link: https://takeuforward.org/practice/dsa/reverse-pairs?category=divide-and-conquer&source=strivers-180-master-dsa-patterns
@@ -17,6 +17,7 @@ tags:
 
 Given an integer array nums. Return the number of reverse pairs in the array.
 An index pair (i, j) is called a reverse pair if:
+
 - 0 <= i < j < nums.length
 - nums[i] > 2 * nums[j]
 
@@ -26,8 +27,8 @@ Input: nums = [6, 4, 1, 2, 7]
 Output: 3
 Explanation:
 The reverse pairs are:
-(0, 2) : nums[0] = 6, nums[2] = 1, 6 > 2 * 1
-(0, 3) : nums[0] = 6, nums[3] = 2, 6 > 2 * 2
+(0, 2) : nums[0] = 6, nums[2] = 1, 6 > 2 *1
+(0, 3) : nums[0] = 6, nums[3] = 2, 6 > 2* 2
 (1, 2) : nums[1] = 4, nums[2] = 1, 4 > 2 * 1
 
 ---

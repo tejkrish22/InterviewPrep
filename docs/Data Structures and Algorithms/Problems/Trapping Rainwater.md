@@ -4,7 +4,7 @@ SubPattern: "[[Two Pointers]]"
 streak: 0
 times_reviewed: 0
 last_reviewed: 2026-11-03
-next_review: 2026-11-06
+next_review: 2026-11-12
 trigger: "Water between walls: process the shorter side, its running max is the water level"
 unique: false
 link: https://takeuforward.org/practice/dsa/trapping-rainwater?source=planly&plan=dsa&task=34311092&subject=strivers-180-master-dsa-patterns&tab=solution&sidebar=1&solution=optimal-approach

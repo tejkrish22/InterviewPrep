@@ -4,7 +4,7 @@ SubPattern: "[[Two Pointers]]"
 streak: 0
 times_reviewed: 0
 last_reviewed:
-next_review: 2026-11-06
+next_review: 2026-11-12
 trigger:
 unique: true
 link: https://takeuforward.org/practice/dsa/merge-two-sorted-arrays-without-extra-space?source=planly&plan=dsa&task=34311091&subject=strivers-180-master-dsa-patterns&tab=problem&solution=optimal-iii
