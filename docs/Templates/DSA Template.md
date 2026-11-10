@@ -4,24 +4,7 @@ SubPattern:
 streak: 0
 times_reviewed: 0
 last_reviewed: <% tp.date.now("YYYY-MM-DD") %>
-next_review: <%*
-  const files = app.vault.getMarkdownFiles();
-  const counts = {};
-  for (const f of files) {
-    if (!f.path.startsWith("Data Structures and Algorithms/Problems/")) continue;
-    const cache = app.metadataCache.getFileCache(f);
-    const nr = cache?.frontmatter?.next_review;
-    const s = cache?.frontmatter?.streak;
-    if (nr && (s === undefined || Number(s) < 3)) {
-      counts[nr] = (counts[nr] || 0) + 1;
-    }
-  }
-  let target = moment().add(1, "days");
-  while ((counts[target.format("YYYY-MM-DD")] || 0) >= 5 || target.day() === 0) {
-    target.add(1, "days");
-  }
-  tR += target.format("YYYY-MM-DD");
-%>
+next_review: <% tp.date.now("YYYY-MM-DD", 1) %>
 trigger:
 unique: false
 link:

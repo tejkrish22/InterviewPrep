@@ -8,12 +8,12 @@ A practical guide to the daily DSA routine in Obsidian. For the reasoning behind
 
 | Piece | Where | What it does |
 | --- | --- | --- |
-| **DSA Dashboard** (Obsidian only) | Opens when Obsidian starts | Shows what is due today, progress, weak sub-patterns and notes missing a trigger |
+| **DSA Dashboard** (Obsidian only) | Opens when Obsidian starts | **Today's Plan** (reviews left, how many new problems to take), what is due, progress, weak sub-patterns and notes missing a trigger |
 | `Problems.base` | `Data Structures and Algorithms/` | Tables: **Due Today**, **Next 7 Days**, **All Problems** |
-| Problem notes | `Data Structures and Algorithms/Problems/` | One note per problem, with the revision schedule in its properties |
-| Review command | `Ctrl+P` → "Templater: Insert Templates/Review.md" | Logs a review and auto load-balances the next date (cap $\le 5$) |
-| Rebalance command | `Ctrl+P` → "Templater: Insert Templates/Rebalance Reviews.md" | Redistributes overdue reviews evenly across days after missed days |
-| DSA Template | `Templates/DSA Template.md` | Applied automatically to new notes in the Problems folder with auto load-balanced scheduling |
+| Problem notes | `Data Structures and Algorithms/Problems/` | One note per problem, with the revision schedule in its properties. Problems not on the sheet live in `Archive/` and aren't scheduled |
+| Review command | `Ctrl+P` → "Templater: Insert Templates/Review.md" | Logs a review and schedules the next one |
+| Rebalance command | `Ctrl+P` → "Templater: Insert Templates/Rebalance Reviews.md" | After missed days, spreads everything due over the coming days |
+| DSA Template | `Templates/DSA Template.md` | Applied automatically to new notes in the Problems folder. First review is tomorrow |
 
 Each problem note tracks five properties:
 
@@ -44,15 +44,15 @@ You never need to edit these by hand. The template and the Review command set th
 
 | Pick | When | What happens |
 | --- | --- | --- |
-| Clean | Optimal solution in 15 min, no help | Streak +1. Back in 7 days, then 21 days, then retired |
-| Struggled | Needed the trigger, a hint, took longer, or had bugs | Streak 0. Back in 3 days |
+| Clean | Optimal solution in 15 min, no help | Streak +1. Back in 7 days, then 21 days, then retired. Moved a few days later if that day already has 5 reviews or is a Sunday |
+| Struggled | Needed the trigger, a hint, took longer, or had bugs | Streak 0. Back in exactly 3 days |
 | Failed | Needed the solution | Streak 0. Back tomorrow. **Rewrite the trigger and Key Insight now** |
 
 4. If the `trigger` is empty, write it now. The Missing Trigger list on the dashboard shows which ones still need one.
 
 #### 2. Learn New
 
-Take the next **3** problems from the sheet, or **2** if more than 5 reviews were due.
+Take the number of new problems that **Today's Plan** on the dashboard shows: 3 if today's reviews are 5 or fewer, 2 if 6 to 8, none if more than 8.
 
 1. Read the problem and work through one example by hand.
 2. Write which pattern you think it is and why, before coding.
@@ -77,6 +77,16 @@ Take the next **3** problems from the sheet, or **2** if more than 5 reviews wer
 #### Bad Day
 
 Do only 2 reviews and skip new problems. Never skip reviews to do new ones.
+
+#### Missed Days
+
+Run `Ctrl+P` → **Templater: Insert Templates/Rebalance Reviews.md** once:
+
+1. Start date: tomorrow (the default).
+2. Cap: 3 a day, so new problems still fit.
+3. Skip Sundays: Yes.
+
+Everything that piled up is spread over the next days, without overfilling days that already have reviews.
 
 ---
 
@@ -108,6 +118,6 @@ Many sheet problems are in your earlier practice. Treat them as a review:
 | New note shows `<% ... %>` text | It was created outside the Problems folder or inserted with the wrong command. Delete it and create it inside `Problems/` |
 | Logged the wrong outcome | Edit `streak` and `next_review` in the note's Properties panel |
 | Dashboard Progress row shows raw HTML | Delete the `<progress>` line in the Progress query |
-| Too many reviews piling up / missed days | Run `Ctrl+P` → **Templater: Insert Templates/Rebalance Reviews.md** to spread overdue reviews evenly, keep the cap of 5, and clear the rest on Sunday |
-| Auto load-balancing | `Review.md` and `DSA Template.md` automatically push target dates forward if a day already has 5 reviews or falls on Sunday |
+| Too many reviews piling up / missed days | Run the Rebalance command (see Missed Days). Take only the new problems Today's Plan shows |
+| Review notice says the date was moved | Only Clean reviews move, when their day already has 5 reviews or is a Sunday. Nothing to do |
 | Want to see the whole schedule | Open `Problems.base` and select **All Problems** |

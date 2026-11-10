@@ -13,56 +13,52 @@ const outcome = await tp.system.suggester(
 );
 if (!outcome) return;
 
-// Count current scheduled reviews per day across all active problems
-const files = app.vault.getMarkdownFiles();
-const reviewCounts = {};
-for (const f of files) {
-  if (!f.path.startsWith("Data Structures and Algorithms/Problems/")) continue;
-  if (f.path === file.path) continue; // exclude current file being reviewed
-  const cache = app.metadataCache.getFileCache(f);
-  const nr = cache?.frontmatter?.next_review;
-  const s = cache?.frontmatter?.streak;
-  if (nr && (s === undefined || Number(s) < 3)) {
-    reviewCounts[nr] = (reviewCounts[nr] || 0) + 1;
-  }
-}
-
-// Helper to find next open slot (cap at 5 reviews/day, skip Sunday for normal scheduled reviews)
 const DAILY_CAP = 5;
-function getLoadBalancedDate(startDate, daysToAdd) {
-  let target = startDate.clone().add(daysToAdd, "days");
-  let shifted = false;
-  while ((reviewCounts[target.format("YYYY-MM-DD")] || 0) >= DAILY_CAP || target.day() === 0) {
-    target.add(1, "days");
-    shifted = true;
+const today = moment().startOf("day");
+
+// Scheduled reviews per day, excluding this note and retired problems.
+const load = {};
+for (const f of app.vault.getMarkdownFiles()) {
+  if (!f.path.startsWith("Data Structures and Algorithms/Problems/") || f.path === file.path) continue;
+  const fm = app.metadataCache.getFileCache(f)?.frontmatter;
+  if (fm?.next_review && (Number(fm.streak) || 0) < 3) {
+    const day = String(fm.next_review);
+    load[day] = (load[day] || 0) + 1;
   }
-  return { date: target.format("YYYY-MM-DD"), shifted };
 }
 
-const today = moment();
+// Only long Clean intervals move; short reviews must happen on time.
+function nextOpenDay(days) {
+  const target = today.clone().add(days, "days");
+  while ((load[target.format("YYYY-MM-DD")] || 0) >= DAILY_CAP || target.day() === 0) {
+    target.add(1, "days");
+  }
+  return target;
+}
+
 let message = "";
 await app.fileManager.processFrontMatter(file, (fm) => {
   fm.last_reviewed = today.format("YYYY-MM-DD");
   fm.times_reviewed = (Number(fm.times_reviewed) || 0) + 1;
+
   if (outcome === "clean") {
-    fm.streak = (Number(fm.streak) || 0) + 1;
-    if (fm.streak >= 3) {
+    fm.streak = Math.min((Number(fm.streak) || 0) + 1, 3);
+    if (fm.streak === 3) {
       fm.next_review = null;
-      message = `Retired after 3 clean solves. (Reviewed ${fm.times_reviewed} times)`;
+      message = "Retired after 3 clean solves in a row.";
       return;
     }
-    const baseDays = fm.streak === 1 ? 7 : 21;
-    const { date, shifted } = getLoadBalancedDate(today, baseDays);
-    fm.next_review = date;
-    const note = shifted ? `(auto-balanced to ${date} to respect cap of ${DAILY_CAP}/day)` : `on ${date}`;
-    message = `Streak ${fm.streak}. Next review in ${baseDays} days${note}. (Reviewed ${fm.times_reviewed} time${fm.times_reviewed > 1 ? "s" : ""})`;
+    const days = fm.streak === 1 ? 7 : 21;
+    const date = nextOpenDay(days);
+    fm.next_review = date.format("YYYY-MM-DD");
+    const moved = date.diff(today, "days") - days;
+    message = `Streak ${fm.streak}. Next review on ${fm.next_review}` +
+      (moved > 0 ? ` (${moved} day${moved > 1 ? "s" : ""} later than ${days}, to keep days at ${DAILY_CAP} or fewer).` : ".");
   } else {
     fm.streak = 0;
-    const baseDays = outcome === "failed" ? 1 : 3;
-    const { date, shifted } = getLoadBalancedDate(today, baseDays);
-    fm.next_review = date;
-    const note = shifted ? `(auto-balanced to ${date} to respect cap of ${DAILY_CAP}/day)` : `on ${date}`;
-    message = `Next review in ${baseDays} day${baseDays > 1 ? "s" : ""}${note}. (Reviewed ${fm.times_reviewed} time${fm.times_reviewed > 1 ? "s" : ""})`;
+    const days = outcome === "failed" ? 1 : 3;
+    fm.next_review = today.clone().add(days, "days").format("YYYY-MM-DD");
+    message = `Next review on ${fm.next_review}.`;
     if (outcome === "failed") message += " Rewrite the trigger and Key Insight now.";
   }
 });

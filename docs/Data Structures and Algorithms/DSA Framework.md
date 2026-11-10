@@ -74,7 +74,7 @@ flowchart LR
     A[Open Due Today view] --> B[Re-solve up to 5 due<br/>problems cold]
     B --> C[Mark Clean / Struggled / Failed]
     C --> D[Update streak<br/>and next_review]
-    D --> E[Solve 3 new sheet problems]
+    D --> E[Solve the new problems<br/>the dashboard allows]
     E --> F[Write note:<br/>trigger + key insight]
     F --> G[next_review = tomorrow]
 ```
@@ -122,6 +122,8 @@ After every review, pick one outcome:
 | Clean | Optimal solution in 15 min or less, no help | +1 | In 7 days at streak 1, in 21 days at streak 2. At streak 3 the problem is **retired**: clear `next_review` |
 
 - Failed: before moving on, rewrite the `trigger` and Key Insight so they would have brought the idea back.
+- Failed and Struggled dates never move: a problem you just missed must come back on time.
+- Clean dates (7 and 21 days) move to the next day with room if their day already has 5 reviews or is a Sunday. A few days' slack doesn't hurt a long interval.
 - Retiring problems is what keeps the daily pile small. A problem that goes clean three times is learned.
 - Failing a review is the system working. Those are exactly the problems you would have failed in an interview.
 
@@ -131,17 +133,18 @@ After every review, pick one outcome:
 
 #### Step 1: Revise (Up to 75 min)
 
-1. Open `Problems.base` and select the **Due Today** view.
+1. Open Obsidian. The dashboard shows **Today's Plan** and the **Due Today** table.
 2. For each due problem, oldest `next_review` first:
 	1. Open it on TUF. **Do not open the note.**
 	2. Solve it from a blank editor. Cap at 15 minutes.
 	3. If stuck, read only the `trigger` line, then try again (this counts as Struggled).
 	4. Run **Templater: Insert Templates/Review.md** and pick Clean, Struggled or Failed. It updates `streak`, `last_reviewed` and `next_review` for you.
-3. **Cap: 5 reviews per day.** The rest roll over to tomorrow or Sunday.
+3. **Cap: 5 reviews per day.** The rest stay in Due Today for tomorrow or Sunday.
+4. **Missed one or more days?** Run **Templater: Insert Templates/Rebalance Reviews.md** once. It spreads everything due over the coming days without overfilling any day.
 
 #### Step 2: Learn New (75 to 90 min)
 
-Take the next **3 problems** in sheet order. If more than 5 reviews were due today, take **2**.
+Take the number of new problems that **Today's Plan** shows, in sheet order: 3 if today's reviews are 5 or fewer, 2 if 6 to 8, none if more than 8. This is what stops reviews from piling up.
 
 1. Read the problem and work through one example by hand.
 2. Before coding, write one line: which pattern you think it is and why.
@@ -187,8 +190,9 @@ No new sheet problems on Sunday.
 - The sheet has 179 problems in 17 modules. 11 are done (`striver180` tag), so 168 remain.
 - 3 new a day, 6 days a week = 18 per week, about 9 to 10 weeks if nothing else got in the way. But each new problem brings 3 reviews (after 1, 7 and 21 days), so from about week 2 most days have more than 5 due and you drop to 2 new problems. Expect **10 to 12 weeks** even if every review goes clean, and longer with failures. 2 months is only possible by dropping revision, which is the exact problem you are fixing.
 - Expect 5 reviews plus 2 or 3 new problems on most days, and a bigger Sunday catch-up.
-- On a light day (2 or fewer reviews due) you may do a 4th problem. Never do more.
+- Never do more new problems than Today's Plan shows.
 - Follow the sheet's module order. Finish a module before starting the next, as similar problems back to back build recognition.
+- Problems that are not on the sheet live in `Archive/`. They are not scheduled and never appear in Due Today.
 
 #### Problems You Already Solved Before
 
@@ -263,28 +267,13 @@ tags:
 
 ---
 
-### 10. The Due Today View
+### 10. The Views
 
-Add this view to `Problems.base`:
+`Problems.base` has three views, all limited to the `Problems/` folder:
 
-```yaml
-  - type: table
-    name: Due Today
-    filters:
-      and:
-        - next_review <= today()
-    order:
-      - file.name
-      - SubPattern
-      - streak
-      - next_review
-      - trigger
-    sort:
-      - property: next_review
-        direction: ASC
-```
-
-It replaces the earlier `Review Queue` view. Retired problems have an empty `next_review`, so they drop out.
+- **Due Today**: `next_review` is today or earlier and the problem isn't retired (`streak < 3`). Oldest first.
+- **Next 7 Days**: what is coming up.
+- **All Problems**: everything, grouped by tag.
 
 To log a review, open the problem note and run **Templater: Insert Templates/Review.md** (bind it to a hotkey). You can still edit the fields by hand in the table cells or the Properties panel.
 
@@ -292,19 +281,15 @@ To log a review, open the problem note and run **Templater: Insert Templates/Rev
 
 ### 11. Setup Status
 
-Done:
-
-- DSA Template uses `streak`, `last_reviewed`, `next_review`, `trigger` and has a Key Insight section.
-- `Problems.base` has three views: **Due Today** (default), **Next 7 Days** and **All Problems**.
-- `streak`, `last_reviewed` and `next_review` are typed as number and dates in Obsidian, so dates get a date picker.
-- All pending problem notes are scheduled to start from **Wednesday, 2026-11-11** onwards, balanced at 3 problems per day (Wed–Sat), leaving Sunday open for blind practice.
-- **Auto Load-Balancing Active:** `Review.md` and `DSA Template.md` automatically check the vault and push dates forward if a target day already has 5 reviews or falls on Sunday.
-- **Rebalance Utility Added:** `Templates/Rebalance Reviews.md` is available via `Ctrl+P` to evenly redistribute overdue reviews whenever you miss days or need to reset your schedule.
+- New notes in `Problems/` get the DSA Template automatically: `streak: 0`, today's `last_reviewed`, tomorrow's `next_review`.
+- `Review.md` logs a review. Failed and Struggled keep exact dates; Clean dates move forward when their day already has 5 reviews or is a Sunday.
+- `Rebalance Reviews.md` spreads everything due on or before a start date (default: tomorrow) over the following days, counting reviews already booked, with a cap of 3, 4 or 5 a day.
+- The dashboard's **Today's Plan** shows reviews left and how many new problems to take.
 - Fixed the [[Two Pointers]] Dataview query and the [[Arrays]] heading.
 
 Your part:
 
-- Most old notes have an empty `trigger`. Fill it in the first time each one comes up for review.
+- Some notes have an empty `trigger`. Fill it in the first time each one comes up for review.
 
 ---
 
