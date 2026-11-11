@@ -2,10 +2,10 @@
 pattern: "[[Arrays]]"
 SubPattern: "[[Linear Scan]]"
 streak: 0
-times_reviewed: 0
-last_reviewed:
-next_review: 2026-11-11
-trigger:
+times_reviewed: 1
+last_reviewed: 2026-11-11
+next_review: 2026-11-14
+trigger: Track two candidates, make sure both are not same, do not decrease cnt2 when arr[i]==cand1
 unique: true
 link: https://takeuforward.org/practice/dsa/majority-element-ii?category=linear-scan&source=strivers-180-master-dsa-patterns&sidebar=0&tab=solution&solution=optimal
 tags:
@@ -160,6 +160,10 @@ public:
 1. This is extended Moore's Voting Algorithm.
 2. Initialise the candidates in the loop.
 3. Always check if both the candidates are not same.
+4. **Why `cnt2` is not decremented when `nums[i] == el1`**:
+   - There can be up to 2 majority elements ($> n/3$). The candidates are allies, not opponents.
+   - Boyer-Moore for $> n/3$ cancels **triplets of 3 distinct elements** $\{ \text{el1}, \text{el2}, \text{nums}[i] \}$, which only occurs in the `else` block.
+   - If seeing `el1` decremented `cnt2`, two valid majority elements (e.g., `[1, 2, 1, 2, 1, 2]`) would cannibalize each other's counts.
 
 ---
 

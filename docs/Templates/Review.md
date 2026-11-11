@@ -53,7 +53,7 @@ await app.fileManager.processFrontMatter(file, (fm) => {
     fm.next_review = date.format("YYYY-MM-DD");
     const moved = date.diff(today, "days") - days;
     message = `Streak ${fm.streak}. Next review on ${fm.next_review}` +
-      (moved > 0 ? ` (${moved} day${moved > 1 ? "s" : ""} later than ${days}, to keep days at ${DAILY_CAP} or fewer).` : ".");
+      (moved > 0 ? " (" + `${moved} day${moved > 1 ? "s" : ""} later than ${days}, to keep days at ${DAILY_CAP} or fewer).` : ".");
   } else {
     fm.streak = 0;
     const days = outcome === "failed" ? 1 : 3;

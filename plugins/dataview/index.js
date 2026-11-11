@@ -105,8 +105,11 @@ function renderQuery(block, contentDir) {
   const sourceDir = from ? path.join(contentDir, from[1]) : contentDir
   const notes = listNotes(sourceDir, contentDir).filter((note) =>
     conditions.every(({ field, op, value }) => {
-      const equal = normalize(getField(note, field)) === value
-      return op === "=" ? equal : !equal
+      const raw = getField(note, field)
+      const hasMatch = Array.isArray(raw)
+        ? raw.some((v) => normalize(v) === value)
+        : normalize(raw) === value
+      return op === "=" ? hasMatch : !hasMatch
     }),
   )
 

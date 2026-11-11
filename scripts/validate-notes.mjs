@@ -72,23 +72,39 @@ function frontmatterLink(value) {
   return match ? linkTarget(match[1]) : null
 }
 
-function checkLinkField(file, fm, key, folder, { required }) {
+function checkLinkField(file, fm, key, folder, { required, allowList = false }) {
   const value = fm[key]
   if (value === undefined || value === null || value === "") {
     if (required) report(file, `frontmatter \`${key}\` is required`)
     return
   }
-  const target = frontmatterLink(value)
-  if (!target) {
-    report(file, `frontmatter \`${key}\` must be a quoted wikilink, e.g. "[[Name]]"`)
-    return
+  if (Array.isArray(value)) {
+    if (!allowList) {
+      report(file, `frontmatter \`${key}\` must be a single quoted wikilink, e.g. "[[Name]]"`)
+      return
+    }
+    if (value.length === 0) {
+      if (required) report(file, `frontmatter \`${key}\` cannot be an empty list`)
+      return
+    }
   }
-  const name = path.posix.basename(target).toLowerCase()
-  const ok = notes.some(
-    (n) => n.startsWith(`${folder}/`) && path.posix.basename(n, ".md").toLowerCase() === name,
-  )
-  if (!ok)
-    report(file, `frontmatter \`${key}\` links to "${target}", which is not a note in ${folder}/`)
+  const values = Array.isArray(value) ? value : [value]
+  for (const v of values) {
+    const target = frontmatterLink(v)
+    if (!target) {
+      report(
+        file,
+        `frontmatter \`${key}\` must be a quoted wikilink${allowList ? " or list of quoted wikilinks" : ""}, e.g. "[[Name]]"`,
+      )
+      return
+    }
+    const name = path.posix.basename(target).toLowerCase()
+    const ok = notes.some(
+      (n) => n.startsWith(`${folder}/`) && path.posix.basename(n, ".md").toLowerCase() === name,
+    )
+    if (!ok)
+      report(file, `frontmatter \`${key}\` links to "${target}", which is not a note in ${folder}/`)
+  }
 }
 
 function checkAllowedKeys(file, fm, allowed) {
@@ -133,7 +149,7 @@ function checkProblem(file, fm, body) {
     if (!(key in fm)) report(file, `frontmatter \`${key}\` is missing (use the DSA Template)`)
   }
   checkLinkField(file, fm, "pattern", PATTERNS_DIR, { required: true })
-  checkLinkField(file, fm, "SubPattern", SUBPATTERNS_DIR, { required: false })
+  checkLinkField(file, fm, "SubPattern", SUBPATTERNS_DIR, { required: false, allowList: true })
   if ("streak" in fm && !(Number.isInteger(fm.streak) && fm.streak >= 0 && fm.streak <= 3)) {
     report(file, "frontmatter `streak` must be an integer from 0 to 3")
   }

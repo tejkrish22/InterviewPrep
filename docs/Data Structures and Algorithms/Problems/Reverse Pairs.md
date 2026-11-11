@@ -2,10 +2,10 @@
 pattern: "[[Arrays]]"
 SubPattern: "[[Divide and Conquer]]"
 streak: 0
-times_reviewed: 1
-last_reviewed: 2026-11-05
-next_review: 2026-11-11
-trigger: Leverage merge sort technique, count the pairs before merging
+times_reviewed: 2
+last_reviewed: 2026-11-11
+next_review: 2026-11-14
+trigger: Leverage merge sort technique, count the pairs before merging, do not reset j after every i while counting
 unique: false
 link: https://takeuforward.org/practice/dsa/reverse-pairs?category=divide-and-conquer&source=strivers-180-master-dsa-patterns
 tags:
@@ -148,7 +148,9 @@ private:
 
 1. Counting inside the merge (like Count Inversions) undercounts. When `arr[left] > arr[right]` but not `> 2 * arr[right]`, the merge still moves past `arr[right]`, so larger left elements never get paired with it. Example: `[3, 7] | [2]` misses (7, 2).
 2. Count before `merge`. After merging, the halves are mixed and you can't tell which side an element came from.
-3. Don't reset `right` for each left element. It is still correct, but it brings back O(n²).
+3. Don't reset `right` for each left element:
+   - **Why not reset?** The left half is sorted ($nums[i+1] \ge nums[i]$). By transitivity ($nums[i+1] \ge nums[i] > 2 \cdot nums[k]$), any right element that satisfied the condition for $nums[i]$ is guaranteed to satisfy it for $nums[i+1]$. Resetting `right` does redundant work and degrades $O(n)$ to $O(n^2)$.
+   - **Count derivation:** Valid right elements span the index range $[mid + 1, right - 1]$. The count is $(right - 1) - (mid + 1) + 1 = right - (mid + 1)$.
 4. Use `2LL * arr[right]`. `2 * arr[right]` overflows `int` for values near 2³¹.
 5. Check `right <= high` before reading `arr[right]` in the `while` condition.
 

@@ -3,7 +3,7 @@
 // Rule reference: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
 {
   "globs": ["docs/**/*.md"],
-  "ignores": ["docs/.obsidian/**"],
+  "ignores": ["docs/.obsidian/**", "docs/Templates/**"],
   "config": {
     "default": true,
 

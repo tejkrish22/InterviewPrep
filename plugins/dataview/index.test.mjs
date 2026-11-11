@@ -11,6 +11,7 @@ const problems = {
   "Aggressive Cows": `pattern: "[[Binary Search]]"\nSubPattern: "[[Binary Search On Answer]]"`,
   "Plain Search": `pattern: "[[Binary Search]]"\nSubPattern:`,
   "Two Sum": `pattern: "[[Arrays]]"\nSubPattern:`,
+  "Subarray Sum": `pattern: "[[Arrays]]"\nSubPattern:\n  - "[[Hashing]]"\n  - "[[Two Pointers]]"`,
 }
 
 let dir
@@ -63,6 +64,17 @@ describe("Dataview plugin", () => {
       ),
     )
     assert.strictEqual(out, "- 🔍 [[Problems/Plain Search|Plain Search]]")
+  })
+
+  test("matches problems with multiple subpatterns in a list", () => {
+    const outHashing = transform(
+      query(`LIST FROM "Problems"\nWHERE SubPattern = [[Hashing]]\nSORT file.name ASC`),
+    )
+    const outTwoPointers = transform(
+      query(`LIST FROM "Problems"\nWHERE SubPattern = [[Two Pointers]]\nSORT file.name ASC`),
+    )
+    assert.strictEqual(outHashing, "- 🔍 [[Problems/Subarray Sum|Subarray Sum]]")
+    assert.strictEqual(outTwoPointers, "- 🔍 [[Problems/Subarray Sum|Subarray Sum]]")
   })
 
   test("shows a placeholder when nothing matches", () => {

@@ -2,10 +2,10 @@
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
 streak: 0
-times_reviewed: 0
-last_reviewed:
-next_review: 2026-11-11
-trigger:
+times_reviewed: 1
+last_reviewed: 2026-11-11
+next_review: 2026-11-14
+trigger: Find the dip from back, if dip not found return the reversed array, swap the dip with the immediate large element from back, reverse the suffix
 unique: false
 link: https://takeuforward.org/practice/dsa/next-permutation?source=planly&plan=dsa&task=34311090&subject=strivers-180-master-dsa-patterns&tab=solution&solution=optimal
 tags:
@@ -139,6 +139,9 @@ public:
 	2. Find number which is greater and close to pivot
 	3. Swap them
 	4. Reverse {pivot+1, n-1}
+2. **Why reverse after swapping?**:
+   - The prefix just increased; to get the *immediate* next permutation, the suffix must be as small as possible (ascending order).
+   - The suffix is guaranteed to remain in descending order after the swap, so `reverse` sorts it into ascending order in $O(n)$ time without needing a sort.
 
 ---
 

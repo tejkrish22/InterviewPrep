@@ -30,6 +30,8 @@
     "times_reviewed": "number",
     "last_reviewed": "date",
     "next_review": "date",
-    "trigger": "text"
+    "trigger": "text",
+    "pattern": "text",
+    "SubPattern": "multitext"
   }
 }
