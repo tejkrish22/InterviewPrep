@@ -3,5 +3,6 @@
     "image-alignment",
     "mermaid-scroll"
   ],
-  "cssTheme": "Minimal"
+  "cssTheme": "Minimal",
+  "showRibbon": true
 }
