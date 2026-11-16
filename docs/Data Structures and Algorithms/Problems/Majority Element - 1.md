@@ -1,10 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Linear Scan]]"
-streak: 1
-times_reviewed: 0
-last_reviewed:
-next_review: 2026-11-16
+streak: 2
+times_reviewed: 1
+last_reviewed: 2026-11-16
+next_review: 2026-12-07
 trigger: moore's voting algorithm, choose candidate and verify candidate
 unique: true
 link: https://takeuforward.org/practice/dsa/majority-element-i?category=linear-scan&source=strivers-180-master-dsa-patterns

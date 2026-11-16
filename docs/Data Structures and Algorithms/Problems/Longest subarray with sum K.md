@@ -3,6 +3,7 @@ pattern: "[[Arrays]]"
 SubPattern:
   - "[[Hashing]]"
   - "[[Two Pointers]]"
+  - "[[Prefix Sum]]"
 streak: 1
 times_reviewed: 1
 last_reviewed: 2026-11-12
