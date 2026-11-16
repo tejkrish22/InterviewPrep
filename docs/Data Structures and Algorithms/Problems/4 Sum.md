@@ -2,10 +2,10 @@
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
 streak: 0
-times_reviewed: 0
-last_reviewed:
-next_review: 2026-11-13
-trigger:
+times_reviewed: 1
+last_reviewed: 2026-11-15
+next_review: 2026-11-18
+trigger: sort the array, take first 2; 3 and n-1, after utilising avoid duplicates
 unique: false
 link: https://takeuforward.org/practice/dsa/4-sum?category=two-pointers&source=strivers-180-master-dsa-patterns
 tags:

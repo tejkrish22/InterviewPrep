@@ -1,11 +1,11 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
-streak: 0
-times_reviewed: 0
-last_reviewed:
-next_review: 2026-11-14
-trigger:
+streak: 1
+times_reviewed: 1
+last_reviewed: 2026-11-15
+next_review: 2026-11-23
+trigger: Similar to 2 Sum, but to avoid duplicate entries; have new set for each outer iteration so that older history is erased
 unique: false
 link: https://takeuforward.org/practice/dsa/3-sum?category=two-pointers&source=strivers-180-master-dsa-patterns
 tags:

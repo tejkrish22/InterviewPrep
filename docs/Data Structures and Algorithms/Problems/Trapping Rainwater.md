@@ -2,12 +2,12 @@
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
 streak: 0
-times_reviewed: 0
-last_reviewed: 2026-11-03
-next_review: 2026-11-12
+times_reviewed: 1
+last_reviewed: 2026-11-15
+next_review: 2026-11-16
 trigger: "Water between walls: process the shorter side, its running max is the water level"
 unique: false
-link: https://takeuforward.org/practice/dsa/trapping-rainwater?source=planly&plan=dsa&task=34311092&subject=strivers-180-master-dsa-patterns&tab=solution&sidebar=1&solution=optimal-approach
+link: https://takeuforward.org/practice/dsa/trapping-rainwater?category=two-pointers&source=strivers-180-master-dsa-patterns
 tags:
   - striver180
 ---
@@ -139,64 +139,38 @@ public:
 ### Optimal 2
 
 ```cpp
+
 class Solution {
 public:
-    // Function to get the trapped water
-    int trap(vector<int> &height){
-        
-        int n = height.size(); // Size of array
-        
-        // To store the total trapped rainwater
+    int trap(vector<int>& arr) {
+        int n = arr.size();
+        if (n == 0) return 0;
+
         int total = 0;
-        
-        // To store the maximums on both sides
-        int leftMax = 0, rightMax = 0;
-        
-        // Left and Right pointers
-        int left = 0, right = n-1;
-        
-        // Traverse from both ends
-        while(left < right) {
-            
-            // If left height is smaller or equal
-            if(height[left] <= height[right]) {
-                
-                // If water can be stored
-                if(leftMax > height[left]) {
-                    
-                    // Update total water
-                    total += leftMax - height[left];
-                }
-                
-                // Else update maximum height on left
-                else leftMax = height[left];
-                
-                // Shift left by 1
-                left = left + 1;
+
+        int leftMax = 0;
+        int rightMax = arr[n-1];
+
+        int left = 0;
+        int right = n-1;
+
+        while (left <= right) {
+            if (leftMax < rightMax) {
+                leftMax = max(leftMax, arr[left]);
+                total += leftMax - arr[left];
+                left++;
             }
-            
-            // Else if right height is smaller
             else {
-                
-                // If water can be stored
-                if(rightMax > height[right]) {
-                    
-                    // Update total water
-                    total += rightMax - height[right];
-                }
-                
-                // Else update maximum height on right
-                else rightMax = height[right];
-                
-                // Shift right by 1
-                right = right - 1;
+                rightMax = max(rightMax, arr[right]);
+                total += rightMax - arr[right];
+                right--;
             }
         }
-        
-        // Return the result
+
         return total;
     }
 };
+
 ```
 
 - TC: O(n)

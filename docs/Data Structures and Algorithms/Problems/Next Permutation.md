@@ -1,13 +1,13 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
-streak: 0
-times_reviewed: 1
-last_reviewed: 2026-11-11
-next_review: 2026-11-14
+streak: 1
+times_reviewed: 2
+last_reviewed: 2026-11-15
+next_review: 2026-11-23
 trigger: Find the dip from back, if dip not found return the reversed array, swap the dip with the immediate large element from back, reverse the suffix
 unique: false
-link: https://takeuforward.org/practice/dsa/next-permutation?source=planly&plan=dsa&task=34311090&subject=strivers-180-master-dsa-patterns&tab=solution&solution=optimal
+link: https://takeuforward.org/practice/dsa/next-permutation?category=two-pointers&source=strivers-180-master-dsa-patterns&sidebar=0
 tags:
   - striver180
 ---

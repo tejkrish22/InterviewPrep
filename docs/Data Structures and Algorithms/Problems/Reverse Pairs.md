@@ -1,10 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Divide and Conquer]]"
-streak: 0
-times_reviewed: 2
-last_reviewed: 2026-11-11
-next_review: 2026-11-14
+streak: 1
+times_reviewed: 3
+last_reviewed: 2026-11-15
+next_review: 2026-11-24
 trigger: Leverage merge sort technique, count the pairs before merging, do not reset j after every i while counting
 unique: false
 link: https://takeuforward.org/practice/dsa/reverse-pairs?category=divide-and-conquer&source=strivers-180-master-dsa-patterns
