@@ -2,7 +2,6 @@
 
 | Aspect            | Multiprogramming                                  | Multitasking                                   | Multiprocessing                                               | Multithreading                                                |
 | ----------------- | ------------------------------------------------- | ---------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-
 | What it is        | Many programs stay in memory together.            | Many tasks share CPU using time slices.        | Many CPUs or cores run work at the same time.                 | Many threads exist inside one process.                        |
 | Problem it solves | CPU becomes idle when one program waits for I/O.  | Users need many tasks to feel active together. | One CPU or core cannot do many things at the exact same time. | One application needs many activities to happen concurrently. |
 | Unit involved     | Programs or processes are the main unit.          | Tasks, processes, or threads are time-shared.  | Threads or processes run on different CPUs or cores.          | Threads run inside the same process.                          |
