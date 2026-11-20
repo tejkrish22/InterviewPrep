@@ -88,4 +88,16 @@ describe("Dataview plugin", () => {
       assert.match(out, /Unsupported Dataview clause/, where)
     }
   })
+
+  test("flags LIMIT instead of listing every match", () => {
+    const out = transform(query(`LIST FROM "Problems"\nSORT file.name ASC\nLIMIT 2`))
+    assert.match(out, /Unsupported Dataview clause on the website: `LIMIT 2`/)
+  })
+
+  test("flags query types other than LIST", () => {
+    for (const type of [`TABLE pattern FROM "Problems"`, `TASK FROM "Problems"`]) {
+      const out = transform(query(type))
+      assert.match(out, /Unsupported Dataview clause/, type)
+    }
+  })
 })

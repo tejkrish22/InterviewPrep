@@ -20,11 +20,14 @@ When launching Obsidian on any laptop:
 
 ## 🔌 2. Installed Obsidian Community Plugins
 
-The vault is configured with the following 8 core community plugins inside `docs/.obsidian/`:
+The vault has the following 11 community plugins enabled inside `docs/.obsidian/`:
 
 | Plugin                           | Purpose & Functionality                                                          |
 | :------------------------------- | :------------------------------------------------------------------------------- |
-| **`dataview`**                   | Metadata querying, pattern auto-linking, and dynamic problem table generation.   |
+| **`dataview`**                   | Metadata querying, pattern auto-linking, and the DSA Dashboard queries.          |
+| **`templater-obsidian`**         | Fills in new problem notes and runs the Review and Rebalance Reviews commands.   |
+| **`homepage`**                   | Opens the DSA Dashboard when Obsidian starts.                                    |
+| **`calendar`**                   | Calendar view in the sidebar.                                                    |
 | **`obsidian-excalidraw-plugin`** | Interactive architecture diagrams and whiteboard visual note-taking.             |
 | **`obsidian-linter`**            | Automated formatting of Markdown headers, frontmatter YAML, and tag consistency. |
 | **`obsidian-git`**               | Automatic scheduled Git commits, pushes, and backup synchronization.             |
@@ -32,6 +35,8 @@ The vault is configured with the following 8 core community plugins inside `docs
 | **`notebook-navigator`**         | Enhanced file tree navigation and folder browsing sidebar.                       |
 | **`multi-column-markdown`**      | Multi-column layout formatting for side-by-side note comparisons.                |
 | **`obsidian-importer`**          | Utility for importing notes from Notion, HTML, and external Markdown tools.      |
+
+`easy-typing-obsidian` is also installed but disabled; enable it in Settings → Community plugins if you want it.
 
 ---
 
@@ -49,7 +54,7 @@ By committing `docs/.obsidian/plugins/` and `docs/.obsidian/community-plugins.js
 When running `git clone` or `git pull` on any device:
 
 1. Open Obsidian $\rightarrow$ "Open folder as vault" $\rightarrow$ select the `InterviewPrep/docs` folder.
-2. **All 8 plugins and configurations load automatically out-of-the-box!**
+2. **All plugins and configurations load automatically out-of-the-box!**
 
 ---
 
@@ -59,8 +64,8 @@ When running `git clone` or `git pull` on any device:
 - **Content Source**: `docs/` folder (Root page: `docs/index.md`).
 - **Site Configuration**: `quartz.config.yaml` (title, base URL, plugins). Don't edit `quartz.config.default.yaml`; it stays identical to upstream.
 - **Dataview Plugin**: the local Quartz plugin in `plugins/dataview/` renders ` ```dataview ` `LIST` blocks at build time. It supports `FROM "folder"`, `WHERE` conditions using `=` / `!=` joined by `AND` (values can be `[[Link]]` or `"text"`), and `SORT field ASC|DESC`. `this.file.link` is not supported, so write the note's own link (`WHERE pattern = [[Arrays]]`). Sort by `file.name`, not `file.ctime`: file creation times are not preserved by a CI checkout. `npm run lint:notes` reports any query the website can't render.
-- **Automated 404 Link Audit**: `npm run test:links` (runs `node scripts/check-links.mjs` scanning 6000+ internal hyperlinks).
-- **GitHub Actions Pipeline**: `.github/workflows/deploy.yaml` lints the notes, builds Quartz, audits 404 links, and deploys to GitHub Pages on `git push origin main`.
+- **Automated 404 Link Audit**: `npm run test:links` (runs `node scripts/check-links.mjs`, which checks every internal link and image in the built site).
+- **GitHub Actions Pipeline**: `.github/workflows/deploy.yaml` lints the notes, tests the local plugins, builds Quartz, audits 404 links, and deploys to GitHub Pages on `git push origin main`. It is the only workflow; Quartz's own upstream workflows are not kept.
 
 ### Keeping Quartz upgradable
 
@@ -107,7 +112,8 @@ If something can't be fixed automatically, the commit is stopped and your files 
 - **Titles**: Quartz shows the file name as the page title, so never use an H1 (`#`): start at `##`. `npm run lint:notes` flags any H1, and the Obsidian Linter's _Heading Increment_ rule (with _Start Headings at H2_) renumbers headings on save. To keep a longer name searchable, such as "Priority Queue" for `Heap.md`, add it to `aliases` in the frontmatter.
 - **File names**: no `? , : # ^ [ ] | \ * " < >`. Use a numeric prefix for ordered series (`3_UDP.md`) and `Week N Day N - Topic.md` in Learn LLM.
 - **Frontmatter**: optional for concept notes; only `title`, `aliases`, `tags`, `description` and `draft` are allowed.
-- **DSA problems** (`Data Structures and Algorithms/Problems/`): create them from `Templates/DSA Template.md`. They require `pattern` (a `[[link]]` to a note in `Patterns/`), `SubPattern` (empty or a `[[link]]` to a note in `Subpatterns/`), `confidence` (1–5), `unique` (true/false) and `link` (problem URL), plus the sections `## Question`, `## Code`, `## Complexity` and `## Look out`, in that order.
+- **DSA problems** (`Data Structures and Algorithms/Problems/`): create them inside that folder and Templater fills in `Templates/DSA Template.md`. They require `pattern` (a `[[link]]` to a note in `Patterns/`), `SubPattern` (empty, a `[[link]]` or a list of `[[links]]` to notes in `Subpatterns/`), `streak` (0–3), `times_reviewed` (0 or more), `last_reviewed` and `next_review` (empty or `YYYY-MM-DD`), `trigger` (empty or text), `unique` (true/false) and `link` (problem URL), plus the sections `## Question`, `## Code` and `## Look out`, in that order. The template also adds `## Key Insight` and `## Related Problems`. See [How to Use the DSA System](docs/Data%20Structures%20and%20Algorithms/How%20to%20Use%20the%20DSA%20System.md) for the review routine.
+- **Archived problems** (`Data Structures and Algorithms/Archive/`): problems not on the current sheet. They are published but not scheduled, and they skip the problem frontmatter and section checks.
 - **Sub-patterns** (`Data Structures and Algorithms/Subpatterns/`): require a `parent` `[[link]]` to their pattern.
 - **Placeholders**: a note that isn't written yet should contain a `> [!todo] Coming soon` callout rather than being empty.
 

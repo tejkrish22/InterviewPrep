@@ -36,6 +36,9 @@ jobs:
       - name: Lint Notes (markdownlint + frontmatter/link validation)
         run: npm run lint
 
+      - name: Test Local Plugins
+        run: node --test "plugins/**/*.test.mjs"
+
       - name: Build Quartz Site
         run: npx quartz build -d docs -v
 

@@ -6,7 +6,7 @@ Personal study notes for software engineering interviews, written in [Obsidian](
 
 ## What's inside
 
-- **Data Structures & Algorithms**: 17 pattern cheat sheets and solved problems with C++ code, complexity, and pitfalls.
+- **Data Structures & Algorithms**: pattern and sub-pattern notes, plus solved problems with C++ code, complexity, pitfalls, and a spaced-revision schedule.
 - **Core CS**: Computer Networks, Operating Systems, OOP, C++, Cloud Computing, and System Design.
 - **Learn LLM**: a course log on LLMs, Hugging Face, transformers, and agentic AI.
 
@@ -24,7 +24,7 @@ Personal study notes for software engineering interviews, written in [Obsidian](
 | `npm run test:links`     | Build the site and check for broken links              |
 | `npm run upgrade:quartz` | Upgrade Quartz to the latest upstream version          |
 
-Pushing to `main` lints the notes, builds the site, checks links, and deploys it to GitHub Pages.
+Pushing to `main` lints the notes, tests the local plugins, builds the site, checks links and images, and deploys it to GitHub Pages.
 
 ## Repository layout
 

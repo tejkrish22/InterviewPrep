@@ -11,7 +11,8 @@ import YAML from "yaml"
  *   WHERE field = [[Link]] AND field != "text"
  *   SORT field ASC|DESC
  *
- * Only `=` / `!=` joined by AND are supported. Links are compared by note name,
+ * Only `=` / `!=` joined by AND are supported. Other query types and LIMIT are flagged.
+ * Links are compared by note name,
  * ignoring folder path, alias and heading, which matches how they resolve in Obsidian.
  * Quartz doesn't tell text transformers which note they are rendering, so
  * `this.file.link` can't be supported; write the note's link instead, e.g. `[[Binary Search]]`.
@@ -84,6 +85,9 @@ const unsupported = (clause) =>
 
 function renderQuery(block, contentDir) {
   const query = block.replace(/^```dataview\s*/, "").replace(/```$/, "")
+  if (!/^LIST\b/i.test(query)) return unsupported(query.split("\n")[0].trim())
+  const limit = query.match(/^\s*LIMIT\b.*$/im)
+  if (limit) return unsupported(limit[0].trim())
 
   const from = query.match(/FROM\s+"([^"]+)"/i)
   const where = query.match(/WHERE\s+([\s\S]+?)(?=\n\s*SORT\b|\n\s*LIMIT\b|$)/i)

@@ -29,18 +29,21 @@ let totalChecked = 0
 
 for (const htmlFile of htmlFiles) {
   const content = fs.readFileSync(htmlFile, "utf-8")
-  const hrefMatches = content.matchAll(/href=["']([^"']+)["']/g)
+  // href covers page links; src covers images and other embedded files.
+  const hrefMatches = content.matchAll(/(?:href|src)=["']([^"']+)["']/g)
 
   for (const match of hrefMatches) {
     let href = match[1]
 
-    // Skip external URLs, mailto, tel, javascript, or empty anchors
+    // Skip external URLs, mailto, tel, javascript, inline data, or empty anchors
     if (
       href.startsWith("http://") ||
       href.startsWith("https://") ||
+      href.startsWith("//") ||
       href.startsWith("mailto:") ||
       href.startsWith("tel:") ||
       href.startsWith("javascript:") ||
+      href.startsWith("data:") ||
       href === "#" ||
       href.startsWith("#")
     ) {
@@ -66,9 +69,7 @@ for (const htmlFile of htmlFiles) {
     let exists =
       fs.existsSync(targetPath) ||
       fs.existsSync(`${targetPath}.html`) ||
-      fs.existsSync(path.join(targetPath, "index.html")) ||
-      fs.existsSync(path.join(publicDir, "dsa", "problems", `${path.basename(cleanHref)}.html`)) ||
-      fs.existsSync(path.join(publicDir, "dsa", "patterns", `${path.basename(cleanHref)}.html`))
+      fs.existsSync(path.join(targetPath, "index.html"))
 
     if (!exists) {
       const relSource = path.relative(publicDir, htmlFile)
