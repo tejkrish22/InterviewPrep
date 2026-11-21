@@ -1,10 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Hashing]]"
-streak: 0
-times_reviewed: 2
-last_reviewed: 2026-11-15
-next_review: 2026-11-18
+streak: 1
+times_reviewed: 3
+last_reviewed: 2026-11-20
+next_review: 2026-11-27
 trigger: use set to find the consecutive elements  for each new possible sequence
 unique: false
 link: https://takeuforward.org/practice/dsa/longest-consecutive-sequence-in-an-array?source=planly&plan=dsa&task=34311096&subject=strivers-180-master-dsa-patterns&tab=solution&solution=optimal

@@ -2,10 +2,10 @@
 pattern: "[[Binary Search]]"
 SubPattern:
   - "[[Core Algorithm]]"
-streak: 0
-times_reviewed: 0
-last_reviewed: 2026-11-17
-next_review: 2026-11-18
+streak: 1
+times_reviewed: 1
+last_reviewed: 2026-11-20
+next_review: 2026-11-27
 trigger: apply binary search to find the peak based on increasing or decreasing side
 unique: false
 link: https://takeuforward.org/practice/dsa/find-peak-element?category=binary-search&source=strivers-180-master-dsa-patterns&sidebar=0&tab=problem&solution=binary-search

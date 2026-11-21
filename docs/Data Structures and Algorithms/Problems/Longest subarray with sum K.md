@@ -4,10 +4,10 @@ SubPattern:
   - "[[Hashing]]"
   - "[[Two Pointers]]"
   - "[[Prefix Sum]]"
-streak: 1
-times_reviewed: 1
-last_reviewed: 2026-11-12
-next_review: 2026-11-19
+streak: 2
+times_reviewed: 2
+last_reviewed: 2026-11-20
+next_review: 2026-12-11
 trigger: Map running prefix sum to its earliest index; check if (sum - k) exists and never overwrite existing sums
 unique: false
 link: https://takeuforward.org/practice/dsa/longest-subarray-with-sum-k?category=hashing-prefix-sums&source=strivers-180-master-dsa-patterns&sidebar=0&tab=problem&solution=optimal-%28only-positives%29

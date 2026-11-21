@@ -1,10 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
-streak: 1
-times_reviewed: 1
-last_reviewed: 2026-11-13
-next_review: 2026-11-20
+streak: 0
+times_reviewed: 2
+last_reviewed: 2026-11-20
+next_review: 2026-11-23
 trigger: merge similar way from backwards
 unique: true
 link: https://takeuforward.org/practice/dsa/merge-two-sorted-arrays-without-extra-space?source=planly&plan=dsa&task=34311091&subject=strivers-180-master-dsa-patterns&tab=problem&solution=optimal-iii
@@ -105,6 +105,7 @@ public:
 ## Look out
 
 1. Also solved with gap method with shell sort
+2. `i>=0` in inner check
 
 ---
 
