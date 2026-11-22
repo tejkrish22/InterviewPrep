@@ -1,7 +1,6 @@
 ---
 pattern: "[[Binary Search]]"
-SubPattern:
-  - "[[Core Algorithm]]"
+SubPattern: "[[Find the Sorted Half]]"
 streak: 1
 times_reviewed: 1
 last_reviewed: 2026-11-20

@@ -1,7 +1,6 @@
 ---
 pattern: "[[Binary Search]]"
-SubPattern:
-  - "[[Binary Search On Answer]]"
+SubPattern: "[[Core Algorithm]]"
 streak: 0
 times_reviewed: 0
 last_reviewed: 2026-11-22

@@ -1,7 +1,6 @@
 ---
 pattern: "[[Binary Search]]"
-SubPattern:
-  - "[[Core Algorithm]]"
+SubPattern: "[[Core Algorithm]]"
 streak: 1
 times_reviewed: 1
 last_reviewed: 2026-11-20

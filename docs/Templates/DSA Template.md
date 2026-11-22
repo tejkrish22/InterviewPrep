@@ -1,6 +1,6 @@
 ---
-pattern:
-SubPattern:
+pattern: "[[]]"
+SubPattern: "[[]]"
 streak: 0
 times_reviewed: 0
 last_reviewed: <% tp.date.now("YYYY-MM-DD") %>
@@ -21,8 +21,8 @@ tags:
 
 ## Key Insight
 
-1. The one idea that makes the optimal solution work.
-2. What I did not see the first time.
+1. What is the core observation that unlocks the optimal approach?
+2. What would I miss on a first attempt?
 
 ---
 
