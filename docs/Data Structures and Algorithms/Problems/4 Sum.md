@@ -1,10 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
-streak: 0
-times_reviewed: 2
-last_reviewed: 2026-11-18
-next_review: 2026-11-21
+streak: 1
+times_reviewed: 3
+last_reviewed: 2026-11-22
+next_review: 2026-11-30
 trigger: sort the array, take first 2; 3 and n-1, after utilising avoid duplicates
 unique: false
 link: https://takeuforward.org/practice/dsa/4-sum?category=two-pointers&source=strivers-180-master-dsa-patterns
@@ -131,7 +131,7 @@ public:
 
 ## Look out
 
-1. Checking Duplicates
+1. Checking Duplicates should happen inside while loop immediately after you find an answer, to skip the remaining
 
 ---
 

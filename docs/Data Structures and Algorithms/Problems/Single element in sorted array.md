@@ -1,10 +1,10 @@
 ---
 pattern: "[[Binary Search]]"
 SubPattern: "[[Core Algorithm]]"
-streak: 0
-times_reviewed: 0
-last_reviewed: 2026-11-20
-next_review: 2026-11-21
+streak: 1
+times_reviewed: 1
+last_reviewed: 2026-11-22
+next_review: 2026-11-30
 trigger: |-
   0 1 2 3 4 5 6 7 8 9 10
   e o e o e o e o e o e
