@@ -1,10 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Linear Scan]]"
-streak: 1
-times_reviewed: 2
-last_reviewed: 2026-11-15
-next_review: 2026-11-23
+streak: 2
+times_reviewed: 3
+last_reviewed: 2026-11-24
+next_review: 2026-12-16
 trigger: Track two candidates, make sure both are not same, do not decrease cnt2 when arr[i]==cand1
 unique: true
 link: https://takeuforward.org/practice/dsa/majority-element-ii?category=linear-scan&source=strivers-180-master-dsa-patterns&sidebar=0&tab=solution&solution=optimal

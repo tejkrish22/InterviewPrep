@@ -3,10 +3,10 @@ pattern: "[[Arrays]]"
 SubPattern:
   - "[[Hashing]]"
   - "[[Prefix Sum]]"
-streak: 1
-times_reviewed: 1
-last_reviewed: 2026-11-17
-next_review: 2026-11-24
+streak: 2
+times_reviewed: 2
+last_reviewed: 2026-11-24
+next_review: 2026-12-15
 trigger: Keep calculating prefix sum, while maintaining hash map with count of prefix xor occurrence
 unique: false
 link: https://takeuforward.org/practice/dsa/count-subarrays-with-given-xor-k?category=hashing-prefix-sums&source=strivers-180-master-dsa-patterns&tab=problem&solution=optimal

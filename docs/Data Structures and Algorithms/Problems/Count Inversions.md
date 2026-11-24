@@ -1,10 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Divide and Conquer]]"
-streak: 1
-times_reviewed: 2
-last_reviewed: 2026-11-15
-next_review: 2026-11-24
+streak: 2
+times_reviewed: 3
+last_reviewed: 2026-11-24
+next_review: 2026-12-15
 trigger: "Count pairs i<j with a[i]>a[j]: merge sort, add mid-left+1 when the right element is smaller"
 unique: false
 link: https://takeuforward.org/practice/dsa/count-inversions?category=divide-and-conquer&source=strivers-180-master-dsa-patterns

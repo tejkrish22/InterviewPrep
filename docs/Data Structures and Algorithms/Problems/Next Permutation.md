@@ -1,10 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
-streak: 1
-times_reviewed: 2
-last_reviewed: 2026-11-15
-next_review: 2026-11-23
+streak: 2
+times_reviewed: 3
+last_reviewed: 2026-11-24
+next_review: 2026-12-16
 trigger: Find the dip from back, if dip not found return the reversed array, swap the dip with the immediate large element from back, reverse the suffix
 unique: false
 link: https://takeuforward.org/practice/dsa/next-permutation?category=two-pointers&source=strivers-180-master-dsa-patterns&sidebar=0

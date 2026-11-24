@@ -1,10 +1,10 @@
 ---
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
-streak: 1
-times_reviewed: 2
-last_reviewed: 2026-11-16
-next_review: 2026-11-24
+streak: 2
+times_reviewed: 3
+last_reviewed: 2026-11-24
+next_review: 2026-12-15
 trigger: "Water between walls: process the shorter side, its running max is the water level"
 unique: false
 link: https://takeuforward.org/practice/dsa/trapping-rainwater?category=two-pointers&source=strivers-180-master-dsa-patterns

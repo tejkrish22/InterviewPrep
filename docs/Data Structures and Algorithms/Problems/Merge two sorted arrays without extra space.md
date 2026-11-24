@@ -2,9 +2,9 @@
 pattern: "[[Arrays]]"
 SubPattern: "[[Two Pointers]]"
 streak: 0
-times_reviewed: 2
-last_reviewed: 2026-11-20
-next_review: 2026-11-23
+times_reviewed: 3
+last_reviewed: 2026-11-24
+next_review: 2026-11-27
 trigger: merge similar way from backwards
 unique: true
 link: https://takeuforward.org/practice/dsa/merge-two-sorted-arrays-without-extra-space?source=planly&plan=dsa&task=34311091&subject=strivers-180-master-dsa-patterns&tab=problem&solution=optimal-iii
