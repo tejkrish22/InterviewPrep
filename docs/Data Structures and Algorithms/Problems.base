@@ -18,6 +18,23 @@ views:
       - property: next_review
         direction: ASC
   - type: table
+    name: Due Tomorrow
+    filters:
+      and:
+        - next_review > today()
+        - next_review <= today() + "1d"
+        - streak < 3
+    order:
+      - file.name
+      - SubPattern
+      - streak
+      - next_review
+    sort:
+      - property: streak
+        direction: ASC
+      - property: file.name
+        direction: ASC
+  - type: table
     name: Next 7 Days
     filters:
       and:
