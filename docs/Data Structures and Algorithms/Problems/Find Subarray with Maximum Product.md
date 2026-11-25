@@ -4,7 +4,7 @@ SubPattern: "[[Linear Scan]]"
 streak: 0
 times_reviewed: 2
 last_reviewed: 2026-11-20
-next_review: 2026-11-23
+next_review: 2026-11-26
 trigger: If all positive ok, if even neg ok, but during odd neg we need suff and pref products to eliminate that odd neg
 unique: false
 link: https://takeuforward.org/practice/dsa/maximum-product-subarray-in-an-array?category=linear-scan&source=strivers-180-master-dsa-patterns

@@ -4,7 +4,7 @@ SubPattern: "[[Core Algorithm]]"
 streak: 0
 times_reviewed: 1
 last_reviewed: 2026-11-22
-next_review: 2026-11-25
+next_review: 2026-11-28
 trigger: When duplicates are try to trim down the search space
 unique: false
 link: https://takeuforward.org/practice/dsa/search-in-rotated-sorted-array-2?category=binary-search&source=strivers-180-master-dsa-patterns&sidebar=0&tab=solution&solution=optimal

@@ -2,10 +2,10 @@
 pattern: "[[Binary Search]]"
 SubPattern:
   - "[[Binary Search On Answer]]"
-streak: 0
-times_reviewed: 0
-last_reviewed: 2026-11-22
-next_review: 2026-11-23
+streak: 1
+times_reviewed: 1
+last_reviewed: 2026-11-25
+next_review: 2026-12-02
 trigger: median is the smallest value x for which more than half of the elements are ≤ x
 unique: true
 link: https://takeuforward.org/practice/dsa/matrix-median?category=search-on-answer&source=strivers-180-master-dsa-patterns&tab=problem&solution=optimal

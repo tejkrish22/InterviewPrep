@@ -1,10 +1,10 @@
 ---
 pattern: "[[Binary Search]]"
 SubPattern: "[[Core Algorithm]]"
-streak: 0
-times_reviewed: 0
-last_reviewed: 2026-11-22
-next_review: 2026-11-23
+streak: 1
+times_reviewed: 1
+last_reviewed: 2026-11-25
+next_review: 2026-12-02
 trigger: "{0,n-1} is the vantage point"
 unique: true
 link: https://takeuforward.org/practice/dsa/search-in-2d-matrix-ii?category=binary-search&source=strivers-180-master-dsa-patterns

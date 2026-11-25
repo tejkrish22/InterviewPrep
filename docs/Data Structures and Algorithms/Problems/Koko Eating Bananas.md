@@ -1,10 +1,10 @@
 ---
 pattern: "[[Binary Search]]"
 SubPattern: "[[Binary Search On Answer]]"
-streak: 0
-times_reviewed: 0
-last_reviewed: 2026-11-22
-next_review: 2026-11-23
+streak: 1
+times_reviewed: 1
+last_reviewed: 2026-11-25
+next_review: 2026-12-02
 trigger: Minimize a rate/value over a monotonic feasibility space → binary search on the answer range
 unique: false
 link: https://takeuforward.org/practice/dsa/koko-eating-bananas?category=search-on-answer&source=strivers-180-master-dsa-patterns&sidebar=0&tab=solution&solution=binary-search

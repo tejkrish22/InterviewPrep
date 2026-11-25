@@ -4,7 +4,7 @@ SubPattern: "[[Linear Scan]]"
 streak: 1
 times_reviewed: 1
 last_reviewed: 2026-11-15
-next_review: 2026-11-23
+next_review: 2026-11-30
 trigger: traverse the array, keep adding the elements while updating the ans if anywhere sum is greater, if sum becomes negative reset to 0
 unique: true
 link: https://takeuforward.org/practice/dsa/kadane's-algorithm?source=planly&planly_plan=dsa&planly_task_id=30201060&planly_day_id=3829451&planly_session_id=291659&subject=strivers-180-master-dsa-patterns&tab=problem&solution=follow-up&sidebar=1

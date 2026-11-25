@@ -2,12 +2,12 @@
 pattern: "[[Binary Search]]"
 SubPattern: "[[Binary Search on Partition]]"
 streak: 0
-times_reviewed: 0
-last_reviewed: 2026-11-22
-next_review: 2026-11-23
+times_reviewed: 1
+last_reviewed: 2026-11-25
+next_review: 2026-11-28
 trigger: Two sorted arrays, find median without merging → binary search on how many elements to take from the smaller array
 unique: true
-link: https://takeuforward.org/data-structure/median-of-two-sorted-arrays/
+link: https://takeuforward.org/practice/dsa/median-of-2-sorted-arrays?category=partition-search&source=strivers-180-master-dsa-patterns
 tags:
   - striver180
 ---

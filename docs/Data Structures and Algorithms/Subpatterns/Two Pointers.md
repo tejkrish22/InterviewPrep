@@ -1,5 +1,5 @@
 ---
-parent: "[[Arrays]]"
+parent: "[[Sliding Window]]"
 ---
 
 ## Recognition Cues

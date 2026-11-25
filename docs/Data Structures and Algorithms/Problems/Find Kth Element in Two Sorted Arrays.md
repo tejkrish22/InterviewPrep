@@ -4,7 +4,7 @@ SubPattern: "[[Binary Search on Partition]]"
 streak: 0
 times_reviewed: 0
 last_reviewed: 2026-11-22
-next_review: 2026-11-23
+next_review: 2026-11-28
 trigger: Two sorted arrays, kth smallest without merging → same partition idea as median but left half size = k, answer is always max(l1, l2)
 unique: false
 link: https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1

@@ -32,6 +32,7 @@
     "next_review": "date",
     "trigger": "text",
     "pattern": "text",
-    "SubPattern": "multitext"
+    "SubPattern": "multitext",
+    "parent": "multitext"
   }
 }

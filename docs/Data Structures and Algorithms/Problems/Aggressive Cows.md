@@ -5,7 +5,7 @@ SubPattern:
 streak: 0
 times_reviewed: 0
 last_reviewed: 2026-11-22
-next_review: 2026-11-23
+next_review: 2026-11-28
 trigger: Do binary search on [0, (max(arr)-min(arr)], to find possibility manually place the cows one by one
 unique: false
 link: https://takeuforward.org/practice/dsa/aggressive-cows?category=search-on-answer&source=strivers-180-master-dsa-patterns&tab=problem&solution=linear-search&sidebar=0
