@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!-- Planar 2-link arm (L1 = 1.0 m, L2 = 0.5 m), both joints rotate about z.
+     Same geometry as the maths crash course, so FK numbers can be checked with tf2. -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="planar_arm">
+  <xacro:arg name="use_mock" default="true"/>
+
+  <xacro:property name="L1" value="1.0"/>
+  <xacro:property name="L2" value="0.5"/>
+  <xacro:property name="W" value="0.06"/>
+
+  <material name="grey"><color rgba="0.5 0.5 0.5 1"/></material>
+  <material name="blue"><color rgba="0.2 0.4 0.9 1"/></material>
+  <material name="orange"><color rgba="0.95 0.55 0.1 1"/></material>
+
+  <xacro:macro name="arm_link" params="name length material">
+    <link name="${name}">
+      <visual>
+        <origin xyz="${length / 2} 0 0" rpy="0 0 0"/>
+        <geometry><box size="${length} ${W} ${W}"/></geometry>
+        <material name="${material}"/>
+      </visual>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro name="arm_joint" params="name parent child x">
+    <joint name="${name}" type="revolute">
+      <parent link="${parent}"/>
+      <child link="${child}"/>
+      <origin xyz="${x} 0 0" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-3.14" upper="3.14" effort="10.0" velocity="1.5"/>
+    </joint>
+  </xacro:macro>
+
+  <link name="base_link">
+    <visual>
+      <geometry><cylinder radius="0.1" length="0.05"/></geometry>
+      <material name="grey"/>
+    </visual>
+  </link>
+
+  <xacro:arm_link name="link1" length="${L1}" material="blue"/>
+  <xacro:arm_link name="link2" length="${L2}" material="orange"/>
+  <link name="tool0"/>
+
+  <xacro:arm_joint name="joint1" parent="base_link" child="link1" x="0"/>
+  <xacro:arm_joint name="joint2" parent="link1" child="link2" x="${L1}"/>
+  <joint name="tool_joint" type="fixed">
+    <parent link="link2"/>
+    <child link="tool0"/>
+    <origin xyz="${L2} 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ros2_control: swap the hardware plugin without touching controllers (SIL vs real). -->
+  <ros2_control name="PlanarArm" type="system">
+    <hardware>
+      <xacro:if value="$(arg use_mock)">
+        <plugin>mock_components/GenericSystem</plugin>
+      </xacro:if>
+      <xacro:unless value="$(arg use_mock)">
+        <plugin>lab_hardware/SimpleArmHardware</plugin>
+        <param name="tau">0.3</param>
+      </xacro:unless>
+    </hardware>
+    <xacro:macro name="control_joint" params="name">
+      <joint name="${name}">
+        <command_interface name="position">
+          <param name="min">-3.14</param>
+          <param name="max">3.14</param>
+        </command_interface>
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+      </joint>
+    </xacro:macro>
+    <xacro:control_joint name="joint1"/>
+    <xacro:control_joint name="joint2"/>
+  </ros2_control>
+</robot>

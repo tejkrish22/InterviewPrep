@@ -1,0 +1,35 @@
+# Self-contained ROS 2 Jazzy image for macOS (Apple Silicon or Intel); builds natively for the host arch.
+# GUI apps render to a virtual desktop shown in the browser via noVNC (no XQuartz needed).
+# Build:  docker build -f Dockerfile.mac -t ros2-prep:jazzy-mac .
+FROM osrf/ros:jazzy-desktop
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+        build-essential g++ gdb sudo \
+        python3-colcon-common-extensions \
+        ros-jazzy-ros2-control ros-jazzy-ros2-controllers ros-jazzy-ros2controlcli \
+        ros-jazzy-xacro ros-jazzy-joint-state-publisher-gui \
+        ros-jazzy-rqt-joint-trajectory-controller ros-jazzy-plotjuggler-ros \
+        ros-jazzy-rmw-cyclonedds-cpp ros-jazzy-tf2-tools \
+        ros-jazzy-turtlesim ros-jazzy-rqt-graph ros-jazzy-rqt-bag \
+        ros-jazzy-rosbag2-storage-mcap ros-jazzy-demo-nodes-cpp \
+        tigervnc-standalone-server tigervnc-common novnc websockify openbox \
+        mesa-utils libgl1-mesa-dri \
+ && rm -rf /var/lib/apt/lists/*
+
+# The base image ships a uid-1000 "ubuntu" user; replace it with "dev" to match the guide's paths.
+RUN userdel -r ubuntu 2>/dev/null || true \
+ && useradd -m -u 1000 -s /bin/bash dev \
+ && echo "dev ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/dev \
+ && mkdir -p /home/dev/ws /home/dev/solutions \
+ && chown -R dev:dev /home/dev
+
+COPY --chmod=755 start-desktop.sh /usr/local/bin/start-desktop.sh
+
+# Docker exec shells inherit these, so GUI apps launched from any terminal land on the VNC desktop.
+ENV DISPLAY=:1 LIBGL_ALWAYS_SOFTWARE=1
+
+USER dev
+WORKDIR /home/dev/ws

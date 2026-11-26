@@ -1,0 +1,7 @@
+<library path="lab_hardware">
+  <class name="lab_hardware/SimpleArmHardware"
+         type="lab_hardware::SimpleArmHardware"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>Simulated arm: joints follow position commands with a first-order lag.</description>
+  </class>
+</library>

@@ -1,0 +1,10 @@
+# Goal
+string config_path
+float64 duration_s
+---
+# Result
+bool success
+string message
+---
+# Feedback
+float64 progress

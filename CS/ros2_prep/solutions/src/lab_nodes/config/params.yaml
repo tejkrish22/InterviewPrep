@@ -1,0 +1,9 @@
+# "/**/" matches the node in any namespace (robot1, robot2, ...).
+/**/sensor_sim:
+  ros__parameters:
+    rate_hz: 20.0
+    amplitude: 1.0
+
+/**/monitor:
+  ros__parameters:
+    timeout_s: 0.5

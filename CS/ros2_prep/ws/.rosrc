@@ -1,0 +1,11 @@
+# Shell setup for the ROS 2 prep container (loaded by run.sh).
+mkdir -p -m 700 "${XDG_RUNTIME_DIR:-/tmp/runtime-dev}"
+# Use the system Python, which has ROS's build-time Python modules (e.g. empy).
+export PATH="/usr/bin:$PATH"
+source /opt/ros/jazzy/setup.bash
+[ -f /home/dev/ws/install/setup.bash ] && source /home/dev/ws/install/setup.bash
+
+# Build the workspace and re-source it.
+alias cb='cd /home/dev/ws && colcon build --symlink-install && source install/setup.bash'
+
+PS1='\[\e[1;32m\](ros2 d${ROS_DOMAIN_ID})\[\e[0m\] \w$ '
